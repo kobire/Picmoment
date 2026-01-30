@@ -70,7 +70,6 @@
                 <a href="#workshops" class="hover:text-brand-yellow transition-colors">סדנאות</a>
                 <a href="#gift-card" class="hover:text-brand-yellow transition-colors">שובר מתנה</a>
                 <a href="#reviews" class="hover:text-brand-yellow transition-colors">המלצות</a>
-                <a href="#gallery" class="hover:text-brand-yellow transition-colors">גלריה</a>
                 <a href="#contact" class="px-6 py-2.5 bg-brand-yellow text-slate-900 rounded-full font-bold hover:bg-yellow-300 hover:scale-105 transition-all shadow-lg">
                     בואו נצלם
                 </a>
@@ -88,7 +87,6 @@
                 <a href="#about" onclick="toggleMenu()" class="py-2 border-b border-white/10">אודות</a>
                 <a href="#workshops" onclick="toggleMenu()" class="py-2 border-b border-white/10">סדנאות</a>
                 <a href="#gift-card" onclick="toggleMenu()" class="py-2 border-b border-white/10">שובר מתנה</a>
-                <a href="#gallery" onclick="toggleMenu()" class="py-2 border-b border-white/10">גלריה</a>
                 <a href="#contact" onclick="toggleMenu()" class="py-2 font-bold text-brand-yellow">צור קשר</a>
             </div>
         </div>
@@ -121,9 +119,6 @@
                 <a href="#workshops" class="px-8 py-4 bg-brand-yellow text-slate-900 rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-lg hover:shadow-yellow-400/30 flex items-center justify-center gap-2">
                     שריין מקום בסדנה
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-                <a href="#gallery" class="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-xl font-bold text-lg hover:bg-white/10 transition-all">
-                    לגלריה המלאה
                 </a>
             </div>
 
@@ -197,14 +192,6 @@
                 <div>
                     <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-4">סדנאות קרובות</h2>
                     <p class="text-slate-500 text-lg">בחר את ההרפתקה הבאה שלך. מספר המקומות מוגבל.</p>
-                </div>
-                
-                <!-- פילטרים -->
-                <div class="flex flex-wrap gap-2 p-1.5 bg-white rounded-xl shadow-sm border border-slate-200" id="filters">
-                    <button onclick="filterWorkshops('הכל')" class="filter-btn active px-6 py-2.5 rounded-lg text-sm font-bold bg-slate-900 text-white transition-all">הכל</button>
-                    <button onclick="filterWorkshops('אורבני')" class="filter-btn px-6 py-2.5 rounded-lg text-sm font-bold text-slate-500 hover:bg-slate-100 transition-all">אורבני</button>
-                    <button onclick="filterWorkshops('טבע')" class="filter-btn px-6 py-2.5 rounded-lg text-sm font-bold text-slate-500 hover:bg-slate-100 transition-all">טבע</button>
-                    <button onclick="filterWorkshops('לילה')" class="filter-btn px-6 py-2.5 rounded-lg text-sm font-bold text-slate-500 hover:bg-slate-100 transition-all">לילה</button>
                 </div>
             </div>
 
@@ -330,40 +317,71 @@
     <section class="py-20 bg-slate-900 text-white relative">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
+            <!-- צד תמונה -->
             <div class="md:w-1/2 relative group reveal">
                 <div class="absolute inset-0 bg-brand-yellow rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
                 <img src="COLLAGE.jpg" alt="Photographer" class="rounded-2xl relative z-10 w-full shadow-2xl transition-all duration-500">
             </div>
-            <div class="md:w-1/2 reveal">
-                <h2 class="text-4xl md:text-5xl font-black mb-6">קובי רפאלי</h2>
-                <h3 class="text-xl text-brand-yellow font-bold mb-6 tracking-widest uppercase">האיש מאחורי העדשה</h3>
-                <p class="text-slate-300 text-lg mb-6 leading-relaxed">
-                    התשוקה שלי היא להוכיח שלכל אחד יש "עין טובה" – היא פשוט צריכה קצת הכוונה. אחרי שנים של צילום במצלמות כבדות, גיליתי את החופש שבסמארטפון.
-                </p>
-                <p class="text-slate-300 text-lg mb-8 leading-relaxed">
-                    בסדנאות שלי אני לא מלמד טכניקה יבשה, אלא איך לספר סיפור. איך לגרום לאנשים לעצור את הגלילה בפיד ולהגיד "וואו".
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- גלריה (הוזזה לכאן) -->
-    <section id="gallery" class="py-24 bg-slate-900 text-white border-t border-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-16 reveal">
-                <div class="text-center md:text-right mb-8 md:mb-0">
-                    <h2 class="text-4xl md:text-6xl font-black mb-4">הגלריה</h2>
-                    <p class="text-slate-400 text-lg">רגעים שנתפסו בעדשת הסמארטפון.</p>
-                </div>
-                <a href="https://www.instagram.com/kobi_refaeli" target="_blank" class="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors flex items-center gap-2">
-                    <i data-lucide="instagram" class="w-5 h-5 text-brand-yellow"></i>
-                    <span>עקבו באינסטגרם</span>
-                </a>
-            </div>
             
-            <!-- רשת תמונות (תוכן יוזרק ע"י JS) -->
-            <div id="gallery-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-                <!-- התמונות יופיעו כאן -->
+            <!-- צד טקסט (מעודכן לפי תמונה) -->
+            <div class="md:w-1/2 reveal">
+                <h2 class="text-4xl md:text-5xl font-black mb-2">קובי רפאלי</h2>
+                <h3 class="text-xl text-brand-yellow font-bold mb-6 tracking-widest uppercase">צלם ומראשוני האינסטגרמרים בארץ ובעולם</h3>
+                
+                <div class="space-y-4 text-slate-300 text-lg leading-relaxed">
+                    <p>
+                        אני מתמחה בצילום באמצעות הסמארטפון. הגלריה שלי היא מסע ויזואלי רב-גוני, המציג זוויות בלתי שגרתיות וסגנונות המעוררים השראה.
+                    </p>
+                    <p>
+                        כיום אני מנהל מספר חשבונות ברשת אינסטגרם המונה כ-400,000 עוקבים (ו-76,000 בחשבוני הפרטי), קהילה איתה אני חולק את אהבתי ליצירה.
+                    </p>
+                    <p>
+                        לאורך השנים הייתה לי הזכות לייצג את ישראל במפגשי פסגה של יוצרי תוכן בינלאומיים – מהחופים האקזוטיים של האיים המלדיביים ועד פסגות המושלגות של צרפת – ולקחת חלק בפרויקטים ייחודיים עם מותגי ענק בארץ ובעולם.
+                    </p>
+                    <p>
+                        כזוכה תואר 'צלם השנה' בטקס פרסי האינסטגרם הישראלי, אני רואה שליחות בהעברת הידע, ומעביר כיום הרצאות וסדנאות לקהלים מגוונים ברחבי הארץ.
+                    </p>
+                </div>
+
+                <!-- תגיות מומחיות (Features Tags) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                    <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-3">
+                        <div class="bg-brand-yellow/20 p-2 rounded-lg text-brand-yellow">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-sm">
+                            <div class="font-bold text-white">מומחה לרשתות חברתיות</div>
+                            <div class="text-slate-400 text-xs">דגש על אינסטגרם וניהול תוכן</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-3">
+                        <div class="bg-brand-yellow/20 p-2 rounded-lg text-brand-yellow">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-sm">
+                            <div class="font-bold text-white">למעלה מעשור</div>
+                            <div class="text-slate-400 text-xs">ניסיון בצילום</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-3">
+                        <div class="bg-brand-yellow/20 p-2 rounded-lg text-brand-yellow">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-sm">
+                            <div class="font-bold text-white">תשוקה לחנך</div>
+                            <div class="text-slate-400 text-xs">ולהעביר את הידע הלאה</div>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-3">
+                        <div class="bg-brand-yellow/20 p-2 rounded-lg text-brand-yellow">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-sm">
+                            <div class="font-bold text-white">צילום אמנותי</div>
+                            <div class="text-slate-400 text-xs">דגש על הסמארטפון</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -446,7 +464,6 @@
                 <img id="modal-image" src="" alt="" class="w-full h-full object-cover opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
                 <div class="absolute bottom-6 right-6 text-white">
-                    <span id="modal-category" class="bg-brand-yellow text-slate-900 text-xs font-bold px-2 py-1 rounded mb-2 inline-block"></span>
                     <h2 id="modal-title" class="text-2xl font-bold"></h2>
                     <div class="flex items-center gap-2 text-sm text-slate-300 mt-1">
                         <i data-lucide="calendar" class="w-4 h-4"></i>
@@ -485,14 +502,6 @@
         </div>
     </div>
 
-    <!-- מודל גלריה (Lightbox) -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl flex items-center justify-center p-4 hidden" onclick="closeLightbox()">
-        <button class="absolute top-6 right-6 text-white hover:text-brand-yellow transition-colors">
-            <i data-lucide="x" class="w-10 h-10"></i>
-        </button>
-        <img id="lightbox-img" src="" alt="Full size" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl" onclick="event.stopPropagation()">
-    </div>
-
     <!-- סקריפטים (לוגיקה) -->
     <script>
         // --- 1. נתונים (כאן ניתן לשנות טקסטים, תמונות ומחירים) ---
@@ -501,12 +510,11 @@
             {
                 id: 1,
                 title: 'נווה צדק ומתחם התחנה בת"א',
-                category: "אורבני",
                 date: "06.02.2026",
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "1(7).JPG", // תמונת סדנת נווה צדק
+                image: "1 (18).JPG", // תמונת סדנת נווה צדק (פרח)
                 spotsLeft: 4,
                 difficulty: "מתחילים",
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
@@ -514,12 +522,11 @@
             {
                 id: 2,
                 title: "נמל תל אביב - רידינג 3",
-                category: "אורבני",
                 date: "13.02.2026",
                 time: "10:00 - 12:30",
                 location: "נמל תל אביב",
                 price: "220 ₪",
-                image: "1(4).JPG", // תמונת סדנת נמל תל אביב
+                image: "1(4).JPG", // תמונת סדנת נמל תל אביב (יונה)
                 spotsLeft: 9,
                 difficulty: "מתחילים",
                 description: "סיור חוויתי בנמל המשלב צילום אנשים, ארכיטקטורה וצלליות מול הים."
@@ -527,12 +534,11 @@
             {
                 id: 3,
                 title: 'נווה צדק ומתחם התחנה בת"א',
-                category: "אורבני",
                 date: "20.02.2026",
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "1(7).JPG", // תמונת סדנת נווה צדק
+                image: "1 (18).JPG", // תמונת סדנת נווה צדק (פרח)
                 spotsLeft: 11,
                 difficulty: "מתחילים",
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
@@ -540,12 +546,11 @@
             {
                 id: 4,
                 title: "נמל תל אביב - רידינג 3",
-                category: "אורבני",
                 date: "27.02.2026",
                 time: "10:00 - 12:30",
                 location: "נמל תל אביב",
                 price: "220 ₪",
-                image: "1(4).JPG", // תמונת סדנת נמל תל אביב
+                image: "1(4).JPG", // תמונת סדנת נמל תל אביב (יונה)
                 spotsLeft: 50, // "ניתן להזמין כרטיסים"
                 difficulty: "מתחילים",
                 description: "סיור חוויתי בנמל המשלב צילום אנשים, ארכיטקטורה וצלליות מול הים."
@@ -553,12 +558,11 @@
             {
                 id: 5,
                 title: 'נווה צדק ומתחם התחנה בת"א',
-                category: "אורבני",
                 date: "06.03.2026",
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "1(7).JPG", // תמונת סדנת נווה צדק
+                image: "1 (18).JPG", // תמונת סדנת נווה צדק (פרח)
                 spotsLeft: 8,
                 difficulty: "מתחילים",
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
@@ -566,12 +570,11 @@
             {
                 id: 6,
                 title: "נמל תל אביב - רידינג 3",
-                category: "אורבני",
                 date: "20.03.2026",
                 time: "10:00 - 12:30",
                 location: "נמל תל אביב",
                 price: "220 ₪",
-                image: "1(4).JPG", // תמונת סדנת נמל תל אביב
+                image: "1(4).JPG", // תמונת סדנת נמל תל אביב (יונה)
                 spotsLeft: 12,
                 difficulty: "מתחילים",
                 description: "סיור חוויתי בנמל המשלב צילום אנשים, ארכיטקטורה וצלליות מול הים."
@@ -579,24 +582,15 @@
             {
                 id: 7,
                 title: 'נווה צדק ומתחם התחנה בת"א',
-                category: "אורבני",
                 date: "17.04.2026",
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "1(7).JPG", // תמונת סדנת נווה צדק
+                image: "1 (18).JPG", // תמונת סדנת נווה צדק (פרח)
                 spotsLeft: 50, // "ניתן להזמין כרטיסים"
                 difficulty: "מתחילים",
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
             }
-        ];
-
-        const GALLERY_IMAGES = [
-            "1 (13).jpg",
-            "1 (9).jpg",
-            "1 (25).jpg",
-            "1 (32).jpg",
-            "1 (7).jpg"
         ];
 
         // --- 2. אתחול והפעלת האתר ---
@@ -642,25 +636,12 @@
         }
 
         // רינדור סדנאות (כולל סינון)
-        function renderWorkshops(filter = 'הכל') {
+        function renderWorkshops() {
             const grid = document.getElementById('workshops-grid');
             grid.innerHTML = ''; // ניקוי
 
-            // עדכון כפתורי סינון
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                if (btn.innerText === filter) {
-                    btn.classList.add('bg-slate-900', 'text-white');
-                    btn.classList.remove('text-slate-500', 'hover:bg-slate-100');
-                } else {
-                    btn.classList.remove('bg-slate-900', 'text-white');
-                    btn.classList.add('text-slate-500', 'hover:bg-slate-100');
-                }
-            });
-
             // יצירת הכרטיסיות
             WORKSHOPS.forEach(workshop => {
-                if (filter !== 'הכל' && workshop.category !== filter) return;
-
                 const isFull = workshop.spotsLeft === 0;
                 const btnClass = isFull 
                     ? 'bg-slate-200 text-slate-400 cursor-not-allowed' 
@@ -719,25 +700,6 @@
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
-        // פונקציית עזר לסינון (נקראת מהכפתורים)
-        window.filterWorkshops = renderWorkshops;
-
-        // רינדור גלריה
-        const galleryGrid = document.getElementById('gallery-grid');
-        GALLERY_IMAGES.forEach((img, idx) => {
-            const html = `
-                <div class="relative rounded-2xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-brand-yellow/20 transition-all duration-500 break-inside-avoid reveal" onclick="openLightbox('${img}')">
-                    <img src="${img}" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-90 group-hover:brightness-100">
-                    <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                       <span class="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center text-slate-900 transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl">
-                          <i data-lucide="image" class="w-7 h-7"></i>
-                       </span>
-                    </div>
-                </div>
-            `;
-            galleryGrid.innerHTML += html;
-        });
-
         // --- ניהול מודלים (חלונות קופצים) ---
 
         let currentWorkshop = null;
@@ -748,7 +710,6 @@
 
             document.getElementById('modal-title').innerText = currentWorkshop.title;
             document.getElementById('modal-date').innerText = `${currentWorkshop.date} | ${currentWorkshop.time}`;
-            document.getElementById('modal-category').innerText = currentWorkshop.category;
             document.getElementById('modal-image').src = currentWorkshop.image;
 
             const modal = document.getElementById('modal');
@@ -779,19 +740,9 @@
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function openLightbox(src) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox').classList.remove('hidden');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.add('hidden');
-        }
-
         // הרצה ראשונית
         renderWorkshops();
 
     </script>
 </body>
 </html>
-
