@@ -67,10 +67,10 @@
             <!-- תפריט דסקטופ -->
             <div class="hidden md:flex items-center gap-8 text-white font-medium text-sm tracking-wide">
                 <a href="#about" class="hover:text-brand-yellow transition-colors">אודות</a>
-                <a href="#gallery" class="hover:text-brand-yellow transition-colors">גלריה</a>
                 <a href="#workshops" class="hover:text-brand-yellow transition-colors">סדנאות</a>
                 <a href="#gift-card" class="hover:text-brand-yellow transition-colors">שובר מתנה</a>
                 <a href="#reviews" class="hover:text-brand-yellow transition-colors">המלצות</a>
+                <a href="#gallery" class="hover:text-brand-yellow transition-colors">גלריה</a>
                 <a href="#contact" class="px-6 py-2.5 bg-brand-yellow text-slate-900 rounded-full font-bold hover:bg-yellow-300 hover:scale-105 transition-all shadow-lg">
                     בואו נצלם
                 </a>
@@ -86,9 +86,9 @@
         <div id="mobile-menu" class="absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-xl border-t border-white/10 overflow-hidden transition-all duration-300 max-h-0 opacity-0">
             <div class="flex flex-col p-6 gap-4 text-center text-white">
                 <a href="#about" onclick="toggleMenu()" class="py-2 border-b border-white/10">אודות</a>
-                <a href="#gallery" onclick="toggleMenu()" class="py-2 border-b border-white/10">גלריה</a>
                 <a href="#workshops" onclick="toggleMenu()" class="py-2 border-b border-white/10">סדנאות</a>
                 <a href="#gift-card" onclick="toggleMenu()" class="py-2 border-b border-white/10">שובר מתנה</a>
+                <a href="#gallery" onclick="toggleMenu()" class="py-2 border-b border-white/10">גלריה</a>
                 <a href="#contact" onclick="toggleMenu()" class="py-2 font-bold text-brand-yellow">צור קשר</a>
             </div>
         </div>
@@ -186,27 +186,6 @@
                     <h3 class="text-2xl font-bold mb-4">חוויה ועריכה</h3>
                     <p class="text-slate-400">סדנה מעשית בשטח עם פידבק מיידי. לסיום, נלמד לערוך ב-Lightroom ו-Snapseed כמו המקצוענים.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- גלריה -->
-    <section id="gallery" class="py-24 bg-slate-900 text-white border-t border-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-16 reveal">
-                <div class="text-center md:text-right mb-8 md:mb-0">
-                    <h2 class="text-4xl md:text-6xl font-black mb-4">הגלריה</h2>
-                    <p class="text-slate-400 text-lg">רגעים שנתפסו בעדשת הסמארטפון.</p>
-                </div>
-                <a href="https://instagram.com" target="_blank" class="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors flex items-center gap-2">
-                    <i data-lucide="instagram" class="w-5 h-5 text-brand-yellow"></i>
-                    <span>עקבו באינסטגרם</span>
-                </a>
-            </div>
-            
-            <!-- רשת תמונות (תוכן יוזרק ע"י JS) -->
-            <div id="gallery-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-                <!-- התמונות יופיעו כאן -->
             </div>
         </div>
     </section>
@@ -368,6 +347,27 @@
         </div>
     </section>
 
+    <!-- גלריה (הוזזה לכאן) -->
+    <section id="gallery" class="py-24 bg-slate-900 text-white border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16 reveal">
+                <div class="text-center md:text-right mb-8 md:mb-0">
+                    <h2 class="text-4xl md:text-6xl font-black mb-4">הגלריה</h2>
+                    <p class="text-slate-400 text-lg">רגעים שנתפסו בעדשת הסמארטפון.</p>
+                </div>
+                <a href="https://www.instagram.com/kobi_refaeli" target="_blank" class="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors flex items-center gap-2">
+                    <i data-lucide="instagram" class="w-5 h-5 text-brand-yellow"></i>
+                    <span>עקבו באינסטגרם</span>
+                </a>
+            </div>
+            
+            <!-- רשת תמונות (תוכן יוזרק ע"י JS) -->
+            <div id="gallery-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+                <!-- התמונות יופיעו כאן -->
+            </div>
+        </div>
+    </section>
+
     <!-- צור קשר (Contact) -->
     <section id="contact" class="py-24 bg-brand-yellow">
         <div class="container mx-auto px-6">
@@ -506,7 +506,7 @@
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "https://images.unsplash.com/photo-1517329782449-810562a4ec2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1462275646964-a0e338679c1e?auto=format&fit=crop&w=800&q=80", // פרח צהוב
                 spotsLeft: 4,
                 difficulty: "מתחילים",
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
@@ -519,7 +519,7 @@
                 time: "10:00 - 12:30",
                 location: "נמל תל אביב",
                 price: "220 ₪",
-                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1544626053-8985dc54fabd?auto=format&fit=crop&w=800&q=80", // יונה במעוף
                 spotsLeft: 9,
                 difficulty: "מתחילים",
                 description: "סיור חוויתי בנמל המשלב צילום אנשים, ארכיטקטורה וצלליות מול הים."
@@ -532,7 +532,7 @@
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "https://images.unsplash.com/photo-1517329782449-810562a4ec2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1462275646964-a0e338679c1e?auto=format&fit=crop&w=800&q=80", // פרח צהוב
                 spotsLeft: 11,
                 difficulty: "מתחילים",
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
@@ -545,7 +545,7 @@
                 time: "10:00 - 12:30",
                 location: "נמל תל אביב",
                 price: "220 ₪",
-                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1544626053-8985dc54fabd?auto=format&fit=crop&w=800&q=80", // יונה במעוף
                 spotsLeft: 50, // "ניתן להזמין כרטיסים"
                 difficulty: "מתחילים",
                 description: "סיור חוויתי בנמל המשלב צילום אנשים, ארכיטקטורה וצלליות מול הים."
@@ -558,7 +558,7 @@
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "https://images.unsplash.com/photo-1517329782449-810562a4ec2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1462275646964-a0e338679c1e?auto=format&fit=crop&w=800&q=80", // פרח צהוב
                 spotsLeft: 8,
                 difficulty: "מתחילים",
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
@@ -571,7 +571,7 @@
                 time: "10:00 - 12:30",
                 location: "נמל תל אביב",
                 price: "220 ₪",
-                image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1544626053-8985dc54fabd?auto=format&fit=crop&w=800&q=80", // יונה במעוף
                 spotsLeft: 12,
                 difficulty: "מתחילים",
                 description: "סיור חוויתי בנמל המשלב צילום אנשים, ארכיטקטורה וצלליות מול הים."
@@ -584,7 +584,7 @@
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "https://images.unsplash.com/photo-1517329782449-810562a4ec2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://images.unsplash.com/photo-1462275646964-a0e338679c1e?auto=format&fit=crop&w=800&q=80", // פרח צהוב
                 spotsLeft: 50, // "ניתן להזמין כרטיסים"
                 difficulty: "מתחילים",
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
@@ -592,12 +592,11 @@
         ];
 
         const GALLERY_IMAGES = [
-            "https://images.unsplash.com/photo-1533158326339-7f3cf2404354?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1554048612-387768052bf7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1512641406448-6574e777bec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1516961642265-531546e84af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1621600411688-4be93cd68504?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1500634245200-e5245c7574ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            "https://images.unsplash.com/photo-1533561098679-b86c9d56eb5d?auto=format&fit=crop&w=800&q=80", // אופניים בשקיעה
+            "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&w=800&q=80", // כדור בדולח
+            "https://images.unsplash.com/photo-1563823223-b6495f2de806?auto=format&fit=crop&w=800&q=80", // קפיצה בצללית
+            "https://images.unsplash.com/photo-1544297787-c3848b894103?auto=format&fit=crop&w=800&q=80", // נעל בלט
+            "https://images.unsplash.com/photo-1500917293047-344a69e3222d?auto=format&fit=crop&w=800&q=80"  // משחקי פרספקטיבה/חול
         ];
 
         // --- 2. אתחול והפעלת האתר ---
