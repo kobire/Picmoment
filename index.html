@@ -70,6 +70,7 @@
                 <a href="#workshops" class="hover:text-brand-yellow transition-colors">סדנאות</a>
                 <a href="#gift-card" class="hover:text-brand-yellow transition-colors">שובר מתנה</a>
                 <a href="#reviews" class="hover:text-brand-yellow transition-colors">המלצות</a>
+                <a href="#gallery" class="hover:text-brand-yellow transition-colors">גלריה</a>
                 <a href="#contact" class="px-6 py-2.5 bg-brand-yellow text-slate-900 rounded-full font-bold hover:bg-yellow-300 hover:scale-105 transition-all shadow-lg">
                     בואו נצלם
                 </a>
@@ -87,6 +88,7 @@
                 <a href="#about" onclick="toggleMenu()" class="py-2 border-b border-white/10">אודות</a>
                 <a href="#workshops" onclick="toggleMenu()" class="py-2 border-b border-white/10">סדנאות</a>
                 <a href="#gift-card" onclick="toggleMenu()" class="py-2 border-b border-white/10">שובר מתנה</a>
+                <a href="#gallery" onclick="toggleMenu()" class="py-2 border-b border-white/10">גלריה</a>
                 <a href="#contact" onclick="toggleMenu()" class="py-2 font-bold text-brand-yellow">צור קשר</a>
             </div>
         </div>
@@ -205,54 +207,61 @@
     <!-- המלצות -->
     <section id="reviews" class="py-24 bg-white border-t border-slate-100">
         <div class="container mx-auto px-6">
-            <h2 class="text-center text-3xl md:text-5xl font-black text-slate-900 mb-16 reveal">מה אומרים הבוגרים?</h2>
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-4">מה אומרים המשתתפים</h2>
+                <p class="text-lg text-slate-600 font-medium">דירוג 5.0 מתוך 451 חוות דעת | למעלה מ-2,344 משתתפים</p>
+                <div class="flex justify-center gap-1 text-yellow-400 mt-2">
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                </div>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="reviews-grid">
-                <!-- המלצה 1 -->
-                <div class="bg-slate-50 p-8 rounded-3xl relative reveal">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="reviews-grid">
+                <!-- המלצה 1 - מיכל -->
+                <div class="bg-purple-50 p-8 rounded-3xl relative reveal flex flex-col">
                     <div class="absolute -top-4 -right-4 bg-brand-yellow text-slate-900 p-3 rounded-full shadow-lg">
-                        <i data-lucide="message-circle" class="w-6 h-6 text-white fill-white"></i>
+                        <i data-lucide="quote" class="w-5 h-5 text-white fill-white"></i>
                     </div>
-                    <div class="flex gap-1 text-yellow-500 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-slate-600 text-lg mb-6 leading-relaxed">"וואו! לא האמנתי שאפשר להוציא תמונות כאלה מהטלפון שלי. קובי מדריך בחסד."</p>
-                    <div class="font-bold text-slate-900">מיכל כהן</div>
+                    <p class="text-slate-700 text-sm leading-relaxed flex-grow mb-6">"קובי מגיע עם רצון כנה מכל הלב להעביר ידע. מלא באנרגיות חיוביות והתלהבות. הטיפים אחלה. גם בפורום גדול קובי לא הגביל את הזמן שהוא מוכן להיות נוכח ולסייע."</p>
+                    <div class="font-bold text-slate-900 text-brand-yellow">מיכל</div>
                 </div>
-                <!-- המלצה 2 -->
-                <div class="bg-slate-50 p-8 rounded-3xl relative reveal">
+
+                <!-- המלצה 2 - ישי -->
+                <div class="bg-purple-50 p-8 rounded-3xl relative reveal flex flex-col">
                     <div class="absolute -top-4 -right-4 bg-brand-yellow text-slate-900 p-3 rounded-full shadow-lg">
-                        <i data-lucide="message-circle" class="w-6 h-6 text-white fill-white"></i>
+                        <i data-lucide="quote" class="w-5 h-5 text-white fill-white"></i>
                     </div>
-                    <div class="flex gap-1 text-yellow-500 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-slate-600 text-lg mb-6 leading-relaxed">"סדנה מעשית, כיפית ומלמדת. הטיפים על עריכה שינו לי את כל הפיד."</p>
-                    <div class="font-bold text-slate-900">דני רופ</div>
+                    <p class="text-slate-700 text-sm leading-relaxed flex-grow mb-6">"למרות שאני יודע לצלם, למדתי טיפים ודברים רבים. קובי מוכן לתת ולשתף כמה שיותר. ממליץ בחום!"</p>
+                    <div class="font-bold text-slate-900 text-brand-yellow">ישי</div>
                 </div>
-                <!-- המלצה 3 -->
-                <div class="bg-slate-50 p-8 rounded-3xl relative reveal">
+
+                <!-- המלצה 3 - אסנת -->
+                <div class="bg-purple-50 p-8 rounded-3xl relative reveal flex flex-col">
                     <div class="absolute -top-4 -right-4 bg-brand-yellow text-slate-900 p-3 rounded-full shadow-lg">
-                        <i data-lucide="message-circle" class="w-6 h-6 text-white fill-white"></i>
+                        <i data-lucide="quote" class="w-5 h-5 text-white fill-white"></i>
                     </div>
-                    <div class="flex gap-1 text-yellow-500 mb-4">
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                    </div>
-                    <p class="text-slate-600 text-lg mb-6 leading-relaxed">"אווירה מעולה, קבוצה קטנה ויחס אישי. מומלץ בחום לכל מי שאוהב לצלם."</p>
-                    <div class="font-bold text-slate-900">שרון לוי</div>
+                    <p class="text-slate-700 text-sm leading-relaxed flex-grow mb-6">"באתי עם ציפיות נמוכות כי אני לא חובבת צילום אבל זקוקה להתמקצע וחוויתי סדנא מקצועית, יסודית ומרתקת. קובי היה סבלני, מקצוען אמיתי, נהנתי מאוד מהאווירה והלמידה."</p>
+                    <div class="font-bold text-slate-900 text-brand-yellow">אסנת</div>
                 </div>
+
+                <!-- המלצה 4 - גל -->
+                <div class="bg-purple-50 p-8 rounded-3xl relative reveal flex flex-col">
+                    <div class="absolute -top-4 -right-4 bg-brand-yellow text-slate-900 p-3 rounded-full shadow-lg">
+                        <i data-lucide="quote" class="w-5 h-5 text-white fill-white"></i>
+                    </div>
+                    <p class="text-slate-700 text-sm leading-relaxed flex-grow mb-6">"הסדנה הייתה מעולה ומעשירה - כמות הידע שספגנו בזמן קצר היה מעל המצופה. ולגבי המנחה קובי - מקצועי נעים ומוכשר! ממליצה לכל מי שחובב צילום לעשות את הסדנה."</p>
+                    <div class="font-bold text-slate-900 text-brand-yellow">גל</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 reveal">
+                <a href="https://il.funzing.com/funz/%D7%9C%D7%AA%D7%A4%D7%95%D7%A1-%D7%90%D7%AA-%D7%94%D7%A8%D7%92%D7%A2-%D7%91%D7%A0%D7%95%D7%95%D7%94-%D7%A6%D7%93%D7%A7-%D7%A1%D7%93%D7%A0%D7%AA-%D7%A6%D7%99%D7%9C%D7%95%D7%9D-%D7%91%D7%A1%D7%9E%D7%90%D7%A8%D7%98%D7%A4%D7%95%D7%9F-11152?event_id=849042" target="_blank" class="inline-flex items-center gap-2 px-8 py-3 bg-white border-2 border-slate-200 rounded-full font-bold text-slate-700 hover:border-brand-yellow hover:text-brand-yellow transition-all shadow-sm hover:shadow-md">
+                    לתגובות נוספות
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -386,6 +395,27 @@
         </div>
     </section>
 
+    <!-- גלריה (הוזזה לכאן) -->
+    <section id="gallery" class="py-24 bg-slate-900 text-white border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-16 reveal">
+                <div class="text-center md:text-right mb-8 md:mb-0">
+                    <h2 class="text-4xl md:text-6xl font-black mb-4">הגלריה</h2>
+                    <p class="text-slate-400 text-lg">רגעים שנתפסו בעדשת הסמארטפון.</p>
+                </div>
+                <a href="https://www.instagram.com/kobi_refaeli" target="_blank" class="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors flex items-center gap-2">
+                    <i data-lucide="instagram" class="w-5 h-5 text-brand-yellow"></i>
+                    <span>עקבו באינסטגרם</span>
+                </a>
+            </div>
+            
+            <!-- רשת תמונות (תוכן יוזרק ע"י JS) -->
+            <div id="gallery-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+                <!-- התמונות יופיעו כאן -->
+            </div>
+        </div>
+    </section>
+
     <!-- צור קשר (Contact) -->
     <section id="contact" class="py-24 bg-brand-yellow">
         <div class="container mx-auto px-6">
@@ -502,6 +532,14 @@
         </div>
     </div>
 
+    <!-- מודל גלריה (Lightbox) -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-xl flex items-center justify-center p-4 hidden" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white hover:text-brand-yellow transition-colors">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Full size" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+
     <!-- סקריפטים (לוגיקה) -->
     <script>
         // --- 1. נתונים (כאן ניתן לשנות טקסטים, תמונות ומחירים) ---
@@ -591,6 +629,14 @@
                 difficulty: "מתחילים",
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
             }
+        ];
+
+        const GALLERY_IMAGES = [
+            "1(13).jpg",
+            "1(9).jpg",
+            "1(25).jpg",
+            "1(32).jpg",
+            "1(7).JPG"
         ];
 
         // --- 2. אתחול והפעלת האתר ---
@@ -740,10 +786,18 @@
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
         // הרצה ראשונית
         renderWorkshops();
 
     </script>
 </body>
 </html>
-
