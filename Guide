@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך צילום בסמארטפון | PicMoment</title>
+    <meta name="description" content="מדריך מקצועי לצילום בסמארטפון מאת קובי רפאלי. טיפים, טכניקות וסודות לצילום מנצח.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Assistant', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            yellow: '#FACC15',
+                            dark: '#0F172A',
+                            light: '#F8FAFC',
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans">
+
+    <!-- Header -->
+    <header class="bg-brand-dark text-white py-12 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-yellow/5"></div>
+        <div class="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+            <a href="index.html" class="flex items-center gap-2 mb-8 hover:opacity-80 transition-opacity">
+                <div class="bg-brand-yellow p-1.5 rounded-lg text-brand-dark rotate-3">
+                    <i data-lucide="camera" class="w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-black">Pic<span class="text-brand-yellow">Moment</span></span>
+            </a>
+            <h1 class="text-4xl md:text-6xl font-black mb-4">המדריך המלא לצילום בסמארטפון</h1>
+            <p class="text-xl text-slate-300 max-w-2xl">ריכזתי עבורכם את הטיפים החשובים ביותר שיהפכו כל תמונה שלכם ליצירת אמנות קטנה.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16 max-w-4xl">
+        
+        <!-- כפתור חזרה -->
+        <div class="mb-12">
+            <a href="index.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-brand-yellow font-bold transition-colors">
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                חזרה לדף הבית
+            </a>
+        </div>
+
+        <!-- תוכן המדריך -->
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+            
+            <!-- פרק 1 -->
+            <div class="p-8 md:p-12 border-b border-slate-100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-dark">
+                        <i data-lucide="sun" class="w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold">1. תאורה היא הכל</h2>
+                </div>
+                <div class="prose max-w-none text-slate-600 leading-relaxed">
+                    <p>הסוד לתמונה טובה מתחיל באור. נסו תמיד לצלם כשהאור מאחוריכם או מהצד. הימנעו מצילום ישיר מול השמש (אלא אם אתם רוצים ליצור צללית). שעות הזהב (זריחה ושקיעה) הן הזמן המושלם לצילום רך ומחמיא.</p>
+                </div>
+            </div>
+
+            <!-- פרק 2 -->
+            <div class="p-8 md:p-12 border-b border-slate-100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-dark">
+                        <i data-lucide="grid" class="w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold">2. חוק השלישים</h2>
+                </div>
+                <div class="prose max-w-none text-slate-600 leading-relaxed">
+                    <p>הפעילו את "הרשת" (Grid) בהגדרות המצלמה שלכם. נסו למקם את הנושא העיקרי של התמונה על אחד הקווים או בנקודות המפגש ביניהם, ולאו דווקא במרכז. זה יוצר עניין ודינמיות בתמונה.</p>
+                </div>
+            </div>
+
+            <!-- פרק 3 -->
+            <div class="p-8 md:p-12 border-b border-slate-100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-dark">
+                        <i data-lucide="focus" class="w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold">3. פוקוס וחשיפה</h2>
+                </div>
+                <div class="prose max-w-none text-slate-600 leading-relaxed">
+                    <p>לפני הצילום, הקישו על המסך בנקודה שבה תרצו להתמקד. אם התמונה בהירה או כהה מדי, החליקו את האצבע למעלה או למטה (ליד ריבוע הפוקוס) כדי לתקן את החשיפה ידנית.</p>
+                </div>
+            </div>
+
+             <!-- פרק 4 -->
+             <div class="p-8 md:p-12 bg-slate-50">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-dark">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold">4. ניקיון העדשה</h2>
+                </div>
+                <div class="prose max-w-none text-slate-600 leading-relaxed">
+                    <p>זה נשמע פשוט, אבל זה הטיפ הכי חשוב: לפני כל צילום, נקו את עדשת המצלמה עם מטלית רכה או עם החולצה. עדשה מלוכלכת היא הסיבה מספר אחת לתמונות מטושטשות ודהויות.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Call to Action -->
+        <div class="mt-16 text-center">
+            <h3 class="text-2xl font-bold mb-6">רוצים ללמוד עוד?</h3>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#workshops" class="px-8 py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold hover:bg-yellow-300 transition-all shadow-lg flex items-center justify-center gap-2">
+                    הירשמו לסדנה מעשית
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                </a>
+                <button onclick="alert('קובץ המדריך יורד למחשבך...')" class="px-8 py-4 bg-white border-2 border-slate-200 text-slate-700 rounded-xl font-bold hover:border-brand-yellow hover:text-brand-yellow transition-all flex items-center justify-center gap-2">
+                    הורדת המדריך כ-PDF
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-slate-500 py-8 border-t border-slate-900 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm">© 2023 PicMoment | כל הזכויות שמורות לקובי רפאלי</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
