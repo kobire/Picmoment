@@ -87,7 +87,9 @@
 
             <!-- תפריט דסקטופ -->
             <div class="hidden md:flex items-center gap-8 text-white font-medium text-sm tracking-wide">
-                <a href="#about" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">אודות</a>
+                <a href="guide.html" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow flex items-center gap-1">
+                    <i data-lucide="book-open" class="w-4 h-4"></i> מדריך צילום
+                </a>
                 <!-- הוסר הקישור "למה אנחנו" -->
                 <a href="#custom-packages" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">חבילות</a>
                 <a href="#workshops" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">סדנאות קרובות</a>
@@ -107,7 +109,7 @@
         <!-- תפריט מובייל נפתח -->
         <div id="mobile-menu" class="absolute top-full left-0 w-full bg-brand-dark/95 backdrop-blur-xl border-t border-white/10 overflow-hidden transition-all duration-300 max-h-0 opacity-0" aria-hidden="true">
             <div class="flex flex-col p-6 gap-4 text-center text-white">
-                <a href="#about" onclick="toggleMenu()" class="py-2 border-b border-white/10">אודות</a>
+                <a href="guide.html" class="py-2 border-b border-white/10 font-bold text-brand-yellow">מדריך צילום</a>
                 <!-- הוסר הקישור "למה אנחנו" -->
                 <a href="#custom-packages" onclick="toggleMenu()" class="py-2 border-b border-white/10">חבילות</a>
                 <a href="#workshops" onclick="toggleMenu()" class="py-2 border-b border-white/10">סדנאות קרובות</a>
@@ -693,6 +695,7 @@
                 <span>PicMoment</span>
             </div>
             <div class="flex gap-4">
+               <a href="guide.html" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline">מדריך למשתמש</a>
                <button onclick="openPrivacyModal()" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline">מדיניות פרטיות</button>
                <p class="text-sm">© 2023 כל הזכויות שמורות לקובי רפאלי. נבנה באהבה לצילום.</p>
             </div>
