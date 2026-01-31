@@ -87,14 +87,13 @@
 
             <!-- תפריט דסקטופ -->
             <div class="hidden md:flex items-center gap-8 text-white font-medium text-sm tracking-wide">
-                <a href="guide.html" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow flex items-center gap-1">
-                    <i data-lucide="book-open" class="w-4 h-4"></i> מדריך צילום
-                </a>
-                <!-- הוסר הקישור "למה אנחנו" -->
                 <a href="#custom-packages" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">חבילות</a>
                 <a href="#workshops" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">סדנאות קרובות</a>
                 <a href="#gift-card" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">שובר מתנה</a>
                 <a href="#reviews" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">המלצות</a>
+                <a href="#guide" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow flex items-center gap-1">
+                    <i data-lucide="book-open" class="w-4 h-4"></i> מדריך צילום
+                </a>
                 <a href="#contact" class="px-6 py-2.5 bg-brand-yellow text-brand-dark rounded-full font-bold hover:bg-yellow-300 hover:scale-105 transition-all shadow-lg focus:ring-2 focus:ring-white">
                     בואו נצלם
                 </a>
@@ -109,11 +108,10 @@
         <!-- תפריט מובייל נפתח -->
         <div id="mobile-menu" class="absolute top-full left-0 w-full bg-brand-dark/95 backdrop-blur-xl border-t border-white/10 overflow-hidden transition-all duration-300 max-h-0 opacity-0" aria-hidden="true">
             <div class="flex flex-col p-6 gap-4 text-center text-white">
-                <a href="guide.html" class="py-2 border-b border-white/10 font-bold text-brand-yellow">מדריך צילום</a>
-                <!-- הוסר הקישור "למה אנחנו" -->
                 <a href="#custom-packages" onclick="toggleMenu()" class="py-2 border-b border-white/10">חבילות</a>
                 <a href="#workshops" onclick="toggleMenu()" class="py-2 border-b border-white/10">סדנאות קרובות</a>
                 <a href="#gift-card" onclick="toggleMenu()" class="py-2 border-b border-white/10">שובר מתנה</a>
+                <a href="#guide" onclick="toggleMenu()" class="py-2 border-b border-white/10 font-bold text-brand-yellow">מדריך צילום</a>
                 <a href="#contact" onclick="toggleMenu()" class="py-2 font-bold text-brand-yellow">צור קשר</a>
             </div>
         </div>
@@ -427,6 +425,62 @@
         </div>
     </section>
 
+    <!-- שובר מתנה (Gift Card) -->
+    <section id="gift-card" class="py-20 bg-brand-dark text-white relative overflow-hidden">
+        <!-- רקע דקורטיבי -->
+        <div class="absolute inset-0 bg-brand-yellow/5"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-white/10 flex flex-col md:flex-row items-center gap-12 reveal">
+                <!-- צד טקסט -->
+                <div class="md:w-1/2">
+                    <div class="inline-block bg-brand-yellow text-brand-dark font-bold px-4 py-1 rounded-full text-sm mb-6">
+                        <i data-lucide="gift" class="w-4 h-4 inline-block ml-1"></i>
+                        הרעיון למתנה המושלמת
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-black mb-6">שובר מתנה לסדנת צילום</h2>
+                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                        מחפשים מתנה מקורית וערכית? העניקו לאהובים שלכם חוויה בלתי נשכחת. 
+                        שובר מתנה לסדנת צילום מעשית שתשדרג להם את היכולות ותשאיר אותם עם מזכרות לכל החיים.
+                    </p>
+                    <ul class="space-y-4 mb-8 text-slate-300" role="list">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow" aria-hidden="true"></i>
+                            תקף לכל הסדנאות הפתוחות (תל אביב, ירושלים, טבע)
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow" aria-hidden="true"></i>
+                            תוקף לשנה שלמה מיום הרכישה
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow" aria-hidden="true"></i>
+                            מגיע כקובץ דיגיטלי מעוצב או ככרטיס פיזי מהודר
+                        </li>
+                    </ul>
+                    <button onclick="purchaseGiftCard()" class="px-8 py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-lg hover:shadow-yellow-400/30 flex items-center gap-2 focus:ring-4 focus:ring-white/50">
+                        לרכישת שובר מתנה
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <!-- צד ויזואלי -->
+                <div class="md:w-1/2 relative">
+                    <!-- עיצוב הכרטיס -->
+                    <div class="relative bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/10 transform rotate-3 hover:rotate-0 transition-transform duration-500 max-w-md mx-auto">
+                        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="שובר מתנה מעוצב לסדנת צילום" class="w-full h-64 object-cover opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 right-6 text-white">
+                            <div class="text-brand-yellow font-black text-2xl mb-1">GIFT CARD</div>
+                            <div class="text-xl font-bold">סדנת צילום בסמארטפון</div>
+                            <div class="text-sm text-slate-300 mt-2">קובי רפאלי | PicMoment</div>
+                        </div>
+                        <div class="absolute top-6 left-6" aria-hidden="true">
+                            <i data-lucide="camera" class="w-8 h-8 text-white/80"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- המלצות -->
     <section id="reviews" class="py-24 bg-white border-t border-slate-100">
         <div class="container mx-auto px-6">
@@ -485,62 +539,6 @@
                     לקריאת כל התגובות
                     <i data-lucide="external-link" class="w-5 h-5"></i>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- שובר מתנה (Gift Card) -->
-    <section id="gift-card" class="py-20 bg-brand-dark text-white relative overflow-hidden">
-        <!-- רקע דקורטיבי -->
-        <div class="absolute inset-0 bg-brand-yellow/5"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-white/10 flex flex-col md:flex-row items-center gap-12 reveal">
-                <!-- צד טקסט -->
-                <div class="md:w-1/2">
-                    <div class="inline-block bg-brand-yellow text-brand-dark font-bold px-4 py-1 rounded-full text-sm mb-6">
-                        <i data-lucide="gift" class="w-4 h-4 inline-block ml-1"></i>
-                        הרעיון למתנה המושלמת
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-black mb-6">שובר מתנה לסדנת צילום</h2>
-                    <p class="text-slate-300 text-lg mb-8 leading-relaxed">
-                        מחפשים מתנה מקורית וערכית? העניקו לאהובים שלכם חוויה בלתי נשכחת. 
-                        שובר מתנה לסדנת צילום מעשית שתשדרג להם את היכולות ותשאיר אותם עם מזכרות לכל החיים.
-                    </p>
-                    <ul class="space-y-4 mb-8 text-slate-300" role="list">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow" aria-hidden="true"></i>
-                            תקף לכל הסדנאות הפתוחות (תל אביב, ירושלים, טבע)
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow" aria-hidden="true"></i>
-                            תוקף לשנה שלמה מיום הרכישה
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow" aria-hidden="true"></i>
-                            מגיע כקובץ דיגיטלי מעוצב או ככרטיס פיזי מהודר
-                        </li>
-                    </ul>
-                    <button onclick="purchaseGiftCard()" class="px-8 py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-lg hover:shadow-yellow-400/30 flex items-center gap-2 focus:ring-4 focus:ring-white/50">
-                        לרכישת שובר מתנה
-                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
-                    </button>
-                </div>
-                <!-- צד ויזואלי -->
-                <div class="md:w-1/2 relative">
-                    <!-- עיצוב הכרטיס -->
-                    <div class="relative bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/10 transform rotate-3 hover:rotate-0 transition-transform duration-500 max-w-md mx-auto">
-                        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="שובר מתנה מעוצב לסדנת צילום" class="w-full h-64 object-cover opacity-80">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 right-6 text-white">
-                            <div class="text-brand-yellow font-black text-2xl mb-1">GIFT CARD</div>
-                            <div class="text-xl font-bold">סדנת צילום בסמארטפון</div>
-                            <div class="text-sm text-slate-300 mt-2">קובי רפאלי | PicMoment</div>
-                        </div>
-                        <div class="absolute top-6 left-6" aria-hidden="true">
-                            <i data-lucide="camera" class="w-8 h-8 text-white/80"></i>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -618,23 +616,70 @@
         </div>
     </section>
 
-    <!-- גלריה (הוזזה לכאן) -->
-    <section id="gallery" class="py-24 bg-brand-dark text-white border-t border-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center mb-16 reveal">
-                <div class="text-center md:text-right mb-8 md:mb-0">
-                    <h2 class="text-4xl md:text-6xl font-black mb-4">הגלריה</h2>
-                    <p class="text-slate-400 text-lg">רגעים שנתפסו בעדשת הסמארטפון.</p>
-                </div>
-                <a href="https://www.instagram.com/kobi_refaeli" target="_blank" class="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors flex items-center gap-2 focus:ring-2 focus:ring-brand-yellow" aria-label="עקבו אחרי באינסטגרם">
-                    <i data-lucide="instagram" class="w-5 h-5 text-brand-yellow"></i>
-                    <span>עקבו באינסטגרם</span>
-                </a>
+    <!-- מדריך צילום (Guide Section) -->
+    <section id="guide" class="py-24 bg-brand-dark text-white relative">
+        <div class="absolute inset-0 bg-brand-yellow/5"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-black mb-4">המדריך המלא לצילום בסמארטפון</h2>
+                <p class="text-xl text-slate-300 max-w-2xl mx-auto">ריכזתי עבורכם את הטיפים החשובים ביותר שיהפכו כל תמונה שלכם ליצירת אמנות קטנה.</p>
+                <div class="w-24 h-1.5 bg-brand-yellow mx-auto rounded-full mt-6"></div>
             </div>
-            
-            <!-- רשת תמונות (תוכן יוזרק ע"י JS) -->
-            <div id="gallery-grid" class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-                <!-- התמונות יופיעו כאן -->
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- פרק 1 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors reveal">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow">
+                            <i data-lucide="sun" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">1. תאורה היא הכל</h3>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">הסוד לתמונה טובה מתחיל באור. נסו תמיד לצלם כשהאור מאחוריכם או מהצד. הימנעו מצילום ישיר מול השמש (אלא אם אתם רוצים ליצור צללית). שעות הזהב (זריחה ושקיעה) הן הזמן המושלם לצילום רך ומחמיא.</p>
+                </div>
+
+                <!-- פרק 2 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors reveal">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow">
+                            <i data-lucide="grid" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">2. חוק השלישים</h3>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">הפעילו את "הרשת" (Grid) בהגדרות המצלמה שלכם. נסו למקם את הנושא העיקרי של התמונה על אחד הקווים או בנקודות המפגש ביניהם, ולאו דווקא במרכז. זה יוצר עניין ודינמיות בתמונה.</p>
+                </div>
+
+                <!-- פרק 3 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors reveal">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow">
+                            <i data-lucide="focus" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">3. פוקוס וחשיפה</h3>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">לפני הצילום, הקישו על המסך בנקודה שבה תרצו להתמקד. אם התמונה בהירה או כהה מדי, החליקו את האצבע למעלה או למטה (ליד ריבוע הפוקוס) כדי לתקן את החשיפה ידנית.</p>
+                </div>
+
+                <!-- פרק 4 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors reveal">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow">
+                            <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">4. ניקיון העדשה</h3>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">זה נשמע פשוט, אבל זה הטיפ הכי חשוב: לפני כל צילום, נקו את עדשת המצלמה עם מטלית רכה או עם החולצה. עדשה מלוכלכת היא הסיבה מספר אחת לתמונות מטושטשות ודהויות.</p>
+                </div>
+
+            </div>
+
+            <!-- Call to Action -->
+            <div class="mt-16 text-center reveal">
+                <a href="https://drive.google.com/file/d/1PnO_QLs29nuXk8tYxprMdyftbKAA4Z3m/view" target="_blank" class="px-8 py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold hover:bg-yellow-300 transition-all shadow-lg flex items-center justify-center gap-2 mx-auto w-fit">
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                    להורדת המדריך המלא כ-PDF
+                </a>
             </div>
         </div>
     </section>
@@ -695,7 +740,7 @@
                 <span>PicMoment</span>
             </div>
             <div class="flex gap-4">
-               <a href="guide.html" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline">מדריך למשתמש</a>
+               <a href="#guide" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline">מדריך למשתמש</a>
                <button onclick="openPrivacyModal()" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline">מדיניות פרטיות</button>
                <p class="text-sm">© 2023 כל הזכויות שמורות לקובי רפאלי. נבנה באהבה לצילום.</p>
             </div>
@@ -757,14 +802,6 @@
                 </form>
             </div>
         </div>
-    </div>
-
-    <!-- מודל גלריה (Lightbox) -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-brand-dark/95 backdrop-blur-xl flex items-center justify-center p-4 hidden" onclick="closeLightbox()" aria-hidden="true">
-        <button class="absolute top-6 right-6 text-white hover:text-brand-yellow transition-colors" aria-label="סגור תמונה">
-            <i data-lucide="x" class="w-10 h-10"></i>
-        </button>
-        <img id="lightbox-img" src="" alt="תצוגה מוגדלת" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl" onclick="event.stopPropagation()">
     </div>
 
     <!-- מודל פרטיות -->
@@ -879,17 +916,6 @@
                 description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
             }
         ];
-
-        const GALLERY_IMAGES = [
-            "1(13).jpg",
-            "1(9).jpg",
-            "1(25).jpg",
-            "1(32).jpg",
-            "1(7).JPG"
-        ];
-
-        // הוספתי את ההמלצות ישירות לקוד ה-HTML
-        const REVIEWS = []; // המערך הזה לא בשימוש כרגע, ההמלצות מוטמעות ב-HTML
 
         // --- 2. אתחול והפעלת האתר ---
 
@@ -1064,22 +1090,6 @@
                 document.body.classList.remove('no-scroll');
             }, 300);
         }
-
-        // רינדור גלריה
-        const galleryGrid = document.getElementById('gallery-grid');
-        GALLERY_IMAGES.forEach((img, idx) => {
-            const html = `
-                <div class="relative rounded-2xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-brand-yellow/20 transition-all duration-500 break-inside-avoid reveal mb-8" onclick="openLightbox('${img}')">
-                    <img src="${img}" alt="צילום אומנותי בסמארטפון - דוגמה ${idx+1}" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110 filter brightness-90 group-hover:brightness-100">
-                    <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                       <span class="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center text-brand-dark transform scale-50 group-hover:scale-100 transition-transform duration-300 shadow-xl">
-                          <i data-lucide="image" class="w-7 h-7"></i>
-                       </span>
-                    </div>
-                </div>
-            `;
-            galleryGrid.innerHTML += html;
-        });
 
         // הרצה ראשונית
         renderWorkshops();
