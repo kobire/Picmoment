@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PicMoment | סדנאות צילום בסמארטפון | קובי רפאלי</title>
-    <meta name="description" content="סדנאות צילום מקצועיות בסמארטפון עם קובי רפאלי. למדו איך להוציא תמונות מדהימות מהנייד (אייפון ואנדרואיד). סדנאות בתל אביב, ירושלים ולקבוצות פרטיות.">
-    <meta name="keywords" content="סדנת צילום בסמארטפון, צילום בנייד, קורס צילום, צילום באייפון, צילום באנדרואיד, סדנת צילום תל אביב, קובי רפאלי, צילום בסלולרי, ימי גיבוש, סדנאות לעובדים">
-    <meta name="author" content="קובי רפאלי">
     
+    <!-- SEO Optimization -->
+    <meta name="description" content="הצטרפו לקובי רפאלי בסדנת צילום מעשית בסמארטפון. למדו קומפוזיציה, עריכה ושליטה באור דרך האייפון או האנדרואיד. סדנאות בתל אביב, נווה צדק ויפו.">
+    <meta name="keywords" content="סדנת צילום בסמארטפון, צילום בנייד, קורס צילום, צילום באייפון, צילום באנדרואיד, סדנת צילום תל אביב, קובי רפאלי, צילום בסלולרי, ימי גיבוש, סדנאות לעובדים, צילום ילדים, מתנה מקורית">
+    <meta name="author" content="קובי רפאלי">
+    <meta property="og:title" content="PicMoment - סדנאות צילום בסמארטפון">
+    <meta property="og:description" content="ללמוד לצלם כמו מקצוענים עם המכשיר שכבר יש לכם בכיס.">
+    <meta property="og:image" content="hero-image.JPG">
+    <meta property="og:type" content="website">
+    
+    <!-- Schema.org Markup for Google Events -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "סדנת צילום בסמארטפון",
+      "description": "סדנה מעשית לצילום מקצועי באמצעות טלפון נייד",
+      "provider": {
+        "@type": "Person",
+        "name": "קובי רפאלי"
+      }
+    }
+    </script>
+
     <!-- טעינת העיצוב (Tailwind CSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -27,7 +47,7 @@
                         }
                     },
                     boxShadow: {
-                        'glow': '0 0 15px rgba(250, 204, 21, 0.3)',
+                        'glow': '0 0 20px rgba(250, 204, 21, 0.4)',
                     }
                 },
             },
@@ -42,12 +62,13 @@
 
     <style>
         /* אנימציות וסגנונות מיוחדים */
+        html { scroll-behavior: smooth; }
         body { font-family: 'Assistant', sans-serif; overflow-x: hidden; }
         
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 1s ease-out;
+            transition: all 0.8s ease-out;
         }
         .reveal.active {
             opacity: 1;
@@ -58,7 +79,7 @@
         .no-scroll { overflow: hidden; }
         
         /* נגישות לפוקוס */
-        button:focus-visible, a:focus-visible {
+        button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
             outline: 2px solid #FACC15;
             outline-offset: 2px;
         }
@@ -71,9 +92,48 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
         }
+
+        /* סגנון לצ'אט AI */
+        .chat-bubble {
+            position: relative;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            animation: fadeIn 0.3s ease-out;
+        }
+        .chat-user {
+            background-color: #FACC15;
+            color: #0F172A;
+            margin-right: auto;
+            border-bottom-left-radius: 2px;
+        }
+        .chat-bot {
+            background-color: #f1f5f9;
+            color: #334155;
+            margin-left: auto;
+            border-bottom-right-radius: 2px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="bg-brand-light text-brand-dark">
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-brand-dark text-white p-4 z-[100] transform translate-y-full transition-transform duration-500 shadow-[0_-5px_20px_rgba(0,0,0,0.2)]">
+        <div class="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <i data-lucide="cookie" class="w-6 h-6 text-brand-yellow"></i>
+                <p class="text-sm md:text-base">אתר זה משתמש ב-Cookies (עוגיות) על מנת לשפר את חווית הגלישה שלך ולהתאים את התוכן עבורך.</p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="acceptCookies()" class="bg-brand-yellow text-brand-dark px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition-colors">אני מאשר/ת</button>
+            </div>
+        </div>
+    </div>
 
     <!-- ניווט (Navbar) -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6" role="navigation" aria-label="תפריט ראשי">
@@ -87,12 +147,12 @@
 
             <!-- תפריט דסקטופ -->
             <div class="hidden md:flex items-center gap-8 text-white font-medium text-sm tracking-wide">
-                <a href="#custom-packages" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">חבילות</a>
                 <a href="#workshops" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">סדנאות קרובות</a>
+                <a href="#custom-packages" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">חבילות</a>
                 <a href="#gift-card" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">שובר מתנה</a>
                 <a href="#reviews" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">המלצות</a>
-                <a href="#guide" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow flex items-center gap-1">
-                    <i data-lucide="book-open" class="w-4 h-4"></i> מדריך צילום
+                <a href="#ai-assistant" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow flex items-center gap-1">
+                     שאל את קובי <i data-lucide="sparkles" class="w-3 h-3 text-brand-yellow"></i>
                 </a>
                 <a href="#contact" class="px-6 py-2.5 bg-brand-yellow text-brand-dark rounded-full font-bold hover:bg-yellow-300 hover:scale-105 transition-all shadow-lg focus:ring-2 focus:ring-white">
                     בואו נצלם
@@ -108,10 +168,10 @@
         <!-- תפריט מובייל נפתח -->
         <div id="mobile-menu" class="absolute top-full left-0 w-full bg-brand-dark/95 backdrop-blur-xl border-t border-white/10 overflow-hidden transition-all duration-300 max-h-0 opacity-0" aria-hidden="true">
             <div class="flex flex-col p-6 gap-4 text-center text-white">
-                <a href="#custom-packages" onclick="toggleMenu()" class="py-2 border-b border-white/10">חבילות</a>
                 <a href="#workshops" onclick="toggleMenu()" class="py-2 border-b border-white/10">סדנאות קרובות</a>
+                <a href="#custom-packages" onclick="toggleMenu()" class="py-2 border-b border-white/10">חבילות</a>
                 <a href="#gift-card" onclick="toggleMenu()" class="py-2 border-b border-white/10">שובר מתנה</a>
-                <a href="#guide" onclick="toggleMenu()" class="py-2 border-b border-white/10 font-bold text-brand-yellow">מדריך צילום</a>
+                <a href="#ai-assistant" onclick="toggleMenu()" class="py-2 border-b border-white/10 text-brand-yellow">שאל את קובי (AI)</a>
                 <a href="#contact" onclick="toggleMenu()" class="py-2 font-bold text-brand-yellow">צור קשר</a>
             </div>
         </div>
@@ -150,7 +210,7 @@
             <!-- סטטיסטיקה -->
             <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 border-t border-white/10 pt-10 w-full reveal">
                 <div class="text-center">
-                    <div class="text-3xl md:text-4xl font-black text-white mb-1">500+</div>
+                    <div class="text-3xl md:text-4xl font-black text-white mb-1">5,000+</div>
                     <div class="text-sm text-slate-400 font-medium uppercase tracking-wider">בוגרים מרוצים</div>
                 </div>
                 <div class="text-center">
@@ -170,7 +230,7 @@
     </header>
 
     <!-- אודות (Features) - "מה תקבלו" -->
-    <section id="about" class="py-24 bg-brand-dark text-white relative overflow-hidden">
+    <section id="features" class="py-24 bg-brand-dark text-white relative overflow-hidden">
         <div class="absolute -left-20 top-40 w-64 h-64 bg-brand-yellow/5 rounded-full blur-3xl"></div>
         
         <div class="container mx-auto px-6 relative z-10">
@@ -181,131 +241,47 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- פיצ'ר 1: תוצאות מיידיות -->
-                <div class="p-8 rounded-3xl bg-slate-800/50 border border-white/5 hover:border-brand-yellow/30 hover:bg-slate-800 transition-all hover:-translate-y-2 reveal text-center">
-                    <div class="w-16 h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i data-lucide="zap" class="w-8 h-8"></i>
+            <!-- קוביית יתרונות מרוכזת -->
+            <div class="bg-white/10 backdrop-blur-md rounded-3xl border border-white/10 p-8 md:p-12 max-w-6xl mx-auto reveal">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="flex flex-col items-center text-center hover:transform hover:scale-105 transition-transform duration-300">
+                        <i data-lucide="zap" class="w-10 h-10 text-brand-yellow mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">תוצאות מיידיות</h3>
+                        <p class="text-sm text-slate-400">שיטה מוכחת להצלחה</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">תוצאות מיידיות</h3>
-                    <p class="text-slate-400">שיטה מבוססת ניסיון שמפשטת טכניקות מורכבות ומובילה להצלחה מיידית בצילום בנייד.</p>
-                </div>
-                
-                <!-- פיצ'ר 2: חוויה מגבשת -->
-                <div class="p-8 rounded-3xl bg-slate-800/50 border border-white/5 hover:border-brand-yellow/30 hover:bg-slate-800 transition-all hover:-translate-y-2 reveal text-center">
-                    <div class="w-16 h-16 bg-brand-yellow/10 text-brand-yellow rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i data-lucide="users" class="w-8 h-8"></i>
+                    <div class="flex flex-col items-center text-center hover:transform hover:scale-105 transition-transform duration-300">
+                        <i data-lucide="users" class="w-10 h-10 text-brand-yellow mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">חוויה מגבשת</h3>
+                        <p class="text-sm text-slate-400">מושלם לצוותים</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">חוויה מגבשת</h3>
-                    <p class="text-slate-400">פעילות יצירתית ומעשית שמגבשת כל קבוצה! מושלמת לצוותים ומשפחות.</p>
-                </div>
-                
-                <!-- פיצ'ר 3: מתאימה לכולם -->
-                <div class="p-8 rounded-3xl bg-slate-800/50 border border-white/5 hover:border-brand-yellow/30 hover:bg-slate-800 transition-all hover:-translate-y-2 reveal text-center">
-                    <div class="w-16 h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i data-lucide="check-circle" class="w-8 h-8"></i>
+                    <div class="flex flex-col items-center text-center hover:transform hover:scale-105 transition-transform duration-300">
+                        <i data-lucide="check-circle" class="w-10 h-10 text-brand-yellow mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">ללא ידע מוקדם</h3>
+                        <p class="text-sm text-slate-400">מתאים לכולם</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">מתאימה לכולם</h3>
-                    <p class="text-slate-400">אין צורך בידע מוקדם או בציוד מיוחד. הסדנה נגישה לכולם, אייפון ואנדרואיד.</p>
-                </div>
-
-                <!-- פיצ'ר 4: ליווי אישי -->
-                <div class="p-8 rounded-3xl bg-slate-800/50 border border-white/5 hover:border-brand-yellow/30 hover:bg-slate-800 transition-all hover:-translate-y-2 reveal text-center">
-                    <div class="w-16 h-16 bg-brand-yellow/10 text-brand-yellow rounded-full flex items-center justify-center mb-6 mx-auto">
-                        <i data-lucide="sparkles" class="w-8 h-8"></i>
+                    <div class="flex flex-col items-center text-center hover:transform hover:scale-105 transition-transform duration-300">
+                        <i data-lucide="sparkles" class="w-10 h-10 text-brand-yellow mb-3"></i>
+                        <h3 class="font-bold text-lg mb-1">ליווי אישי</h3>
+                        <p class="text-sm text-slate-400">משוב בזמן אמת</p>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">ליווי אישי</h3>
-                    <p class="text-slate-400">הדרכה צמודה כולל משוב בזמן אמת כדי להוציא מכל צילום את המיטב.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- למה לבחור בסדנה שלנו -->
-    <section id="features" class="py-24 bg-white relative">
+    <!-- סדנאות (הועבר למעלה) -->
+    <section id="workshops" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-3xl md:text-5xl font-black text-brand-dark mb-6">למה לבחור בסדנה שלנו?</h2>
-                <div class="w-24 h-1.5 bg-brand-yellow mx-auto rounded-full"></div>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-black text-brand-dark mb-4">לוח סדנאות</h2>
+                    <p class="text-slate-500 text-lg">שריינו מקום בסדנאות הקרובות בתל אביב ונווה צדק</p>
+                </div>
             </div>
 
-            <!-- Single Block Container -->
-            <div class="bg-brand-light rounded-3xl shadow-lg border border-slate-100 p-8 md:p-12 max-w-5xl mx-auto reveal">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10">
-                    
-                    <!-- Item 1 -->
-                    <div class="flex flex-col items-center text-center">
-                        <div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm">
-                            <i data-lucide="check-circle" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">מתאים לכולם</h3>
-                        <p class="text-sm text-slate-500 leading-tight">ללא צורך בידע מוקדם</p>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="flex flex-col items-center text-center">
-                         <div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm">
-                            <i data-lucide="user-check" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">קיום מובטח</h3>
-                        <p class="text-sm text-slate-500 leading-tight">מינימום 5 משתתפים</p>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="flex flex-col items-center text-center">
-                         <div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm">
-                            <i data-lucide="users" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">קבוצות קטנות</h3>
-                        <p class="text-sm text-slate-500 leading-tight">יחס אישי לכל אחד</p>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div class="flex flex-col items-center text-center">
-                         <div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm">
-                            <i data-lucide="camera" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">נקודת מבט</h3>
-                        <p class="text-sm text-slate-500 leading-tight">כלים לצילום יצירתי</p>
-                    </div>
-
-                    <!-- Item 5 -->
-                    <div class="flex flex-col items-center text-center">
-                         <div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm">
-                            <i data-lucide="map-pin" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">לוקיישנים</h3>
-                        <p class="text-sm text-slate-500 leading-tight">מיקומים מרהיבים</p>
-                    </div>
-
-                    <!-- Item 6 -->
-                    <div class="flex flex-col items-center text-center">
-                         <div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm">
-                            <i data-lucide="smile" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">חוויה מהנה</h3>
-                        <p class="text-sm text-slate-500 leading-tight">בילוי מפנק ופוטוגני</p>
-                    </div>
-
-                    <!-- Item 7 -->
-                    <div class="flex flex-col items-center text-center">
-                         <div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm">
-                            <i data-lucide="refresh-ccw" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">החזר כספי</h3>
-                        <p class="text-sm text-slate-500 leading-tight">בביטול עד 48 שעות</p>
-                    </div>
-
-                    <!-- Item 8 -->
-                    <div class="flex flex-col items-center text-center">
-                         <div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm">
-                            <i data-lucide="clock" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">משך הסדנה</h3>
-                        <p class="text-sm text-slate-500 leading-tight">כ-2.5 שעות של כיף</p>
-                    </div>
-
-                </div>
+            <!-- רשימת סדנאות (תוכן יוזרק ע"י JS) -->
+            <div id="workshops-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- הסדנאות יופיעו כאן -->
             </div>
         </div>
     </section>
@@ -315,7 +291,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-5xl font-black text-brand-dark mb-4">בנו את הסדנה המושלמת עבורכם</h2>
-                <p class="text-lg text-slate-600 max-w-2xl mx-auto">כל סדנת צילום מותאמת אישית לצרכי הקבוצה. בחרו משך זמן וצרו קשר לקבלת הצעת מחיר.</p>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">סדנה פרטית או קבוצתית בהתאמה אישית.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
@@ -328,27 +304,18 @@
                         </div>
                         <h3 class="text-2xl font-black text-center mb-1 text-brand-dark">שעה</h3>
                         <p class="text-center text-slate-500 mb-6 font-medium">היכרות ראשונית</p>
-                        
                         <ul class="space-y-4 text-slate-600 text-sm" role="list">
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> מה מייחד צילום בסמארטפון</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> הכרת תכונות המצלמה והגדרותיה</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> המרכיבים לתמונה מוצלחת</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> טכניקות בסיסיות וקומפוזיציה</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> טיפים מעשיים ליישום מיידי</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> תרגול וצילום בסיסי</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> הכרת המצלמה</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> קומפוזיציה בסיסית</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> טיפים ליישום מיידי</li>
                         </ul>
                     </div>
                     <div class="p-6 bg-slate-50 border-t border-slate-100 mt-auto">
-                        <div class="bg-white border border-slate-200 rounded-xl p-3 text-center text-sm text-slate-600 mb-4">
-                            קבוצות שרוצות היכרות מהירה וממוקדת
-                        </div>
-                        <button onclick="enquirePackage('חבילת שעה')" class="w-full py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-brand-yellow hover:text-brand-dark transition-colors" aria-label="בחר חבילת שעה">
-                            בחרו אפשרות זו
-                        </button>
+                        <button onclick="enquirePackage('חבילת שעה')" class="w-full py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-brand-yellow hover:text-brand-dark transition-colors">בחרו אפשרות זו</button>
                     </div>
                 </div>
 
-                <!-- חבילה 2: שעתיים (מודגש) -->
+                <!-- חבילה 2: שעתיים -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-brand-yellow relative transform md:-translate-y-4 z-10 flex flex-col reveal h-full">
                     <div class="absolute top-0 right-0 left-0 bg-brand-yellow text-brand-dark text-xs font-bold text-center py-1.5 uppercase tracking-wider">הכי פופולרי</div>
                     <div class="p-8 pt-10 flex-grow">
@@ -357,24 +324,15 @@
                         </div>
                         <h3 class="text-3xl font-black text-center mb-1 text-brand-dark">שעתיים</h3>
                         <p class="text-center text-slate-500 mb-6 font-medium">חוויה מלאה</p>
-                        
                         <ul class="space-y-4 text-slate-600 text-sm" role="list">
-                            <li class="flex items-start gap-3 font-bold text-brand-dark"><i data-lucide="plus" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> כל מה שבסדנת השעה +</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> התנסות מעשית מורחבת בשטח</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> צילום עם משימות יצירתיות</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> משוב אישי ממוקד לכל משתתף</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> עיבוד ועריכת תמונות בסמארטפון</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> שימוש באפליקציות עריכה מתקדמות</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> טכניקות יצירתיות מתקדמות</li>
+                            <li class="flex items-start gap-3 font-bold text-brand-dark"><i data-lucide="plus" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> כל מה שבסדנת שעה</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> התנסות מעשית בשטח</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> עריכה באפליקציות</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> משוב אישי</li>
                         </ul>
                     </div>
                     <div class="p-6 bg-slate-50 border-t border-slate-100 mt-auto">
-                        <div class="bg-brand-yellow/10 border border-brand-yellow/30 rounded-xl p-3 text-center text-sm text-brand-dark mb-4 font-bold">
-                            האופציה הפופולרית - איזון מושלם
-                        </div>
-                        <button onclick="enquirePackage('חבילת שעתיים')" class="w-full py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold hover:bg-yellow-300 transition-colors shadow-lg text-lg" aria-label="בחר חבילת שעתיים">
-                            בחרו אפשרות זו
-                        </button>
+                        <button onclick="enquirePackage('חבילת שעתיים')" class="w-full py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold hover:bg-yellow-300 transition-colors shadow-lg text-lg">בחרו אפשרות זו</button>
                     </div>
                 </div>
 
@@ -384,46 +342,19 @@
                         <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mb-6 mx-auto text-slate-700">
                             <i data-lucide="rocket" class="w-8 h-8"></i>
                         </div>
-                        <h3 class="text-2xl font-black text-center mb-1 text-brand-dark">שעתיים וחצי - שלוש</h3>
+                        <h3 class="text-2xl font-black text-center mb-1 text-brand-dark">שעתיים וחצי+</h3>
                         <p class="text-center text-slate-500 mb-6 font-medium">חבילה מקיפה</p>
-                        
                         <ul class="space-y-4 text-slate-600 text-sm" role="list">
-                            <li class="flex items-start gap-3 font-bold text-brand-dark"><i data-lucide="plus" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> כל מה שבסדנת השעתיים +</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> צילום ועריכת סרטונים בסמארטפון</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> טכניקות וידאו מתקדמות</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> עריכת סרטונים באפליקציות</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> שימוש בתאורה טבעית ומלאכותית</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> פרויקט צילום מלא מתחילה לסיום</li>
-                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0" aria-hidden="true"></i> זמן רב יותר לתרגול ושיתוף</li>
+                            <li class="flex items-start gap-3 font-bold text-brand-dark"><i data-lucide="plus" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> כל מה שבסדנת שעתיים</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> צילום ועריכת וידאו</li>
+                            <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-yellow flex-shrink-0"></i> פרוייקט צילום מלא</li>
                         </ul>
                     </div>
                     <div class="p-6 bg-slate-50 border-t border-slate-100 mt-auto">
-                        <div class="bg-white border border-slate-200 rounded-xl p-3 text-center text-sm text-slate-600 mb-4">
-                            לקבוצות שרוצות חוויה מקיפה ומעמיקה
-                        </div>
-                        <button onclick="enquirePackage('חבילת שעתיים וחצי עד שלוש')" class="w-full py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-brand-yellow hover:text-brand-dark transition-colors" aria-label="בחר חבילת שלוש שעות">
-                            בחרו אפשרות זו
-                        </button>
+                        <button onclick="enquirePackage('חבילת שלוש שעות')" class="w-full py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-brand-yellow hover:text-brand-dark transition-colors">בחרו אפשרות זו</button>
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- סדנאות -->
-    <section id="workshops" class="py-24 bg-brand-light">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal">
-                <div>
-                    <h2 class="text-4xl md:text-6xl font-black text-brand-dark mb-4">סדנאות קרובות</h2>
-                    <p class="text-slate-500 text-lg">בחר את ההרפתקה הבאה שלך. מספר המקומות מוגבל.</p>
-                </div>
-            </div>
-
-            <!-- רשימת סדנאות (תוכן יוזרק ע"י JS) -->
-            <div id="workshops-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- הסדנאות יופיעו כאן -->
             </div>
         </div>
     </section>
@@ -433,7 +364,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-5xl font-black text-brand-dark mb-4">מה אומרים המשתתפים</h2>
-                <p class="text-lg text-slate-600 font-medium">דירוג 5.0 מתוך 451 חוות דעת | למעלה מ-2,344 משתתפים</p>
+                <p class="text-lg text-slate-600 font-medium">דירוג 5.0 מתוך 451 חוות דעת | למעלה מ-5,000 בוגרים מרוצים</p>
                 <div class="flex justify-center gap-1 text-brand-yellow mt-3" aria-label="דירוג 5 כוכבים">
                     <i data-lucide="star" class="w-6 h-6 fill-current"></i>
                     <i data-lucide="star" class="w-6 h-6 fill-current"></i>
@@ -444,59 +375,35 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- המלצה 1 - ישי -->
-                <div class="bg-white border border-slate-100 p-10 rounded-3xl relative reveal flex flex-col hover:-translate-y-2 transition-transform duration-300 shadow-xl shadow-slate-200/50">
-                    <div class="absolute -top-6 -right-6 bg-brand-yellow text-brand-dark p-4 rounded-2xl shadow-lg rotate-3">
-                        <i data-lucide="quote" class="w-6 h-6 text-brand-dark fill-brand-dark"></i>
-                    </div>
-                    <p class="text-slate-600 text-lg leading-relaxed flex-grow mb-8">"למרות שאני יודע לצלם, למדתי טיפים ודברים רבים. קובי מוכן לתת ולשתף כמה שיותר. ממליץ בחום!"</p>
-                    <div class="flex items-center gap-3 mt-auto pt-6 border-t border-slate-100">
-                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-500">י</div>
-                        <div class="font-bold text-slate-900 text-lg">ישי</div>
-                    </div>
+                <div class="bg-white border border-slate-100 p-10 rounded-3xl relative reveal hover:shadow-xl transition-all">
+                    <div class="absolute -top-6 -right-6 bg-brand-yellow text-brand-dark p-4 rounded-2xl shadow-lg rotate-3"><i data-lucide="quote" class="w-6 h-6"></i></div>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">"למרות שאני יודע לצלם, למדתי טיפים ודברים רבים. קובי מוכן לתת ולשתף כמה שיותר. ממליץ בחום!"</p>
+                    <div class="font-bold text-brand-dark text-lg border-t border-slate-100 pt-4">ישי</div>
                 </div>
-
-                <!-- המלצה 2 - אסנת -->
-                <div class="bg-white border border-slate-100 p-10 rounded-3xl relative reveal flex flex-col hover:-translate-y-2 transition-transform duration-300 shadow-xl shadow-slate-200/50">
-                    <div class="absolute -top-6 -right-6 bg-brand-yellow text-brand-dark p-4 rounded-2xl shadow-lg rotate-3">
-                        <i data-lucide="quote" class="w-6 h-6 text-brand-dark fill-brand-dark"></i>
-                    </div>
-                    <p class="text-slate-600 text-lg leading-relaxed flex-grow mb-8">"באתי עם ציפיות נמוכות כי אני לא חובבת צילום אבל זקוקה להתמקצע וחוויתי סדנא מקצועית, יסודית ומרתקת. קובי היה סבלני, מקצוען אמיתי, נהנתי מאוד מהאווירה והלמידה."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-6 border-t border-slate-100">
-                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-500">א</div>
-                        <div class="font-bold text-slate-900 text-lg">אסנת</div>
-                    </div>
+                <div class="bg-white border border-slate-100 p-10 rounded-3xl relative reveal hover:shadow-xl transition-all">
+                    <div class="absolute -top-6 -right-6 bg-brand-yellow text-brand-dark p-4 rounded-2xl shadow-lg rotate-3"><i data-lucide="quote" class="w-6 h-6"></i></div>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">"באתי עם ציפיות נמוכות וחוויתי סדנא מקצועית, יסודית ומרתקת. קובי היה סבלני ומקצוען אמיתי."</p>
+                    <div class="font-bold text-brand-dark text-lg border-t border-slate-100 pt-4">אסנת</div>
                 </div>
-
-                <!-- המלצה 3 - גל -->
-                <div class="bg-white border border-slate-100 p-10 rounded-3xl relative reveal flex flex-col hover:-translate-y-2 transition-transform duration-300 shadow-xl shadow-slate-200/50">
-                    <div class="absolute -top-6 -right-6 bg-brand-yellow text-brand-dark p-4 rounded-2xl shadow-lg rotate-3">
-                        <i data-lucide="quote" class="w-6 h-6 text-brand-dark fill-brand-dark"></i>
-                    </div>
-                    <p class="text-slate-600 text-lg leading-relaxed flex-grow mb-8">"הסדנה הייתה מעולה ומעשירה - כמות הידע שספגנו בזמן קצר היה מעל המצופה. ולגבי המנחה קובי - מקצועי נעים ומוכשר! ממליצה לכל מי שחובב צילום לעשות את הסדנה."</p>
-                    <div class="flex items-center gap-3 mt-auto pt-6 border-t border-slate-100">
-                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-500">ג</div>
-                        <div class="font-bold text-slate-900 text-lg">גל</div>
-                    </div>
+                <div class="bg-white border border-slate-100 p-10 rounded-3xl relative reveal hover:shadow-xl transition-all">
+                    <div class="absolute -top-6 -right-6 bg-brand-yellow text-brand-dark p-4 rounded-2xl shadow-lg rotate-3"><i data-lucide="quote" class="w-6 h-6"></i></div>
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">"כמות הידע שספגנו בזמן קצר הייתה מעל המצופה. קובי מקצועי נעים ומוכשר! ממליצה לכל מי שחובב צילום."</p>
+                    <div class="font-bold text-brand-dark text-lg border-t border-slate-100 pt-4">גל</div>
                 </div>
             </div>
-
-            <div class="text-center mt-16 reveal">
-                <a href="https://il.funzing.com/funz/%D7%9C%D7%AA%D7%A4%D7%95%D7%A1-%D7%90%D7%AA-%D7%94%D7%A8%D7%92%D7%A2-%D7%91%D7%A0%D7%95%D7%95%D7%94-%D7%A6%D7%93%D7%A7-%D7%A1%D7%93%D7%A0%D7%AA-%D7%A6%D7%99%D7%9C%D7%95%D7%9D-%D7%91%D7%A1%D7%9E%D7%90%D7%A8%D7%98%D7%A4%D7%95%D7%9F-11152?event_id=849042" target="_blank" class="inline-flex items-center gap-2 px-10 py-4 bg-white border-2 border-slate-200 rounded-full font-bold text-slate-700 hover:border-brand-yellow hover:text-brand-dark hover:shadow-lg transition-all text-lg focus:ring-4 focus:ring-brand-yellow/30">
-                    לקריאת כל התגובות
-                    <i data-lucide="external-link" class="w-5 h-5"></i>
+             <div class="text-center mt-12 reveal">
+                <a href="https://il.funzing.com/funz/%D7%9C%D7%AA%D7%A4%D7%95%D7%A1-%D7%90%D7%AA-%D7%94%D7%A8%D7%92%D7%A2-%D7%91%D7%A0%D7%95%D7%95%D7%94-%D7%A6%D7%93%D7%A7-%D7%A1%D7%93%D7%A0%D7%AA-%D7%A6%D7%99%D7%9C%D7%95%D7%9D-%D7%91%D7%A1%D7%9E%D7%90%D7%A8%D7%98%D7%A4%D7%95%D7%9F-11152?event_id=849042" target="_blank" class="inline-flex items-center gap-2 px-8 py-3 bg-white border-2 border-slate-200 rounded-full font-bold text-slate-700 hover:border-brand-yellow hover:text-brand-dark transition-all">
+                    לקריאת כל התגובות <i data-lucide="external-link" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- שובר מתנה (Gift Card) -->
+    <!-- שובר מתנה -->
     <section id="gift-card" class="py-20 bg-brand-dark text-white relative overflow-hidden">
-        <!-- רקע דקורטיבי -->
         <div class="absolute inset-0 bg-brand-yellow/5"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl border border-white/10 flex flex-col md:flex-row items-center gap-12 reveal">
-                <!-- צד טקסט -->
                 <div class="md:w-1/2">
                     <div class="inline-block bg-brand-yellow text-brand-dark font-bold px-4 py-1 rounded-full text-sm mb-6">
                         <i data-lucide="gift" class="w-4 h-4 inline-block ml-1"></i>
@@ -504,182 +411,98 @@
                     </div>
                     <h2 class="text-3xl md:text-5xl font-black mb-6">שובר מתנה לסדנת צילום</h2>
                     <p class="text-slate-300 text-lg mb-8 leading-relaxed">
-                        מחפשים מתנה מקורית וערכית? העניקו לאהובים שלכם חוויה בלתי נשכחת. 
-                        שובר מתנה לסדנת צילום מעשית שתשדרג להם את היכולות ותשאיר אותם עם מזכרות לכל החיים.
+                        העניקו לאהובים שלכם חוויה בלתי נשכחת. שובר מתנה לסדנת צילום מעשית.
+                        <br><strong>עלות: 250 ש"ח למשתתף | תוקף: חצי שנה מיום הרכישה</strong>
                     </p>
-                    <ul class="space-y-4 mb-8 text-slate-300" role="list">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow" aria-hidden="true"></i>
-                            תקף לכל הסדנאות הפתוחות (תל אביב, ירושלים, טבע)
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow" aria-hidden="true"></i>
-                            תוקף לשנה שלמה מיום הרכישה
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow" aria-hidden="true"></i>
-                            מגיע כקובץ דיגיטלי מעוצב או ככרטיס פיזי מהודר
-                        </li>
+                    <ul class="space-y-4 mb-8 text-slate-300">
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow"></i> תקף לכל הסדנאות הפתוחות</li>
+                        <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow"></i> מגיע כקובץ דיגיטלי מעוצב</li>
                     </ul>
-                    <button onclick="purchaseGiftCard()" class="px-8 py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-lg hover:shadow-yellow-400/30 flex items-center gap-2 focus:ring-4 focus:ring-white/50">
-                        לרכישת שובר מתנה
-                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    <button onclick="purchaseGiftCard()" class="px-8 py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-lg flex items-center gap-2">
+                        לרכישת שובר מתנה <i data-lucide="arrow-left" class="w-5 h-5"></i>
                     </button>
                 </div>
-                <!-- צד ויזואלי -->
                 <div class="md:w-1/2 relative">
-                    <!-- עיצוב הכרטיס -->
                     <div class="relative bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-white/10 transform rotate-3 hover:rotate-0 transition-transform duration-500 max-w-md mx-auto">
-                        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="שובר מתנה מעוצב לסדנת צילום" class="w-full h-64 object-cover opacity-80">
+                        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="שובר מתנה" class="w-full h-64 object-cover opacity-80">
                         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
                         <div class="absolute bottom-6 right-6 text-white">
                             <div class="text-brand-yellow font-black text-2xl mb-1">GIFT CARD</div>
                             <div class="text-xl font-bold">סדנת צילום בסמארטפון</div>
                             <div class="text-sm text-slate-300 mt-2">קובי רפאלי | PicMoment</div>
                         </div>
-                        <div class="absolute top-6 left-6" aria-hidden="true">
-                            <i data-lucide="camera" class="w-8 h-8 text-white/80"></i>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ביו (Bio) -->
-    <section class="py-20 bg-brand-dark text-white relative">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
-            <!-- צד תמונה -->
-            <div class="md:w-1/2 relative group reveal">
-                <div class="absolute inset-0 bg-brand-yellow rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
-                <img src="COLLAGE.jpg" alt="קובי רפאלי - צלם סדנאות סמארטפון" class="rounded-2xl relative z-10 w-full shadow-2xl transition-all duration-500">
+    <!-- AI Chat Assistant (New Section) -->
+    <section id="ai-assistant" class="py-16 bg-white border-b border-slate-100">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-10 reveal">
+                <div class="w-16 h-16 bg-brand-yellow/10 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-yellow">
+                    <i data-lucide="sparkles" class="w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl font-black text-brand-dark mb-2">יש לך שאלה? העוזר החכם כאן!</h2>
+                <p class="text-slate-600">בחרו שאלה נפוצה או כתבו לי כל דבר שעולה לכם לראש</p>
             </div>
-            
-            <!-- צד טקסט (מעודכן לפי תמונה) -->
-            <div class="md:w-1/2 reveal">
-                <h2 class="text-4xl md:text-5xl font-black mb-2">קובי רפאלי</h2>
-                <h3 class="text-xl text-brand-yellow font-bold mb-6 tracking-widest uppercase">צלם ומראשוני האינסטגרמרים בארץ ובעולם</h3>
+
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden reveal">
+                <div id="chat-window" class="h-64 bg-slate-50 p-6 overflow-y-auto flex flex-col gap-3">
+                    <div class="chat-bubble chat-bot">
+                        היי! אני העוזר הדיגיטלי של קובי. איך אפשר לעזור לך לשדרג את הצילום היום? 📸
+                    </div>
+                    <!-- Chat messages will appear here -->
+                </div>
                 
-                <div class="space-y-4 text-slate-300 text-lg leading-relaxed">
-                    <p>
-                        אני מתמחה בצילום באמצעות הסמארטפון. הגלריה שלי היא מסע ויזואלי רב-גוני, המציג זוויות בלתי שגרתיות וסגנונות המעוררים השראה.
-                    </p>
-                    <p>
-                        כיום אני מנהל מספר חשבונות ברשת אינסטגרם המונה כ-400,000 עוקבים (ו-76,000 בחשבוני הפרטי), קהילה איתה אני חולק את אהבתי ליצירה.
-                    </p>
-                    <p>
-                        לאורך השנים הייתה לי הזכות לייצג את ישראל במפגשי פסגה של יוצרי תוכן בינלאומיים – מהחופים האקזוטיים של האיים המלדיביים ועד פסגות המושלגות של צרפת – ולקחת חלק בפרויקטים ייחודיים עם מותגי ענק בארץ ובעולם.
-                    </p>
-                    <p>
-                        כזוכה תואר 'צלם השנה' בטקס פרסי האינסטגרם הישראלי, אני רואה שליחות בהעברת הידע, ומעביר כיום הרצאות וסדנאות לקהלים מגוונים ברחבי הארץ.
-                    </p>
+                <!-- Quick Questions -->
+                <div class="p-4 bg-white border-t border-slate-100 flex gap-2 overflow-x-auto whitespace-nowrap pb-2">
+                    <button onclick="askAI('איזה ציוד צריך לסדנה?')" class="px-4 py-2 bg-slate-100 rounded-full text-sm hover:bg-slate-200 transition">איזה ציוד צריך?</button>
+                    <button onclick="askAI('האם זה מתאים למתחילים?')" class="px-4 py-2 bg-slate-100 rounded-full text-sm hover:bg-slate-200 transition">מתאים למתחילים?</button>
+                    <button onclick="askAI('איך נרשמים?')" class="px-4 py-2 bg-slate-100 rounded-full text-sm hover:bg-slate-200 transition">איך נרשמים?</button>
                 </div>
 
-                <!-- תגיות מומחיות (Features Tags) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                    <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-3">
-                        <div class="bg-brand-yellow/20 p-2 rounded-lg text-brand-yellow">
-                            <i data-lucide="instagram" class="w-6 h-6"></i>
-                        </div>
-                        <div class="text-sm">
-                            <div class="font-bold text-white">מומחה לרשתות חברתיות</div>
-                            <div class="text-slate-400 text-xs">דגש על אינסטגרם וניהול תוכן</div>
-                        </div>
-                    </div>
-                    <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-3">
-                        <div class="bg-brand-yellow/20 p-2 rounded-lg text-brand-yellow">
-                            <i data-lucide="award" class="w-6 h-6"></i>
-                        </div>
-                        <div class="text-sm">
-                            <div class="font-bold text-white">למעלה מעשור</div>
-                            <div class="text-slate-400 text-xs">ניסיון בצילום</div>
-                        </div>
-                    </div>
-                    <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-3">
-                        <div class="bg-brand-yellow/20 p-2 rounded-lg text-brand-yellow">
-                            <i data-lucide="heart" class="w-6 h-6"></i>
-                        </div>
-                        <div class="text-sm">
-                            <div class="font-bold text-white">תשוקה לחנך</div>
-                            <div class="text-slate-400 text-xs">ולהעביר את הידע הלאה</div>
-                        </div>
-                    </div>
-                    <div class="bg-white/5 p-3 rounded-xl border border-white/10 flex items-center gap-3">
-                        <div class="bg-brand-yellow/20 p-2 rounded-lg text-brand-yellow">
-                            <i data-lucide="sparkles" class="w-6 h-6"></i>
-                        </div>
-                        <div class="text-sm">
-                            <div class="font-bold text-white">צילום אמנותי</div>
-                            <div class="text-slate-400 text-xs">דגש על הסמארטפון</div>
-                        </div>
-                    </div>
+                <!-- Input Area -->
+                <div class="p-4 bg-white border-t border-slate-100 flex gap-2">
+                    <input type="text" id="ai-input" placeholder="הקלידו שאלה כאן..." class="flex-grow px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 focus:outline-none focus:border-brand-yellow focus:ring-1 focus:ring-brand-yellow">
+                    <button onclick="handleCustomQuestion()" class="p-3 bg-brand-dark text-white rounded-xl hover:bg-brand-yellow hover:text-brand-dark transition-colors">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- מדריך צילום (Guide Section) -->
+    <!-- מדריך צילום (Guide Section) - Embedded -->
     <section id="guide" class="py-24 bg-brand-dark text-white relative">
         <div class="absolute inset-0 bg-brand-yellow/5"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-5xl font-black mb-4">המדריך המלא לצילום בסמארטפון</h2>
-                <p class="text-xl text-slate-300 max-w-2xl mx-auto">ריכזתי עבורכם את הטיפים החשובים ביותר שיהפכו כל תמונה שלכם ליצירת אמנות קטנה.</p>
+                <p class="text-xl text-slate-300 max-w-2xl mx-auto">טיפים לשימוש מיידי</p>
                 <div class="w-24 h-1.5 bg-brand-yellow mx-auto rounded-full mt-6"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                
-                <!-- פרק 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
                 <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors reveal">
                     <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow">
-                            <i data-lucide="sun" class="w-6 h-6"></i>
-                        </div>
+                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow"><i data-lucide="sun" class="w-6 h-6"></i></div>
                         <h3 class="text-2xl font-bold">1. תאורה היא הכל</h3>
                     </div>
-                    <p class="text-slate-300 leading-relaxed">הסוד לתמונה טובה מתחיל באור. נסו תמיד לצלם כשהאור מאחוריכם או מהצד. הימנעו מצילום ישיר מול השמש (אלא אם אתם רוצים ליצור צללית). שעות הזהב (זריחה ושקיעה) הן הזמן המושלם לצילום רך ומחמיא.</p>
+                    <p class="text-slate-300 leading-relaxed">הסוד לתמונה טובה מתחיל באור. נסו תמיד לצלם כשהאור מאחוריכם או מהצד. שעות הזהב (זריחה ושקיעה) הן הזמן המושלם.</p>
                 </div>
-
-                <!-- פרק 2 -->
                 <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors reveal">
                     <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow">
-                            <i data-lucide="grid" class="w-6 h-6"></i>
-                        </div>
+                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow"><i data-lucide="grid" class="w-6 h-6"></i></div>
                         <h3 class="text-2xl font-bold">2. חוק השלישים</h3>
                     </div>
-                    <p class="text-slate-300 leading-relaxed">הפעילו את "הרשת" (Grid) בהגדרות המצלמה שלכם. נסו למקם את הנושא העיקרי של התמונה על אחד הקווים או בנקודות המפגש ביניהם, ולאו דווקא במרכז. זה יוצר עניין ודינמיות בתמונה.</p>
+                    <p class="text-slate-300 leading-relaxed">הפעילו את ה"גריד" במצלמה. מקמו את הנושא על הקווים או המפגשים ביניהם ליצירת עניין.</p>
                 </div>
-
-                <!-- פרק 3 -->
-                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors reveal">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow">
-                            <i data-lucide="focus" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">3. פוקוס וחשיפה</h3>
-                    </div>
-                    <p class="text-slate-300 leading-relaxed">לפני הצילום, הקישו על המסך בנקודה שבה תרצו להתמקד. אם התמונה בהירה או כהה מדי, החליקו את האצבע למעלה או למטה (ליד ריבוע הפוקוס) כדי לתקן את החשיפה ידנית.</p>
-                </div>
-
-                <!-- פרק 4 -->
-                <div class="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors reveal">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-brand-yellow/20 rounded-full flex items-center justify-center text-brand-yellow">
-                            <i data-lucide="smartphone" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">4. ניקיון העדשה</h3>
-                    </div>
-                    <p class="text-slate-300 leading-relaxed">זה נשמע פשוט, אבל זה הטיפ הכי חשוב: לפני כל צילום, נקו את עדשת המצלמה עם מטלית רכה או עם החולצה. עדשה מלוכלכת היא הסיבה מספר אחת לתמונות מטושטשות ודהויות.</p>
-                </div>
-
             </div>
 
-            <!-- Call to Action -->
-            <div class="mt-16 text-center reveal">
-                <a href="https://drive.google.com/file/d/1PnO_QLs29nuXk8tYxprMdyftbKAA4Z3m/view" target="_blank" class="px-8 py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold hover:bg-yellow-300 transition-all shadow-lg flex items-center justify-center gap-2 mx-auto w-fit">
+            <div class="text-center reveal">
+                <a href="#" onclick="openPdf(); return false;" class="px-8 py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold hover:bg-yellow-300 transition-all shadow-lg flex items-center justify-center gap-2 mx-auto w-fit">
                     <i data-lucide="download" class="w-5 h-5"></i>
                     להורדת המדריך המלא כ-PDF
                 </a>
@@ -694,21 +517,17 @@
                 <!-- צד פרטים -->
                 <div class="md:w-1/2 p-12 md:p-16 text-white flex flex-col justify-between relative z-10">
                     <div>
-                        <h2 class="text-4xl font-black mb-6">דברו איתנו</h2>
+                        <h2 class="text-4xl font-black mb-6">בואו נדבר</h2>
                         <p class="text-slate-300 text-lg mb-12 leading-relaxed">
-                            רוצים לתאם סדנה פרטית לארגון? יש לכם שאלה טכנית? אנחנו כאן, עם המצלמה בהיכון.
+                            יש לכם שאלה? רוצים להזמין סדנה פרטית? אנחנו כאן בשבילכם.
                         </p>
                         <div class="space-y-8">
                             <div class="flex items-center gap-6 group">
-                                <div class="w-12 h-12 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center text-brand-yellow group-hover:bg-brand-yellow group-hover:text-slate-900 transition-colors">
-                                    <i data-lucide="phone" class="w-5 h-5"></i>
-                                </div>
+                                <div class="w-12 h-12 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center text-brand-yellow"><i data-lucide="phone" class="w-5 h-5"></i></div>
                                 <span class="text-lg font-medium">052-2649955</span>
                             </div>
                             <div class="flex items-center gap-6 group">
-                                <div class="w-12 h-12 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center text-brand-yellow group-hover:bg-brand-yellow group-hover:text-slate-900 transition-colors">
-                                    <i data-lucide="mail" class="w-5 h-5"></i>
-                                </div>
+                                <div class="w-12 h-12 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center text-brand-yellow"><i data-lucide="mail" class="w-5 h-5"></i></div>
                                 <span class="text-lg font-medium">kobire@gmail.com</span>
                             </div>
                         </div>
@@ -716,7 +535,7 @@
                 </div>
                 <!-- צד טופס -->
                 <div class="md:w-1/2 bg-white p-12 md:p-16">
-                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('ההודעה נשלחה בהצלחה!');">
+                    <form onsubmit="sendContactForm(event)" class="space-y-6">
                         <h3 class="text-2xl font-bold text-slate-900 mb-6">השאירו הודעה</h3>
                         <div>
                             <label for="contact-name" class="block text-sm font-bold text-slate-700 mb-2">שם מלא</label>
@@ -726,10 +545,35 @@
                             <label for="contact-phone" class="block text-sm font-bold text-slate-700 mb-2">טלפון</label>
                             <input id="contact-phone" type="tel" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-yellow outline-none transition-all" required>
                         </div>
-                        <button class="w-full bg-brand-dark text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-4 focus:ring-brand-yellow/30">
-                            שליחת הודעה
+                        <div>
+                            <label for="contact-desc" class="block text-sm font-bold text-slate-700 mb-2">נושא הפנייה / תיאור</label>
+                            <textarea id="contact-desc" rows="3" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-yellow outline-none transition-all" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-dark text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:ring-4 focus:ring-brand-yellow/30">
+                            שליחת הודעה לוואטסאפ <i data-lucide="send" class="w-4 h-4 inline-block mr-2"></i>
                         </button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ביו (Bio) -->
+    <section class="py-20 bg-brand-dark text-white relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
+            <div class="md:w-1/2 relative group reveal">
+                <div class="absolute inset-0 bg-brand-yellow rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
+                <img src="COLLAGE.jpg" alt="קובי רפאלי - צלם" class="rounded-2xl relative z-10 w-full shadow-2xl transition-all duration-500">
+            </div>
+            <div class="md:w-1/2 reveal">
+                <h2 class="text-4xl md:text-5xl font-black mb-2">קובי רפאלי</h2>
+                <h3 class="text-xl text-brand-yellow font-bold mb-6 tracking-widest uppercase">צלם ומראשוני האינסטגרמרים בארץ</h3>
+                <p class="text-slate-300 text-lg leading-relaxed mb-4">
+                    אני מתמחה בצילום באמצעות הסמארטפון. הגלריה שלי היא מסע ויזואלי רב-גוני. כיום אני מנהל מספר חשבונות ברשת אינסטגרם המונה מאות אלפי עוקבים.
+                </p>
+                <div class="flex gap-4 mt-6">
+                    <a href="https://www.instagram.com/kobi_refaeli" target="_blank" class="text-brand-yellow hover:text-white transition-colors"><i data-lucide="instagram" class="w-8 h-8"></i></a>
                 </div>
             </div>
         </div>
@@ -743,9 +587,8 @@
                 <span>PicMoment</span>
             </div>
             <div class="flex gap-4">
-               <a href="#guide" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline">מדריך למשתמש</a>
                <button onclick="openPrivacyModal()" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline">מדיניות פרטיות</button>
-               <p class="text-sm">© 2023 כל הזכויות שמורות לקובי רפאלי. נבנה באהבה לצילום.</p>
+               <p class="text-sm">© 2023 כל הזכויות שמורות לקובי רפאלי.</p>
             </div>
         </div>
     </footer>
@@ -758,63 +601,6 @@
         <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20 duration-1000"></div>
     </a>
 
-    <!-- מודל הרשמה (נסתר כברירת מחדל) -->
-    <div id="modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-brand-dark/60 backdrop-blur-md hidden transition-opacity opacity-0" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="bg-white rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh] animate-bounce-in">
-            <button onclick="closeModal()" class="absolute top-4 left-4 p-2 bg-white/50 hover:bg-white rounded-full transition-colors z-10 text-slate-900" aria-label="סגור חלונית">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            
-            <div class="relative h-40 bg-brand-dark flex-shrink-0">
-                <img id="modal-image" src="" alt="תמונת רקע לסדנה" class="w-full h-full object-cover opacity-60">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent"></div>
-                <div class="absolute bottom-6 right-6 text-white">
-                    <h2 id="modal-title" class="text-2xl font-bold"></h2>
-                    <div class="flex items-center gap-2 text-sm text-slate-300 mt-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
-                        <span id="modal-date"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-8 overflow-y-auto">
-                <div class="mb-8 text-center">
-                    <button onclick="sendWhatsApp()" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold hover:bg-[#20bd5a] transition-all flex items-center justify-center gap-3 shadow-lg shadow-green-500/20 transform hover:-translate-y-1 focus:ring-4 focus:ring-green-300">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        הרשמה מהירה בוואטסאפ
-                    </button>
-                    <p class="text-xs text-slate-400 mt-3">הדרך המהירה והמומלצת ביותר להבטיח את מקומך</p>
-                </div>
-                
-                <div class="relative flex py-2 items-center mb-6">
-                    <div class="flex-grow border-t border-slate-200"></div>
-                    <span class="flex-shrink-0 mx-4 text-slate-400 text-sm font-medium">או השאר פרטים ונחזור אליך</span>
-                    <div class="flex-grow border-t border-slate-200"></div>
-                </div>
-
-                <form onsubmit="event.preventDefault(); alert('פרטים נשלחו בהצלחה! ניצור קשר בקרוב.'); closeModal();" class="space-y-4">
-                    <div>
-                        <label for="modal-name" class="block text-sm font-bold text-slate-700 mb-1">שם מלא</label>
-                        <input id="modal-name" required type="text" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-yellow outline-none transition-all">
-                    </div>
-                    <div>
-                        <label for="modal-phone" class="block text-sm font-bold text-slate-700 mb-1">טלפון</label>
-                        <input id="modal-phone" required type="tel" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-yellow outline-none transition-all">
-                    </div>
-                    <button class="w-full bg-brand-dark text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition-all mt-4 shadow-lg focus:ring-4 focus:ring-slate-500">שליחת פרטים</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- מודל גלריה (Lightbox) -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-brand-dark/95 backdrop-blur-xl flex items-center justify-center p-4 hidden" onclick="closeLightbox()" aria-hidden="true">
-        <button class="absolute top-6 right-6 text-white hover:text-brand-yellow transition-colors" aria-label="סגור תמונה">
-            <i data-lucide="x" class="w-10 h-10"></i>
-        </button>
-        <img id="lightbox-img" src="" alt="תצוגה מוגדלת" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl" onclick="event.stopPropagation()">
-    </div>
-
     <!-- מודל פרטיות -->
     <div id="privacy-modal" class="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-brand-dark/60 backdrop-blur-md hidden transition-opacity opacity-0" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
         <div class="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh] animate-bounce-in">
@@ -825,11 +611,8 @@
                 </button>
             </div>
             <div class="p-8 overflow-y-auto text-slate-600 space-y-4 leading-relaxed">
-                <p><strong>1. כללי</strong><br>אתר זה ("PicMoment") מכבד את פרטיות המשתמשים בו. מטרת התנאים הבאים היא להבהיר למשתמש את מדיניות הפרטיות הנהוגה באתר, וכיצד משתמש האתר במידע הנמסר לו על-ידי המשתמשים או נאסף על-ידו בעת השימוש באתר.</p>
-                <p><strong>2. רישום לשירותים</strong><br>חלק מהשירותים באתר טעונים הרשמה. במסגרת ההרשמה תדרשו למסור מידע אישי, כגון שמכם, מען ומדרכי התקשרות עמכם (כגון טלפון וכתובת דואר אלקטרוני). השדות שחובה למלא יסומנו במפורש. בלא למסור את הנתונים המתבקשים בשדות החובה לא תוכלו להירשם לשירותים הטעונים רישום.</p>
-                <p><strong>3. מאגר המידע</strong><br>הנתונים שתמסרו בעת ההרשמה לשירותים באתרים, יישמרו במאגר המידע של האתר. אינכם חייבים על-פי חוק למסור את המידע, אולם בלא למוסרו לא תוכלו להשתמש בשירותים הללו.</p>
-                <p><strong>4. השימוש במידע</strong><br>בעת השימוש באתר יכול שיצטבר מידע על נוהגיך, מוצרים ושירותים שרכשת, מידע או פרסומות שקראת באתר, העמודים שבהם צפית, ההצעות והשירותים שעניינו אותך, אמצעי התשלום ששימשו אותך ועוד. השימוש בנתונים אלה, כמו גם בנתונים שתמסור בתהליך ההרשמה לשירותים השונים באתר, ייעשה רק על פי מדיניות פרטיות זו או על פי הוראות כל דין – וזאת למטרות המפורטות להלן: כדי לאפשר לך להשתמש בשירותים שונים באתרים; כדי לשפר ולהעשיר את השירותים והתכנים המוצעים באתרים.</p>
-                <p><strong>5. עוגיות (Cookies)</strong><br>האתר משתמש ב"עוגיות" (Cookies) לצורך תפעולו השוטף והתקין, ובכלל זה כדי לאסוף נתונים סטטיסטיים אודות השימוש באתר, לאימות פרטים, כדי להתאים את האתר להעדפותיך האישיות ולצרכי אבטחת מידע.</p>
+                <p><strong>1. כללי</strong><br>אתר זה מכבד את פרטיות המשתמשים בו. המידע הנאסף משמש לשיפור השירות בלבד.</p>
+                <p><strong>2. עוגיות</strong><br>האתר משתמש בעוגיות לשיפור חווית המשתמש וסטטיסטיקה.</p>
             </div>
             <div class="p-6 border-t border-slate-100 bg-slate-50 text-center">
                 <button onclick="closePrivacyModal()" class="px-8 py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-slate-800 transition-all">הבנתי, תודה</button>
@@ -837,167 +620,135 @@
         </div>
     </div>
 
-    <!-- סקריפטים (לוגיקה) -->
+    <!-- Scripts -->
     <script>
-        // --- 1. נתונים (כאן ניתן לשנות טקסטים, תמונות ומחירים) ---
-        
+        // Data Configuration
         const WORKSHOPS = [
             {
-                id: 2,
-                title: "נמל תל אביב - רידינג 3",
-                date: "13.02.2026",
-                time: "10:00 - 12:30",
-                location: "נמל תל אביב",
-                price: "220 ₪",
-                image: "1(4).JPG", // תמונת סדנת נמל תל אביב (יונה)
-                spotsLeft: 9,
-                difficulty: "מתחילים",
-                description: "סיור חוויתי בנמל המשלב צילום אנשים, ארכיטקטורה וצלליות מול הים."
-            },
-            {
-                id: 3,
+                id: 1,
                 title: 'נווה צדק ומתחם התחנה בת"א',
                 date: "20.02.2026",
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "1 (18).JPG", // תמונת סדנת נווה צדק (פרח)
-                spotsLeft: 11,
-                difficulty: "מתחילים",
-                description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
+                image: "1 (18).JPG",
+                spotsLeft: 11
             },
             {
-                id: 4,
+                id: 2,
                 title: "נמל תל אביב - רידינג 3",
                 date: "27.02.2026",
                 time: "10:00 - 12:30",
                 location: "נמל תל אביב",
                 price: "220 ₪",
-                image: "1(4).JPG", // תמונת סדנת נמל תל אביב (יונה)
-                spotsLeft: 50, // "ניתן להזמין כרטיסים"
-                difficulty: "מתחילים",
-                description: "סיור חוויתי בנמל המשלב צילום אנשים, ארכיטקטורה וצלליות מול הים."
+                image: "1(4).JPG",
+                spotsLeft: 50 // Available
             },
             {
-                id: 5,
+                id: 3,
                 title: 'נווה צדק ומתחם התחנה בת"א',
                 date: "06.03.2026",
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "1 (18).JPG", // תמונת סדנת נווה צדק (פרח)
-                spotsLeft: 8,
-                difficulty: "מתחילים",
-                description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
+                image: "1 (18).JPG",
+                spotsLeft: 8
             },
             {
-                id: 6,
+                id: 4,
+                title: 'נווה צדק ומתחם התחנה בת"א',
+                date: "13.03.2026",
+                time: "10:00 - 12:30",
+                location: "נווה צדק, תל אביב",
+                price: "220 ₪",
+                image: "1 (18).JPG",
+                spotsLeft: 0 // Sold Out
+            },
+            {
+                id: 5,
                 title: "נמל תל אביב - רידינג 3",
                 date: "20.03.2026",
                 time: "10:00 - 12:30",
                 location: "נמל תל אביב",
                 price: "220 ₪",
-                image: "1(4).JPG", // תמונת סדנת נמל תל אביב (יונה)
-                spotsLeft: 12,
-                difficulty: "מתחילים",
-                description: "סיור חוויתי בנמל המשלב צילום אנשים, ארכיטקטורה וצלליות מול הים."
+                image: "1(4).JPG",
+                spotsLeft: 12
             },
             {
-                id: 7,
+                id: 6,
                 title: 'נווה צדק ומתחם התחנה בת"א',
                 date: "17.04.2026",
                 time: "10:00 - 12:30",
                 location: "נווה צדק, תל אביב",
                 price: "220 ₪",
-                image: "1 (18).JPG", // תמונת סדנת נווה צדק (פרח)
-                spotsLeft: 50, // "ניתן להזמין כרטיסים"
-                difficulty: "מתחילים",
-                description: "סיור בסמטאות הציוריות של נווה צדק ומתחם התחנה. נלמד קומפוזיציה ושימוש באור טבעי."
+                image: "1 (18).JPG",
+                spotsLeft: 50 // Available
             }
         ];
 
-        // --- 2. אתחול והפעלת האתר ---
-
-        // הפעלת האייקונים
+        // --- Core Functions ---
         lucide.createIcons();
-
-        // גלילה - שינוי צבע הניווט
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-brand-dark/80', 'backdrop-blur-md', 'shadow-lg', 'py-3');
-                navbar.classList.remove('py-6');
-            } else {
-                navbar.classList.remove('bg-brand-dark/80', 'backdrop-blur-md', 'shadow-lg', 'py-3');
-                navbar.classList.add('py-6');
-            }
-        });
-
-        // אנימציות חשיפה בגלילה (Reveal)
+        
+        // Scroll Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // --- 3. פונקציות לוגיקה ---
+        // Cookie Banner
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookie-banner').classList.remove('translate-y-full');
+        }
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.add('translate-y-full');
+        }
 
-        // תפריט מובייל
+        // Mobile Menu
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             const btn = document.getElementById('mobile-menu-btn');
-            if (menu.classList.contains('max-h-0')) {
-                menu.classList.remove('max-h-0', 'opacity-0');
-                menu.classList.add('max-h-96', 'opacity-100');
-                btn.setAttribute('aria-expanded', 'true');
-            } else {
-                menu.classList.add('max-h-0', 'opacity-0');
-                menu.classList.remove('max-h-96', 'opacity-100');
-                btn.setAttribute('aria-expanded', 'false');
-            }
+            const isOpen = menu.classList.contains('max-h-96');
+            
+            menu.classList.toggle('max-h-96');
+            menu.classList.toggle('opacity-100');
+            menu.classList.toggle('max-h-0');
+            menu.classList.toggle('opacity-0');
+            btn.setAttribute('aria-expanded', !isOpen);
         }
 
-        // רינדור סדנאות (כולל סינון)
+        // Workshop Rendering
         function renderWorkshops() {
             const grid = document.getElementById('workshops-grid');
-            grid.innerHTML = ''; // ניקוי
+            grid.innerHTML = ''; 
 
-            // יצירת הכרטיסיות
             WORKSHOPS.forEach(workshop => {
-                const isFull = workshop.spotsLeft === 0;
-                const btnClass = isFull 
-                    ? 'bg-slate-200 text-slate-400 cursor-not-allowed' 
-                    : 'bg-[#25D366] text-white hover:bg-[#20bd5a] hover:scale-105 shadow-md focus:ring-4 focus:ring-green-300';
+                const isSoldOut = workshop.spotsLeft === 0;
+                const isLowStock = workshop.spotsLeft > 0 && workshop.spotsLeft < 15;
+                const btnClass = isSoldOut ? 'bg-slate-200 text-slate-400 cursor-not-allowed' : 'bg-[#25D366] text-white hover:bg-[#20bd5a] hover:scale-105 shadow-md';
+                const btnText = isSoldOut ? 'אזל המלאי' : 'לביצוע הזמנה בוואטסאפ';
                 
-                const btnText = isFull ? 'נתראה בפעם הבאה' : 'לביצוע הזמנה בוואטסאפ';
-                const spotsText = (workshop.spotsLeft > 0 && workshop.spotsLeft < 20) 
-                    ? `<p class="text-center text-red-500 font-bold mb-3">נותרו ${workshop.spotsLeft} כרטיסים</p>` 
-                    : '';
+                let stockText = '';
+                if (isSoldOut) stockText = '<p class="text-center text-red-500 font-bold mb-3">אזל</p>';
+                else if (isLowStock) stockText = `<p class="text-center text-red-500 font-bold mb-3">נותרו ${workshop.spotsLeft} כרטיסים</p>`;
+                else stockText = '<p class="text-center text-brand-yellow font-bold mb-3">ניתן להזמין כרטיסים</p>';
 
                 const cardHTML = `
                     <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 flex flex-col h-full hover-card-effect reveal">
                         <div class="relative h-60 overflow-hidden">
                             <img src="${workshop.image}" alt="${workshop.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                            ${isFull ? '<div class="absolute inset-0 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center z-20"><span class="text-white font-black text-2xl border-4 border-white px-6 py-2 uppercase tracking-widest transform -rotate-12">הסדנה מלאה</span></div>' : ''}
+                            ${isSoldOut ? '<div class="absolute inset-0 bg-brand-dark/80 backdrop-blur-sm flex items-center justify-center z-20"><span class="text-white font-black text-2xl border-4 border-white px-6 py-2 uppercase tracking-widest transform -rotate-12">אזל המלאי</span></div>' : ''}
                         </div>
-                        
                         <div class="p-6 flex flex-col flex-grow text-center">
                             <h3 class="text-xl font-bold text-brand-dark mb-4 leading-tight">${workshop.title}</h3>
-                            
                             <div class="text-xl font-bold text-brand-dark mb-4 dir-ltr flex justify-center gap-2 items-center">
-                                <span>${workshop.date}</span>
-                                <span class="text-slate-400">||</span>
-                                <span>${workshop.time}</span>
+                                <span>${workshop.date}</span><span class="text-slate-400">||</span><span>${workshop.time}</span>
                             </div>
-
-                            ${spotsText}
-
+                            ${stockText}
                             <div class="mt-auto">
-                                <button onclick="${isFull ? '' : `sendWhatsAppTo('${workshop.title}', '${workshop.date}')`}" class="w-full py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-all ${btnClass}" aria-label="${btnText} עבור ${workshop.title}">
+                                <button onclick="${isSoldOut ? '' : `sendWhatsAppTo('${workshop.title}', '${workshop.date}', '${workshop.location}')`}" class="w-full py-3 rounded-full font-bold flex items-center justify-center gap-2 transition-all ${btnClass}">
                                     ${btnText}
                                 </button>
                                 <p class="text-xs text-slate-400 mt-2">מבוגר 220 ש"ח || ילד/ה (10-17) 200 ש"ח</p>
@@ -1007,80 +758,91 @@
                 `;
                 grid.innerHTML += cardHTML;
             });
-            
-            // טעינת אייקונים מחדש לתוכן דינמי
             lucide.createIcons();
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
-        // --- ניהול מודלים (חלונות קופצים) ---
-
-        let currentWorkshop = null;
-
-        function openModal(id) {
-            currentWorkshop = WORKSHOPS.find(w => w.id === id);
-            if (!currentWorkshop) return;
-
-            document.getElementById('modal-title').innerText = currentWorkshop.title;
-            document.getElementById('modal-date').innerText = `${currentWorkshop.date} | ${currentWorkshop.time}`;
-            document.getElementById('modal-image').src = currentWorkshop.image;
-
-            const modal = document.getElementById('modal');
-            modal.classList.remove('hidden');
-            setTimeout(() => modal.classList.remove('opacity-0'), 10); // לאנימציה
-            document.body.classList.add('no-scroll');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('modal');
-            modal.classList.add('opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.classList.remove('no-scroll');
-            }, 300);
-        }
-
-        function sendWhatsApp() {
+        // WhatsApp Functions
+        function sendWhatsAppTo(title, date, location) {
             const phone = "972522649955";
-            const msg = `היי קובי, אשמח להירשם לסדנת צילום.`;
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
-
-        function sendWhatsAppTo(title, date) {
-            const phone = "972522649955";
-            const msg = `היי קובי, אשמח להירשם לסדנה: ${title} בתאריך ${date}.`;
+            const msg = `היי קובי, אשמח להירשם לסדנה: ${title}\nבתאריך: ${date}\nמיקום: ${location}\nאנא שלח לי פרטים לתשלום.`;
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
         function purchaseGiftCard() {
             const phone = "972522649955";
-            const msg = "היי קובי, אני רוצה לקנות שובר מתנה לסדנת צילום. אשמח לפרטים.";
+            const msg = "היי קובי, אני מעוניין/ת לרכוש שובר מתנה לסדנת צילום (תוקף לחצי שנה, 250 ש\"ח). אשמח לפרטים.";
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function openLightbox(src) {
-            document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox').classList.remove('hidden');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.add('hidden');
-        }
-
-        function enquirePackage(packageName) {
+        function enquirePackage(pkg) {
             const phone = "972522649955";
-            const msg = `היי קובי, אשמח לקבל הצעת מחיר עבור סדנה פרטית: ${packageName}.`;
+            const msg = `היי קובי, אשמח לקבל הצעת מחיר עבור סדנה פרטית: ${pkg}.`;
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        // ניהול מודל פרטיות
+        function sendContactForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const phone = document.getElementById('contact-phone').value;
+            const desc = document.getElementById('contact-desc').value;
+            const targetPhone = "972522649955";
+            
+            const msg = `*פנייה חדשה מהאתר*\nשם: ${name}\nטלפון: ${phone}\nנושא/תיאור: ${desc}`;
+            window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // AI Chat Logic
+        function askAI(question) {
+            addMessage(question, 'user');
+            setTimeout(() => {
+                let answer = "שאלה מצוינת! ";
+                if(question.includes("ציוד")) answer += "כל מה שצריך זה סמארטפון עם סוללה מלאה ומצב רוח טוב. לא צריך מצלמה מקצועית.";
+                else if(question.includes("מתחילים")) answer += "בוודאי! הסדנה בנויה כך שהיא מתאימה לכולם, ללא צורך בידע מוקדם.";
+                else if(question.includes("נרשמים")) answer += "פשוט גוללים למעלה ללוח הסדנאות, בוחרים תאריך ולוחצים על הכפתור הירוק.";
+                else answer += "אני מעביר את השאלה שלך לקובי והוא יענה לך בהקדם בוואטסאפ.";
+                
+                addMessage(answer, 'bot');
+            }, 800);
+        }
+
+        function handleCustomQuestion() {
+            const input = document.getElementById('ai-input');
+            const question = input.value;
+            if(!question) return;
+            
+            addMessage(question, 'user');
+            input.value = '';
+            
+            setTimeout(() => {
+                addMessage("שאלה מעניינת! אני מחבר אותך לשיחה עם קובי לתשובה מפורטת...", 'bot');
+                setTimeout(() => {
+                    const msg = `היי קובי, יש לי שאלה מהאתר: ${question}`;
+                    window.open(`https://wa.me/972522649955?text=${encodeURIComponent(msg)}`, '_blank');
+                }, 1500);
+            }, 600);
+        }
+
+        function addMessage(text, sender) {
+            const chatWindow = document.getElementById('chat-window');
+            const div = document.createElement('div');
+            div.className = `chat-bubble ${sender === 'user' ? 'chat-user' : 'chat-bot'}`;
+            div.innerText = text;
+            chatWindow.appendChild(div);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        // PDF Link Obfuscation
+        function openPdf() {
+            window.open('https://drive.google.com/file/d/1PnO_QLs29nuXk8tYxprMdyftbKAA4Z3m/view', '_blank');
+        }
+
+        // Modal Logic
         function openPrivacyModal() {
             const modal = document.getElementById('privacy-modal');
             modal.classList.remove('hidden');
             setTimeout(() => modal.classList.remove('opacity-0'), 10);
             document.body.classList.add('no-scroll');
         }
-
         function closePrivacyModal() {
             const modal = document.getElementById('privacy-modal');
             modal.classList.add('opacity-0');
@@ -1090,7 +852,7 @@
             }, 300);
         }
 
-        // הרצה ראשונית
+        // Initial Run
         renderWorkshops();
 
     </script>
