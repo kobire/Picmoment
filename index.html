@@ -104,7 +104,7 @@
             outline-offset: 2px;
         }
 
-        /* Hover Effects (Disabled on touch devices ideally, but kept subtle) */
+        /* Hover Effects */
         .hover-card-effect {
             transition: all 0.3s ease;
         }
@@ -141,8 +141,8 @@
 
             <!-- תפריט דסקטופ -->
             <div class="hidden lg:flex items-center gap-8 text-white font-medium text-sm tracking-wide">
-                <a href="#custom-packages" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">חבילות</a>
                 <a href="#workshops" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">סדנאות קרובות</a>
+                <a href="#custom-packages" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">חבילות</a>
                 <a href="#gift-card" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow">שובר מתנה</a>
                 <a href="#ai-agent" class="hover:text-brand-yellow transition-colors focus:text-brand-yellow flex items-center gap-1 text-brand-yellow font-bold">
                     <i data-lucide="bot" class="w-4 h-4" aria-hidden="true"></i> PicAI
@@ -164,8 +164,8 @@
         <!-- תפריט מובייל נפתח -->
         <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/98 backdrop-blur-xl z-40 flex flex-col justify-center items-center transition-all duration-300 opacity-0 pointer-events-none" aria-hidden="true">
             <div class="flex flex-col p-6 gap-6 text-center text-white text-xl font-medium w-full max-w-xs">
-                <a href="#custom-packages" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors">חבילות</a>
                 <a href="#workshops" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors">סדנאות קרובות</a>
+                <a href="#custom-packages" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors">חבילות</a>
                 <a href="#gift-card" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors">שובר מתנה</a>
                 <a href="#ai-agent" onclick="toggleMenu()" class="py-3 border-b border-white/10 text-brand-yellow font-bold flex justify-center items-center gap-2"><i data-lucide="bot" class="w-5 h-5"></i> עוזר אישי AI</a>
                 <a href="#guide" onclick="toggleMenu()" class="py-3 border-b border-white/10 font-bold hover:text-brand-yellow transition-colors">מדריך צילום</a>
@@ -286,7 +286,6 @@
             </div>
             <div class="bg-brand-light rounded-3xl shadow-lg border border-slate-100 p-6 md:p-12 max-w-5xl mx-auto reveal">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-x-4 md:gap-y-10">
-                    <!-- Items simplified for cleaner mobile code -->
                     <div class="flex flex-col items-center text-center"><div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm"><i data-lucide="check-circle" class="w-6 h-6"></i></div><h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">מתאים לכולם</h3><p class="text-sm text-slate-500 leading-tight">ללא ידע מוקדם</p></div>
                     <div class="flex flex-col items-center text-center"><div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm"><i data-lucide="user-check" class="w-6 h-6"></i></div><h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">קיום מובטח</h3><p class="text-sm text-slate-500 leading-tight">מינימום 5 משתתפים</p></div>
                     <div class="flex flex-col items-center text-center"><div class="text-brand-dark mb-3 bg-white p-3 rounded-full shadow-sm"><i data-lucide="users" class="w-6 h-6"></i></div><h3 class="font-bold text-lg mb-1 leading-tight text-brand-dark">קבוצות קטנות</h3><p class="text-sm text-slate-500 leading-tight">יחס אישי</p></div>
@@ -300,8 +299,49 @@
         </div>
     </section>
 
+    <!-- סדנאות -->
+    <section id="workshops" class="py-16 md:py-24 bg-brand-light border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col justify-between items-center mb-8 gap-4 reveal text-center">
+                <h2 class="text-4xl md:text-6xl font-black text-brand-dark mb-2">סדנאות קרובות</h2>
+                <p class="text-slate-500 text-lg">בחר את ההרפתקה הבאה שלך.</p>
+                
+                <!-- מידע כללי חשוב -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 w-full max-w-4xl text-sm md:text-base text-slate-600 mt-4 leading-relaxed">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-center md:text-right">
+                        <div class="flex items-center gap-2 justify-center md:justify-start">
+                            <i data-lucide="users" class="w-5 h-5 text-brand-yellow"></i>
+                            <span><strong>גילאים:</strong> מתאים לגילאי 10 ומעלה</span>
+                        </div>
+                        <div class="flex items-center gap-2 justify-center md:justify-start">
+                            <i data-lucide="accessibility" class="w-5 h-5 text-brand-yellow"></i>
+                            <span><strong>נגישות:</strong> מותאם לאנשים עם מוגבלויות</span>
+                        </div>
+                        <div class="flex items-center gap-2 justify-center md:justify-start">
+                            <i data-lucide="credit-card" class="w-5 h-5 text-brand-yellow"></i>
+                            <!-- עדכון מחיר -->
+                            <span><strong>עלות:</strong> 220 ₪ למבוגר / 200 ₪ לילד (תשלום מראש)</span>
+                        </div>
+                        <div class="flex items-center gap-2 justify-center md:justify-start">
+                            <i data-lucide="refresh-cw" class="w-5 h-5 text-brand-yellow"></i>
+                            <span><strong>ביטולים:</strong> החזר מלא עד 48 שעות לפני המועד</span>
+                        </div>
+                        <div class="flex items-center gap-2 justify-center md:justify-start md:col-span-2">
+                            <i data-lucide="info" class="w-5 h-5 text-brand-yellow"></i>
+                            <span><strong>הרכב קבוצה:</strong> מינימום 5 משתתפים, מקסימום 15 ליחס אישי</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="workshops-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+                <!-- הסדנאות יופיעו כאן -->
+            </div>
+        </div>
+    </section>
+
     <!-- בניית סדנה בהרכבה אישית (חבילות) -->
-    <section id="custom-packages" class="py-16 md:py-24 bg-brand-light border-t border-slate-200">
+    <section id="custom-packages" class="py-16 md:py-24 bg-white border-t border-slate-200">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12 reveal">
                 <h2 class="text-3xl md:text-5xl font-black text-brand-dark mb-4">בנו את הסדנה המושלמת עבורכם</h2>
@@ -310,9 +350,9 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                 <!-- חבילה 1 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col reveal h-full">
+                <div class="bg-brand-light rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col reveal h-full">
                     <div class="p-8 flex-grow">
-                        <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mb-6 mx-auto text-slate-700">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 mx-auto text-slate-700 shadow-sm">
                             <i data-lucide="timer" class="w-8 h-8"></i>
                         </div>
                         <h3 class="text-2xl font-black text-center mb-1 text-brand-dark">שעה</h3>
@@ -332,7 +372,7 @@
                 </div>
 
                 <!-- חבילה 2 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-brand-yellow relative transform md:-translate-y-4 z-10 flex flex-col reveal h-full">
+                <div class="bg-brand-light rounded-3xl overflow-hidden shadow-2xl border-2 border-brand-yellow relative transform md:-translate-y-4 z-10 flex flex-col reveal h-full">
                     <div class="absolute top-0 right-0 left-0 bg-brand-yellow text-brand-dark text-xs font-bold text-center py-1.5 uppercase tracking-wider">הכי פופולרי</div>
                     <div class="p-8 pt-10 flex-grow">
                         <div class="w-16 h-16 bg-brand-yellow/20 rounded-2xl flex items-center justify-center mb-6 mx-auto text-brand-yellow">
@@ -356,9 +396,9 @@
                 </div>
 
                 <!-- חבילה 3 -->
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col reveal h-full">
+                <div class="bg-brand-light rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col reveal h-full">
                     <div class="p-8 flex-grow">
-                        <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mb-6 mx-auto text-slate-700">
+                        <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 mx-auto text-slate-700 shadow-sm">
                             <i data-lucide="rocket" class="w-8 h-8"></i>
                         </div>
                         <h3 class="text-2xl font-black text-center mb-1 text-brand-dark">שעתיים וחצי - שלוש</h3>
@@ -381,24 +421,8 @@
         </div>
     </section>
 
-    <!-- סדנאות -->
-    <section id="workshops" class="py-16 md:py-24 bg-brand-light">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal">
-                <div>
-                    <h2 class="text-4xl md:text-6xl font-black text-brand-dark mb-4">סדנאות קרובות</h2>
-                    <p class="text-slate-500 text-lg">בחר את ההרפתקה הבאה שלך. מספר המקומות מוגבל.</p>
-                </div>
-            </div>
-            <!-- Grid Layout Changed to accommodate "List" view request -->
-            <div id="workshops-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- הסדנאות יופיעו כאן -->
-            </div>
-        </div>
-    </section>
-
     <!-- המלצות -->
-    <section id="reviews" class="py-16 md:py-24 bg-white border-t border-slate-100">
+    <section id="reviews" class="py-16 md:py-24 bg-brand-light border-t border-slate-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12 md:mb-16 reveal">
                 <h2 class="text-3xl md:text-5xl font-black text-brand-dark mb-4">מה אומרים המשתתפים</h2>
@@ -487,16 +511,8 @@
                                 <i data-lucide="bot" class="w-4 h-4"></i>
                             </div>
                             <div class="bg-slate-700 text-slate-100 p-4 rounded-2xl rounded-tr-none max-w-[85%] shadow-md text-sm leading-relaxed border border-slate-600">
-                                היי! אני סוכן ה-AI של PicMoment. אני כאן כדי לעזור לכם עם שאלות על צילום בסמארטפון, פרטים על הסדנאות של קובי, או סתם טיפים מגניבים. מה תרצו לדעת? 📸
+                                היי! אני סוכן ה-AI של PicMoment. אני יודע הכל על סדנאות הצילום, מחירים, תאריכים, ואפילו טיפים לצילום מושלם. מה תרצו לשאול? 📸
                             </div>
-                        </div>
-                        
-                        <!-- Quick Suggestions (Chips) -->
-                        <div class="flex flex-wrap gap-2 pr-11">
-                            <button onclick="fillChat('מתי הסדנה הקרובה?')" class="bg-slate-700 hover:bg-slate-600 text-slate-300 text-xs px-3 py-2 rounded-full transition-colors border border-slate-600 touch-manipulation">מתי הסדנה הקרובה?</button>
-                            <button onclick="fillChat('כמה משתתפים בסדנה?')" class="bg-slate-700 hover:bg-slate-600 text-slate-300 text-xs px-3 py-2 rounded-full transition-colors border border-slate-600 touch-manipulation">כמה משתתפים בסדנה?</button>
-                            <button onclick="fillChat('כמה עולה להשתתף?')" class="bg-slate-700 hover:bg-slate-600 text-slate-300 text-xs px-3 py-2 rounded-full transition-colors border border-slate-600 touch-manipulation">כמה עולה?</button>
-                            <button onclick="fillChat('איך מצלמים בלילה?')" class="bg-slate-700 hover:bg-slate-600 text-slate-300 text-xs px-3 py-2 rounded-full transition-colors border border-slate-600 touch-manipulation">איך מצלמים בלילה?</button>
                         </div>
                     </div>
                 </div>
@@ -531,6 +547,7 @@
                         <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow flex-shrink-0 mt-1"></i> ניתן לממש בכל הסדנאות הפתוחות</li>
                         <li class="flex items-center gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-yellow"></i> מגיע כקובץ דיגיטלי מעוצב או ככרטיס פיזי</li>
                          <li class="flex items-center gap-3 text-brand-yellow font-bold mt-4"><i data-lucide="phone" class="w-5 h-5"></i> לתיאומים: 052-2649955</li>
+                         <li class="flex items-start gap-3 text-sm text-slate-400 mt-2"><i data-lucide="info" class="w-4 h-4 mt-1"></i> לתשומת לבכם: אין אפשרות לביטול או קבלת החזר כספי על שובר מתנה לאחר הרכישה.</li>
                     </ul>
                     <button onclick="purchaseGiftCard()" class="px-8 py-4 bg-brand-yellow text-brand-dark rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-lg hover:shadow-yellow-400/30 flex items-center gap-2 focus:ring-4 focus:ring-white/50 touch-manipulation">לרכישת שובר מתנה <i data-lucide="arrow-left" class="w-5 h-5"></i></button>
                 </div>
@@ -683,14 +700,30 @@
     <!-- Footer -->
     <footer class="bg-brand-dark text-slate-500 py-12 border-t border-slate-900">
         <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-right">
-            <div class="text-2xl font-black text-white flex items-center gap-2 justify-center md:justify-start">
-                <i data-lucide="camera" class="w-5 h-5 text-brand-yellow"></i>
-                <span>PicMoment</span>
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="text-2xl font-black text-white flex items-center gap-2">
+                    <i data-lucide="camera" class="w-5 h-5 text-brand-yellow"></i>
+                    <span>PicMoment</span>
+                </div>
+                <!-- כפתורי מדיה חברתית ושיתוף -->
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/kobi_refaeli/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all" aria-label="אינסטגרם">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.facebook.com/kobire/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all" aria-label="פייסבוק">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
+                    <button onclick="shareSite()" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-dark transition-all" aria-label="שתף את האתר">
+                        <i data-lucide="share-2" class="w-5 h-5"></i>
+                    </button>
+                </div>
             </div>
-            <div class="flex gap-4 flex-wrap justify-center">
+            
+            <div class="flex gap-4 flex-wrap justify-center items-center">
                <a href="#guide" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline">מדריך למשתמש</a>
                <button onclick="openPrivacyModal()" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline">מדיניות פרטיות</button>
-               <p class="text-sm w-full md:w-auto">© 2023 כל הזכויות שמורות לקובי רפאלי. נבנה באהבה לצילום.</p>
+               <button onclick="openTermsModal()" class="text-sm hover:text-brand-yellow transition-colors focus:outline-none focus:underline font-bold">תקנון ומדיניות ביטולים</button>
+               <p class="text-sm w-full md:w-auto mt-2 md:mt-0">© 2026 כל הזכויות שמורות לקובי רפאלי.</p>
             </div>
         </div>
     </footer>
@@ -780,6 +813,76 @@
         </div>
     </div>
 
+    <!-- מודל תקנון ומדיניות ביטולים (משופר ומורחב) -->
+    <div id="terms-modal" class="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-brand-dark/60 backdrop-blur-md hidden transition-opacity opacity-0" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+        <div class="bg-white rounded-3xl w-full max-w-3xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh] animate-bounce-in">
+            <div class="bg-brand-yellow p-6 border-b border-brand-yellow/20 flex justify-between items-center sticky top-0 z-10">
+                <h2 id="terms-title" class="text-2xl font-black text-brand-dark">תקנון ומדיניות ביטולים</h2>
+                <button onclick="closeTermsModal()" class="p-2 bg-white/20 hover:bg-white/40 rounded-full transition-colors text-brand-dark shadow-sm touch-manipulation" aria-label="סגור"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <div class="p-8 overflow-y-auto text-slate-800 space-y-8 leading-relaxed text-sm md:text-base bg-slate-50/50">
+                
+                <!-- חלק א: מדיניות ביטולים והרשמה -->
+                <section>
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark border-b-2 border-brand-yellow/30 pb-2 inline-block">מדיניות ביטולים והרשמה</h3>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                        <div>
+                            <h4 class="font-bold text-base mb-1">1. הרשמה ותשלום</h4>
+                            <p class="text-slate-600 text-sm">ההשתתפות בסדנה מותנית בהרשמה ותשלום מלא מראש. עלות ההשתתפות הינה 220 ₪ למבוגר ו-200 ₪ לילד (גילאי 10-17). הבטחת המקום בסדנה הינה רק לאחר הסדרת התשלום.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-base mb-1">2. ביטול מצד המשתתף</h4>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600 text-sm">
+                                <li><strong>עד 48 שעות לפני מועד הסדנה:</strong> ניתן לבטל את ההשתתפות ולקבל החזר כספי מלא (בניכוי עמלות סליקה אם ישנן).</li>
+                                <li><strong>פחות מ-48 שעות לפני מועד הסדנה:</strong> לא יינתן החזר כספי בגין ביטול.</li>
+                                <li><strong>חריגים (פחות מ-48 שעות):</strong> במקרה של חוסר יכולת להגיע ברגע האחרון, תינתן אפשרות להעביר את זכות ההשתתפות לאדם אחר מטעמכם, או (במקרים חריגים ובתיאום מול מנהל הסדנה) להעביר את הרישום למועד פנוי אחר בעתיד על בסיס מקום פנוי בלבד.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-base mb-1">3. ביטול מצד המארגן</h4>
+                            <p class="text-slate-600 text-sm">אנו שומרים לעצמנו את הזכות לבטל או לדחות סדנה במקרים של מיעוט נרשמים (מתחת ל-5 משתתפים), תנאי מזג אוויר קיצוניים, או כוח עליון. במקרה כזה, יוצע למשתתף מועד חלופי או החזר כספי מלא, לבחירתו.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- חלק ב: שוברי מתנה -->
+                <section>
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark border-b-2 border-brand-yellow/30 pb-2 inline-block">מדיניות שוברי מתנה</h3>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 text-sm">
+                            <li>תוקף השובר הינו ל-6 חודשים מיום הרכישה.</li>
+                            <li>מימוש השובר הינו על בסיס מקום פנוי בסדנאות הפתוחות לקהל הרחב.</li>
+                            <li><strong>לא ניתן לבטל עסקה לרכישת שובר מתנה ולא יינתן החזר כספי (מלא או חלקי) בגין שובר שנרכש, מרגע ביצוע ההזמנה.</strong></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- חלק ג: אחריות וכללי התנהגות -->
+                <section>
+                    <h3 class="font-bold text-xl mb-3 text-brand-dark border-b-2 border-brand-yellow/30 pb-2 inline-block">אחריות וכללי התנהגות</h3>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
+                        <div>
+                            <h4 class="font-bold text-base mb-1">1. אחריות אישית</h4>
+                            <p class="text-slate-600 text-sm">ההשתתפות בסדנה הינה באחריות המשתתף בלבד. המארגן אינו אחראי לכל נזק גופני, בריאותי או רכושי שייגרם למשתתף במהלך הסדנה.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-base mb-1">2. ציוד אישי</h4>
+                            <p class="text-slate-600 text-sm">השמירה על הציוד האישי (טלפונים, ארנקים, תיקים וכו') הינה באחריות המשתתף בלבד. אנו ממליצים להגיע עם ציוד נוח ומינימלי.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-base mb-1">3. קניין רוחני</h4>
+                            <p class="text-slate-600 text-sm">התכנים המועברים בסדנה, לרבות מצגות, דפי הסבר ושיטות לימוד, הינם קניינו הרוחני של קובי רפאלי ואין להעתיקם או להפיצם ללא אישור.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <div class="p-6 border-t border-slate-100 bg-slate-50 text-center">
+                <button onclick="closeTermsModal()" class="px-8 py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-slate-800 transition-all touch-manipulation">קראתי ואישרתי את התקנון</button>
+            </div>
+        </div>
+    </div>
+
     <!-- סקריפטים (לוגיקה) -->
     <script>
         // --- נתוני סדנאות ---
@@ -819,12 +922,13 @@
 
         const qaDatabase = [
             { 
-                keywords: ["כמה", "עולה", "מחיר", "עלות", "תשלום", "כסף", "220", "250"], 
-                answer: "עלות סדנה פתוחה לקהל הרחב היא 220 ש\"ח למשתתף. ילדים ונוער (גילאי 10-17) נהנים ממחיר מוזל של 200 ש\"ח. ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש\"ח שתקף לחצי שנה." 
+                keywords: ["כמה", "עולה", "מחיר", "עלות", "תשלום", "כסף", "220", "250", "200"], 
+                // עדכון תשובת ה-AI
+                answer: "עלות סדנה פתוחה לקהל הרחב היא 220 ש\"ח למבוגר ו-200 ש\"ח לילד (גילאי 10-17). ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש\"ח שתקף לחצי שנה. התשלום מתבצע מראש." 
             },
             { 
                 keywords: ["משתתפים", "אנשים", "כמות", "גודל", "קבוצה", "מינימום", "מקסימום", "כמה אנשים"], 
-                answer: "אנחנו מקפידים על יחס אישי ולכן הסדנאות הן בקבוצות קטנות ואינטימיות. המינימום לפתיחת סדנה הוא 5 משתתפים, והמקסימום הוא 15 משתתפים בלבד. כדאי לשריין מקום מראש!" 
+                answer: "אנחנו מקפידים על יחס אישי ולכן הסדנאות הן בקבוצות קטנות. המינימום לפתיחת סדנה הוא 5 משתתפים, והמקסימום הוא 15 משתתפים בלבד." 
             },
             { 
                 keywords: ["מתי", "תאריך", "קרוב", "הבא", "יום", "שעה", "לוח"], 
@@ -839,8 +943,10 @@
             },
             { keywords: ["איפה", "מיקום", "מקום", "נווה צדק", "נמל", "ירושלים", "כתובת"], answer: "הסדנאות שלנו מתקיימות בלוקיישנים הכי פוטוגניים בארץ: סמטאות נווה צדק הקסומות, מתחם התחנה, או אזור רידינג 3 בנמל תל אביב. המיקום המדויק נשלח לנרשמים." },
             { keywords: ["ציוד", "להביא", "מצלמה", "טלפון", "אייפון", "אנדרואיד", "סמסונג"], answer: "כל מה שצריך זה סמארטפון (לא משנה איזה סוג - אייפון או אנדרואיד) ומצב רוח טוב! מומלץ להגיע עם סוללה מלאה ואולי מטען נייד ליתר ביטחון." },
-            { keywords: ["ביטול", "לבטל", "החזר", "מדיניות"], answer: "אנחנו מבינים שלפעמים יש שינויים. מדיניות הביטול שלנו מאפשרת קבלת החזר כספי מלא בביטול עד 48 שעות לפני מועד הסדנה." },
-            { keywords: ["מתנה", "שובר", "גיפט", "יום הולדת"], answer: "שובר מתנה לסדנת צילום הוא מתנה מושלמת ומקורית! העלות היא 250 ש\"ח, השובר תקף לחצי שנה, וניתן לממש אותו בכל אחת מהסדנאות הפתוחות שלנו." },
+            { keywords: ["ביטול", "לבטל", "החזר", "מדיניות"], answer: "ניתן לבטל השתתפות ולקבל החזר מלא עד 48 שעות לפני המועד. במקרה של ביטול ברגע האחרון (פחות מ-48 שעות), ניתן להעביר את הרישום לאדם אחר או לתיאום מועד חלופי מול קובי." },
+            { keywords: ["מתנה", "שובר", "גיפט", "יום הולדת"], answer: "שובר מתנה לסדנת צילום הוא מתנה מושלמת! העלות היא 250 ש\"ח והשובר תקף לחצי שנה. שימו לב: לא ניתן לבטל או לקבל החזר כספי על רכישת שובר מתנה." },
+            { keywords: ["גיל", "ילדים", "נוער", "מבוגרים"], answer: "הסדנאות מתאימות לגילאי 10 ומעלה. השפה נגישה והחוויה כיפית לכל הגילאים!" },
+            { keywords: ["נגישות", "נכים", "מוגבלות"], answer: "הסדנאות שלנו מונגשות ומותאמות לאנשים עם מוגבלויות. לפרטים ספציפיים על מסלול מסוים, כדאי ליצור קשר עם קובי." },
             { keywords: ["לילה", "חושך"], answer: "טיפ לצילום לילה: חפשו תמיד מקור אור זמין (כמו פנס רחוב או חלון מואר) והעמידו את האובייקט כך שהאור יאיר עליו. החזיקו את הטלפון יציב ככל האפשר." },
             { keywords: ["פורטרט", "אנשים"], answer: "כשמצלמים אנשים, נסו לרדת לגובה העיניים שלהם. השתמשו במצב 'פורטרט' בטלפון כדי לטשטש את הרקע ולהבליט את המצולם." },
             { keywords: ["סלפי"], answer: "בסלפי, הרימו את היד מעט מעל גובה העיניים לקבלת זווית מחמיאה, וחפשו תאורה רכה שתגיע מלפנים ולא מאחור." }
@@ -952,15 +1058,30 @@
                             היי! אני סוכן ה-AI של PicMoment. אני יודע הכל על סדנאות הצילום, מחירים, תאריכים, ואפילו טיפים לצילום מושלם. מה תרצו לשאול? 📸
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-2 pr-11">
-                        <button onclick="fillChat('מתי הסדנה הקרובה?')" class="bg-slate-700 hover:bg-slate-600 text-slate-300 text-xs px-3 py-2 rounded-full transition-colors border border-slate-600 touch-manipulation">מתי הסדנה הקרובה?</button>
-                        <button onclick="fillChat('כמה משתתפים בסדנה?')" class="bg-slate-700 hover:bg-slate-600 text-slate-300 text-xs px-3 py-2 rounded-full transition-colors border border-slate-600 touch-manipulation">כמה משתתפים בסדנה?</button>
-                        <button onclick="fillChat('כמה עולה להשתתף?')" class="bg-slate-700 hover:bg-slate-600 text-slate-300 text-xs px-3 py-2 rounded-full transition-colors border border-slate-600 touch-manipulation">כמה עולה?</button>
-                        <button onclick="fillChat('איך מצלמים בלילה?')" class="bg-slate-700 hover:bg-slate-600 text-slate-300 text-xs px-3 py-2 rounded-full transition-colors border border-slate-600 touch-manipulation">איך מצלמים בלילה?</button>
-                    </div>
                 </div>
             `;
             lucide.createIcons();
+        }
+
+        // --- פונקציית שיתוף ---
+        function shareSite() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'PicMoment - סדנאות צילום בסמארטפון עם קובי רפאלי',
+                    text: 'היי, כדאי לראות את האתר הזה! סדנאות צילום מעולות.',
+                    url: window.location.href
+                })
+                .catch(console.error);
+            } else {
+                // Fallback לקליפבורד
+                const el = document.createElement('textarea');
+                el.value = window.location.href;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                alert('הקישור הועתק ללוח!');
+            }
         }
 
         // --- אתחול והפעלת האתר ---
@@ -1051,45 +1172,61 @@
                 const btnText = isFull ? 'הסדנה מלאה' : 'שריין מקום';
                 let badgeHTML = '';
                 
-                // תגיות סטטוס קטנות ועדינות יותר
+                // תגיות סטטוס בולטות ומעוצבות
                 if (isFull) {
-                    badgeHTML = `<span class="bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md shadow-sm">אזל</span>`;
+                    badgeHTML = `<span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5"><i data-lucide="x-circle" class="w-3.5 h-3.5"></i> אזל</span>`;
                 } else if (workshop.spotsLeft > 0 && workshop.spotsLeft < 10) {
-                     badgeHTML = `<span class="bg-red-50 text-red-600 border border-red-100 text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1"><span class="w-1 h-1 bg-red-500 rounded-full animate-pulse"></span> נותרו ${workshop.spotsLeft}</span>`;
+                     badgeHTML = `<span class="bg-white border border-red-500 text-red-600 text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5"><span class="relative flex h-2 w-2 mr-1"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span></span> נותרו ${workshop.spotsLeft}</span>`;
                 } else {
-                     badgeHTML = `<span class="bg-green-50 text-green-600 border border-green-100 text-[10px] font-bold px-2 py-0.5 rounded-md">פנוי</span>`;
+                     badgeHTML = `<span class="bg-green-100 text-green-700 border border-green-200 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> פנוי</span>`;
                 }
 
                 // כרטיסייה במבנה רשימה (Horizontal Card)
                 const cardHTML = `
                     <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100 flex flex-col sm:flex-row h-full hover-card-effect reveal">
                         <!-- תמונה קומפקטית -->
-                        <div class="relative w-full sm:w-40 h-32 sm:h-auto flex-shrink-0 bg-slate-100">
+                        <div class="relative w-full sm:w-48 h-40 sm:h-auto flex-shrink-0 bg-slate-100 overflow-hidden">
                             <img src="${workshop.image}" alt="${workshop.title}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         </div>
                         
                         <!-- תוכן -->
-                        <div class="p-4 flex flex-col flex-grow justify-between gap-3">
+                        <div class="p-5 flex flex-col flex-grow justify-between gap-2">
                             <div>
-                                <div class="flex justify-between items-start mb-2">
+                                <div class="flex justify-between items-start mb-3">
                                     <h3 class="text-lg font-black text-slate-800 leading-tight">${workshop.title}</h3>
-                                    <div class="mr-2 flex-shrink-0">${badgeHTML}</div>
+                                    <div class="mr-3 flex-shrink-0">${badgeHTML}</div>
                                 </div>
                                 
-                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500">
-                                    <div class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5 text-brand-yellow"></i><span>${workshop.date}</span></div>
-                                    <div class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-brand-yellow"></i><span>${workshop.time}</span></div>
-                                    <div class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-yellow"></i><span>${workshop.location}</span></div>
+                                <div class="space-y-2 text-sm text-slate-600">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 flex justify-center"><i data-lucide="calendar" class="w-4 h-4 text-brand-yellow"></i></div>
+                                        <span class="font-medium">${workshop.date}</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 flex justify-center"><i data-lucide="clock" class="w-4 h-4 text-brand-yellow"></i></div>
+                                        <span>${workshop.time}</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-6 flex justify-center"><i data-lucide="map-pin" class="w-4 h-4 text-brand-yellow"></i></div>
+                                        <span class="truncate">${workshop.location}</span>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="flex items-center justify-between pt-3 border-t border-slate-50 mt-auto">
-                                <div class="text-lg font-black text-slate-900">${workshop.price}</div>
+                            <div class="flex items-center justify-between pt-4 border-t border-slate-50 mt-2">
+                                <!-- עדכון תצוגת מחיר בכרטיס -->
+                                <div class="flex flex-col">
+                                    <span class="text-xs text-slate-400 font-medium">מחיר למשתתף</span>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="text-xl font-black text-slate-900">220 ₪</span>
+                                        <span class="text-xs text-slate-500 font-medium">(ילד 200 ₪)</span>
+                                    </div>
+                                </div>
                                 
                                 <button onclick="${isFull ? '' : `sendWhatsAppTo('${workshop.title}', '${workshop.date}')`}" 
-                                    class="px-5 py-2 rounded-lg font-bold text-sm transition-all transform active:scale-95 flex items-center gap-2 ${btnClass} touch-manipulation" 
+                                    class="px-6 py-2.5 rounded-lg font-bold text-sm transition-all transform active:scale-95 flex items-center gap-2 ${btnClass} touch-manipulation" 
                                     aria-label="${btnText} עבור ${workshop.title}">
-                                    ${isFull ? '<i data-lucide="lock" class="w-3.5 h-3.5"></i>' : '<i data-lucide="message-circle" class="w-3.5 h-3.5"></i>'} ${btnText}
+                                    ${isFull ? '<i data-lucide="lock" class="w-4 h-4"></i>' : '<i data-lucide="message-circle" class="w-4 h-4"></i>'} ${btnText}
                                 </button>
                             </div>
                         </div>
@@ -1111,6 +1248,10 @@
         function enquirePackage(packageName) { const phone = "972522649955"; const msg = `היי קובי, אשמח לקבל הצעת מחיר עבור סדנה פרטית: ${packageName}.`; window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank'); }
         function openPrivacyModal() { const modal = document.getElementById('privacy-modal'); modal.classList.remove('hidden'); setTimeout(() => modal.classList.remove('opacity-0'), 10); document.body.classList.add('no-scroll'); }
         function closePrivacyModal() { const modal = document.getElementById('privacy-modal'); modal.classList.add('opacity-0'); setTimeout(() => { modal.classList.add('hidden'); document.body.classList.remove('no-scroll'); }, 300); }
+        
+        // מודל תקנון
+        function openTermsModal() { const modal = document.getElementById('terms-modal'); modal.classList.remove('hidden'); setTimeout(() => modal.classList.remove('opacity-0'), 10); document.body.classList.add('no-scroll'); }
+        function closeTermsModal() { const modal = document.getElementById('terms-modal'); modal.classList.add('opacity-0'); setTimeout(() => { modal.classList.add('hidden'); document.body.classList.remove('no-scroll'); }, 300); }
 
         renderWorkshops();
     </script>
