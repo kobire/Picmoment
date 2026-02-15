@@ -110,8 +110,8 @@
         }
         @media (hover: hover) {
             .hover-card-effect:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+                transform: translateY(-3px);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             }
         }
 
@@ -156,13 +156,13 @@
             </div>
 
             <!-- כפתור תפריט מובייל -->
-            <button onclick="toggleMenu()" class="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors z-50 relative touch-manipulation" aria-label="פתח תפריט" aria-expanded="false" id="mobile-menu-btn">
+            <button onclick="toggleMenu()" class="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors z-50 relative touch-manipulation focus:ring-2 focus:ring-brand-yellow" aria-label="פתח תפריט" aria-expanded="false" id="mobile-menu-btn">
                 <i data-lucide="menu" class="w-7 h-7"></i>
             </button>
         </div>
 
-        <!-- תפריט מובייל נפתח -->
-        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/98 backdrop-blur-xl z-40 flex flex-col justify-center items-center transition-all duration-300 opacity-0 pointer-events-none" aria-hidden="true">
+        <!-- תפריט מובייל נפתח (תוקן: נוסף padding-top והוגדרה גלילה במידת הצורך) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/98 backdrop-blur-xl z-40 flex flex-col items-center pt-28 pb-10 transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto" aria-hidden="true">
             <div class="flex flex-col p-6 gap-6 text-center text-white text-xl font-medium w-full max-w-xs">
                 <a href="#workshops" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors">סדנאות קרובות</a>
                 <a href="#custom-packages" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors">חבילות</a>
@@ -238,40 +238,21 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                <!-- פיצ'ר 1 -->
                 <div class="p-6 md:p-8 rounded-3xl bg-slate-800/50 border border-white/5 hover:border-brand-yellow/30 hover:bg-slate-800 transition-all hover:-translate-y-2 reveal text-center">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-                        <i data-lucide="zap" class="w-7 h-7 md:w-8 md:h-8"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-3">תוצאות מיידיות</h3>
-                    <p class="text-sm md:text-base text-slate-400">שיטה מבוססת ניסיון שמפשטת טכניקות מורכבות ומובילה להצלחה מיידית.</p>
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto"><i data-lucide="zap" class="w-7 h-7 md:w-8 md:h-8"></i></div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3">תוצאות מיידיות</h3><p class="text-sm md:text-base text-slate-400">שיטה מבוססת ניסיון שמפשטת טכניקות מורכבות ומובילה להצלחה מיידית.</p>
                 </div>
-                
-                <!-- פיצ'ר 2 -->
                 <div class="p-6 md:p-8 rounded-3xl bg-slate-800/50 border border-white/5 hover:border-brand-yellow/30 hover:bg-slate-800 transition-all hover:-translate-y-2 reveal text-center">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-yellow/10 text-brand-yellow rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-                        <i data-lucide="users" class="w-7 h-7 md:w-8 md:h-8"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-3">חוויה מגבשת</h3>
-                    <p class="text-sm md:text-base text-slate-400">פעילות יצירתית ומעשית שמגבשת כל קבוצה! מושלמת לצוותים ומשפחות.</p>
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-yellow/10 text-brand-yellow rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto"><i data-lucide="users" class="w-7 h-7 md:w-8 md:h-8"></i></div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3">חוויה מגבשת</h3><p class="text-sm md:text-base text-slate-400">פעילות יצירתית ומעשית שמגבשת כל קבוצה! מושלמת לצוותים ומשפחות.</p>
                 </div>
-                
-                <!-- פיצ'ר 3 -->
                 <div class="p-6 md:p-8 rounded-3xl bg-slate-800/50 border border-white/5 hover:border-brand-yellow/30 hover:bg-slate-800 transition-all hover:-translate-y-2 reveal text-center">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-                        <i data-lucide="check-circle" class="w-7 h-7 md:w-8 md:h-8"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-3">מתאימה לכולם</h3>
-                    <p class="text-sm md:text-base text-slate-400">אין צורך בידע מוקדם או בציוד מיוחד. הסדנה נגישה לכולם, אייפון ואנדרואיד.</p>
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto"><i data-lucide="check-circle" class="w-7 h-7 md:w-8 md:h-8"></i></div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3">מתאימה לכולם</h3><p class="text-sm md:text-base text-slate-400">אין צורך בידע מוקדם או בציוד מיוחד. הסדנה נגישה לכולם, אייפון ואנדרואיד.</p>
                 </div>
-
-                <!-- פיצ'ר 4 -->
                 <div class="p-6 md:p-8 rounded-3xl bg-slate-800/50 border border-white/5 hover:border-brand-yellow/30 hover:bg-slate-800 transition-all hover:-translate-y-2 reveal text-center">
-                    <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-yellow/10 text-brand-yellow rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-                        <i data-lucide="sparkles" class="w-7 h-7 md:w-8 md:h-8"></i>
-                    </div>
-                    <h3 class="text-xl md:text-2xl font-bold mb-3">ליווי אישי</h3>
-                    <p class="text-sm md:text-base text-slate-400">הדרכה צמודה כולל משוב בזמן אמת כדי להוציא מכל צילום את המיטב.</p>
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-brand-yellow/10 text-brand-yellow rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto"><i data-lucide="sparkles" class="w-7 h-7 md:w-8 md:h-8"></i></div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3">ליווי אישי</h3><p class="text-sm md:text-base text-slate-400">הדרכה צמודה כולל משוב בזמן אמת כדי להוציא מכל צילום את המיטב.</p>
                 </div>
             </div>
         </div>
@@ -319,7 +300,6 @@
                         </div>
                         <div class="flex items-center gap-2 justify-center md:justify-start">
                             <i data-lucide="credit-card" class="w-5 h-5 text-brand-yellow"></i>
-                            <!-- עדכון מחיר -->
                             <span><strong>עלות:</strong> 220 ₪ למבוגר / 200 ₪ לילד (תשלום מראש)</span>
                         </div>
                         <div class="flex items-center gap-2 justify-center md:justify-start">
@@ -334,7 +314,7 @@
                 </div>
             </div>
             
-            <div id="workshops-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+            <div id="workshops-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <!-- הסדנאות יופיעו כאן -->
             </div>
         </div>
@@ -828,7 +808,7 @@
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
                         <div>
                             <h4 class="font-bold text-base mb-1">1. הרשמה ותשלום</h4>
-                            <p class="text-slate-600 text-sm">ההשתתפות בסדנה מותנית בהרשמה ותשלום מלא מראש. עלות ההשתתפות הינה 220 ₪ למבוגר ו-200 ₪ לילד (גילאי 10-17). הבטחת המקום בסדנה הינה רק לאחר הסדרת התשלום.</p>
+                            <p class="text-slate-600 text-sm">ההשתתפות בסדנה מותנית בהרשמה ותשלום מלא מראש. עלות ההשתתפות הינה 220 ₪ למבוגר ו-220 ₪ לילד (גילאי 10-17). הבטחת המקום בסדנה הינה רק לאחר הסדרת התשלום.</p>
                         </div>
                         <div>
                             <h4 class="font-bold text-base mb-1">2. ביטול מצד המשתתף</h4>
@@ -923,8 +903,7 @@
         const qaDatabase = [
             { 
                 keywords: ["כמה", "עולה", "מחיר", "עלות", "תשלום", "כסף", "220", "250", "200"], 
-                // עדכון תשובת ה-AI
-                answer: "עלות סדנה פתוחה לקהל הרחב היא 220 ש\"ח למבוגר ו-200 ש\"ח לילד (גילאי 10-17). ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש\"ח שתקף לחצי שנה. התשלום מתבצע מראש." 
+                answer: "עלות סדנה פתוחה לקהל הרחב היא 220 ש\"ח למבוגר ו-220 ש\"ח לילד (גילאי 10-17). ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש\"ח שתקף לחצי שנה. התשלום מתבצע מראש." 
             },
             { 
                 keywords: ["משתתפים", "אנשים", "כמות", "גודל", "קבוצה", "מינימום", "מקסימום", "כמה אנשים"], 
@@ -1219,7 +1198,7 @@
                                     <span class="text-xs text-slate-400 font-medium">מחיר למשתתף</span>
                                     <div class="flex items-baseline gap-1">
                                         <span class="text-xl font-black text-slate-900">220 ₪</span>
-                                        <span class="text-xs text-slate-500 font-medium">(ילד 200 ₪)</span>
+                                        <span class="text-xs text-slate-500 font-medium">(ילד 220 ₪)</span>
                                     </div>
                                 </div>
                                 
