@@ -168,7 +168,7 @@
             </button>
         </div>
 
-        <!-- תפריט מובייל נפתח (מתוקן - גלילה ורקע שקוף למחצה) -->
+        <!-- תפריט מובייל נפתח -->
         <div id="mobile-menu" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xl z-[60] flex flex-col items-center justify-start pt-32 pb-10 transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto" aria-hidden="true">
             <button onclick="toggleMenu()" class="absolute top-6 left-6 text-white p-2 hover:bg-white/10 rounded-full bg-slate-800/50 shadow-lg" aria-label="סגור תפריט">
                 <i data-lucide="x" class="w-8 h-8"></i>
@@ -666,21 +666,63 @@
         <img id="lightbox-img" src="" alt="תצוגה מוגדלת" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl" onclick="event.stopPropagation()">
     </div>
 
-    <!-- מודל פרטיות -->
+    <!-- מודל פרטיות מורחב ומפורט -->
     <div id="privacy-modal" class="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-brand-dark/60 backdrop-blur-md hidden transition-opacity opacity-0" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
-        <div class="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh] animate-bounce-in">
+        <div class="bg-white rounded-3xl w-full max-w-3xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh] animate-bounce-in">
             <div class="bg-slate-50 p-6 border-b border-slate-100 flex justify-between items-center sticky top-0 z-10">
                 <h2 id="privacy-title" class="text-2xl font-black text-slate-900">מדיניות פרטיות</h2>
                 <button onclick="closePrivacyModal()" class="p-2 bg-white hover:bg-slate-100 rounded-full transition-colors text-slate-500 hover:text-slate-900 shadow-sm touch-manipulation" aria-label="סגור"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
-            <div class="p-8 overflow-y-auto text-slate-600 space-y-4 leading-relaxed text-sm md:text-base">
-                <p><strong>1. כללי</strong><br>אתר זה ("PicMoment" בבעלות קובי רפאלי) הינו אתר תדמיתי המספק מידע אודות סדנאות צילום. אנו מכבדים את פרטיות המשתמשים ומחויבים להגן עליה.</p>
-                <p><strong>2. העדר איסוף מידע</strong><br>האתר אינו אוסף מידע מזהה, אינו מנהל מאגר נתונים ואינו מבצע רישום אוטומטי.</p>
-                <p><strong>3. יצירת קשר</strong><br>כל יצירת קשר מתבצעת ישירות מול בעל העסק בוואטסאפ או בטלפון, ללא שמירת מידע בשרתי האתר.</p>
-                <p><strong>4. עוגיות</strong><br>האתר עשוי להשתמש בעוגיות טכניות בלבד לצורך תפעול תקין.</p>
+            <div class="p-8 overflow-y-auto text-slate-800 space-y-6 leading-relaxed text-sm md:text-base bg-slate-50/50">
+                
+                <section>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">1. מבוא והגדרות</h3>
+                    <p>אתר זה, "PicMoment" (להלן: "האתר"), מופעל על ידי קובי רפאלי (להלן: "המפעיל"). אנו מכבדים את פרטיות המשתמשים ומחויבים להגן עליה. מסמך זה מפרט את המדיניות שלנו ביחס למידע, אופן השימוש באתר והצהרת כוונות משפטית.</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">2. היעדר איסוף מידע וניהול מאגר נתונים</h3>
+                    <p>האתר הינו אתר תדמיתי אינפורמטיבי בלבד ("דף נחיתה").</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>האתר <strong>אינו</strong> מבצע רישום אוטומטי של משתמשים.</li>
+                        <li>האתר <strong>אינו</strong> מנהל מאגר נתונים ("Database") הכולל פרטים אישיים רגישים כגון כתובות, תעודות זהות או פרטי אשראי.</li>
+                        <li>כל הנתונים המוזנים בטפסי יצירת הקשר אינם נשמרים בשרתי האתר אלא נשלחים ישירות כאמצעי תקשורת (הודעת דוא"ל או וואטסאפ) למפעיל האתר.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">3. יצירת קשר ומסירת מידע מרצון</h3>
+                    <p>השימוש בטפסי "צור קשר", לחצני "הרשמה" או קישורי WhatsApp באתר הינו באחריות המשתמש בלבד ונעשה מרצונו החופשי.</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li>הקלקה על כפתורי ה-WhatsApp מעבירה את המשתמש ליישומון חיצוני שאינו בשליטת האתר.</li>
+                        <li>כל מידע הנמסר בשיחה פרטית זו (שם, טלפון, התעניינות) נמסר ישירות למפעיל לצורך מתן שירות בלבד ולא יועבר לצד שלישי ללא הסכמה.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">4. שימוש ב-Cookies וטכנולוגיות מעקב</h3>
+                    <p>האתר עשוי להשתמש ב"עוגיות" (Cookies) טכניות בלבד לצורך תפעול תקין ושיפור חווית המשתמש (למשל: זכירת הסכמת המשתמש למדיניות זו). האתר אינו מפעיל כלי מעקב פולשניים לצורכי פרופיילינג או פרסום ממוקד המזהה את המשתמש באופן אישי.</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">5. אבטחת מידע</h3>
+                    <p>האתר מאוחסן על גבי שרתים מאובטחים והתקשורת עמו מוצפנת בפרוטוקול SSL (תקן HTTPS). עם זאת, מאחר והאתר אינו שומר מידע רגיש, הסיכון לדליפת מידע אישי משרתי האתר הינו אפסי.</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">6. קניין רוחני</h3>
+                    <p>כל התכנים באתר, לרבות תמונות, טקסטים, סמלילים, עיצובים וגרפיקה, הינם קניינו הרוחני הבלעדי של קובי רפאלי. אין להעתיק, לשכפל, להפיץ או לעשות בהם שימוש מסחרי ללא אישור בכתב ומראש.</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-lg text-brand-dark mb-2">7. שינויים במדיניות הפרטיות</h3>
+                    <p>המפעיל שומר לעצמו את הזכות לעדכן מדיניות זו מעת לעת. הנוסח המחייב הוא זה המופיע באתר בעת השימוש בו. המשך השימוש באתר מהווה הסכמה למדיניות זו.</p>
+                </section>
+
+                <p class="text-xs text-slate-500 pt-4 border-t border-slate-200">עודכן לאחרונה: פברואר 2026</p>
             </div>
             <div class="p-6 border-t border-slate-100 bg-slate-50 text-center">
-                <button onclick="closePrivacyModal()" class="px-8 py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-slate-800 transition-all touch-manipulation">הבנתי, תודה</button>
+                <button onclick="closePrivacyModal()" class="px-8 py-3 bg-brand-dark text-white rounded-xl font-bold hover:bg-slate-800 transition-all touch-manipulation">קראתי והבנתי</button>
             </div>
         </div>
     </div>
@@ -725,19 +767,39 @@
             { id: 6, title: 'נווה צדק ומתחם התחנה בת"א', date: "17.04.2026", time: "10:00 - 12:30", location: "נווה צדק, תל אביב", price: "220 ₪", image: "1 (18).JPG", spotsLeft: 50 }
         ];
 
-        // --- סקריפט סוכן AI מבוסס תסריטים ---
-        const aiScripts = {
-            'מחירים': 'עלות השתתפות בסדנה פתוחה היא 220 ש"ח למבוגר ו-200 ש"ח לילד (גילאי 10-17). ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש"ח.',
-            'תאריכים': 'הסדנאות מתקיימות בדרך כלל בימי שישי בבוקר. ניתן לראות את כל התאריכים הפנויים בלוח הסדנאות למעלה באתר.',
-            'ביטולים': 'ניתן לבטל הרשמה ולקבל החזר כספי מלא עד 48 שעות לפני מועד הסדנה. בביטול של פחות מ-48 שעות, ניתן להעביר את הזכות למשתתף אחר.',
-            'למי מתאים': 'הסדנה מתאימה לכולם! מגיל 10 ומעלה, לבעלי אייפון ואנדרואיד, ואין צורך בידע מוקדם. המסלול נגיש גם לבעלי מוגבלויות.',
-            'ציוד': 'כל מה שצריך זה סמארטפון עם סוללה מלאה ומצב רוח טוב :) מומלץ להביא גם מטען נייד ליתר ביטחון.',
-            'מיקום': 'הסדנאות מתקיימות בנווה צדק (תל אביב) או בנמל תל אביב. המיקום המדויק נשלח בווטסאפ לאחר ההרשמה.'
+        // --- סקריפט סוכן AI מבוסס תסריטים (מורחב ל-20 נושאים) ---
+        const fullAiScripts = {
+            'מחירים': 'עלות השתתפות בסדנה פתוחה היא 220 ש"ח למבוגר ו-200 ש"ח לילד (גילאי 10-17). ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש"ח. התשלום מראש בהרשמה.',
+            'תאריכים': 'הסדנאות מתקיימות לרוב בימי שישי בבוקר (10:00). ניתן לראות את לוח המועדים המלא והעדכני בחלק העליון של האתר.',
+            'ביטולים': 'ביטול עד 48 שעות לפני המועד מזכה בהחזר כספי מלא. בביטול של פחות מ-48 שעות לא ניתן לקבל החזר, אך ניתן להעביר את הזכות לחבר.',
+            'למי מתאים': 'הסדנה מתאימה לכולם! מגיל 10 ומעלה, לכל סוגי הסמארטפונים, וללא צורך בידע מוקדם בצילום.',
+            'ציוד נדרש': 'כל מה שצריך זה סמארטפון עם סוללה מלאה ומצב רוח טוב :) מומלץ להביא גם מטען נייד (Power Bank) ליתר ביטחון.',
+            'מיקום': 'הסדנאות מתקיימות בלוקיישנים הכי יפים: נווה צדק (ת"א), מתחם התחנה, או נמל תל אביב (רידינג 3). המיקום המדויק נשלח לנרשמים.',
+            'חניה': 'בכל הלוקיישנים שלנו יש חניונים מסודרים בקרבת מקום (חניון התחנה, חניון רידינג וכו\'). פרטים מדויקים נשלחים בהודעת הוואטסאפ לפני הסדנה.',
+            'מזג אוויר': 'הסדנאות מתקיימות בכל מזג אוויר סביר. במקרה של גשם סוער או תנאים קיצוניים, הסדנה תידחה ותקבלו הודעה מסודרת עם אפשרות למועד חלופי או החזר.',
+            'סוגי טלפונים': 'הסדנה מתאימה גם לאייפון וגם לאנדרואיד (סמסונג, שיאומי, פיקסל וכו\'). אנחנו מלמדים עקרונות צילום שנכונים לכל המכשירים.',
+            'גילאים': 'הסדנה מותאמת לגילאי 10 ומעלה. השפה נגישה, ההסברים ברורים והחוויה מהנה לילדים, נוער ומבוגרים כאחד.',
+            'נגישות': 'המסלולים שלנו בנווה צדק ובנמל תל אביב מונגשים ברובם ומותאמים לאנשים עם מוגבלויות. לפרטים ספציפיים מומלץ לוודא מול קובי.',
+            'משך הסדנה': 'משך הסדנה הוא כ-2.5 שעות של כיף, למידה ותרגול מעשי בשטח.',
+            'קבוצות פרטיות': 'בוודאי! אנחנו מקיימים סדנאות סגורות לימי הולדת, ימי גיבוש לעובדים ואירועים משפחתיים. צרו קשר לקבלת הצעת מחיר מותאמת.',
+            'מה לומדים?': 'לומדים קומפוזיציה (חוק השלישים, הולכת עין), שימוש באור טבעי, זוויות צילום יצירתיות, שליטה בפוקוס וחשיפה, ולבסוף - עריכת תמונות בסיסית.',
+            'עריכת תמונות': 'כן, חלק מהסדנה מוקדש לעיבוד תמונה. נלמד איך לשפר צבעים, חדות ותאורה בעזרת הכלים המובנים בטלפון ובאפליקציות חינמיות.',
+            'רמה מקצועית': 'הסדנה מיועדת בעיקר למתחילים ולחובבים שרוצים לשפר את התמונות שלהם ביומיום. אין צורך בידע מוקדם, אך גם צלמים חובבים ילמדו חידושים.',
+            'סדנת ערב': 'רוב הסדנאות הפתוחות הן בבוקר לניצול אור יום, אך לעיתים אנו מקיימים סדנאות שקיעה/לילה מיוחדות. שווה להתעדכן בלוח!',
+            'הנחות': 'יש לנו מחיר מוזל לילדים ונוער (200 ש"ח במקום 220). לקבוצות גדולות מאורגנות ניתן לקבל הצעת מחיר מרוכזת.',
+            'שובר מתנה': 'ניתן לרכוש שובר מתנה מעוצב (דיגיטלי או פיזי) בעלות של 250 ש"ח. השובר תקף לחצי שנה ואינו ניתן לביטול לאחר הרכישה.',
+            'יצירת קשר': 'ניתן ליצור קשר עם קובי ישירות בטלפון או בוואטסאפ: 052-2649955 לכל שאלה נוספת.'
         };
-        
-        let availableChips = Object.keys(aiScripts);
 
-        function resetChat() {
+        let unaskedKeys = Object.keys(fullAiScripts);
+        let currentDisplayKeys = [];
+
+        function initChat() {
+            unaskedKeys = Object.keys(fullAiScripts);
+            currentDisplayKeys = [];
+            replenishChips(); // Fill initial 5
+            
+            // Render Chat Base
             const chatMessages = document.getElementById('chat-messages');
             chatMessages.innerHTML = `
                 <div class="flex flex-col gap-3">
@@ -749,19 +811,28 @@
                     </div>
                 </div>
             `;
-            availableChips = Object.keys(aiScripts);
             renderChips();
             lucide.createIcons();
+        }
+
+        function replenishChips() {
+            // Add new chips until we have 5 or run out
+            while (currentDisplayKeys.length < 5 && unaskedKeys.length > 0) {
+                // Select random index to keep it interesting
+                const randomIndex = Math.floor(Math.random() * unaskedKeys.length);
+                const key = unaskedKeys.splice(randomIndex, 1)[0];
+                currentDisplayKeys.push(key);
+            }
         }
 
         function renderChips() {
             const actionsDiv = document.getElementById('chat-actions');
             
-            if (availableChips.length === 0) {
+            if (currentDisplayKeys.length === 0 && unaskedKeys.length === 0) {
                  actionsDiv.innerHTML = `
-                 <div class="text-center text-slate-500 text-xs">
-                    <p>נגמרו לי הנושאים... רוצים להתחיל מחדש?</p>
-                    <button onclick="resetChat()" class="mt-2 text-brand-yellow hover:underline">לחצו כאן</button>
+                 <div class="text-center text-slate-500 text-xs animate-fade-in">
+                    <p>עברנו על כל הנושאים! רוצים להתחיל מחדש?</p>
+                    <button onclick="initChat()" class="mt-2 text-brand-yellow hover:underline font-bold">לחצו כאן לאתחול</button>
                  </div>
                  `;
                  return;
@@ -769,8 +840,8 @@
 
             actionsDiv.innerHTML = `
                 <div class="flex flex-wrap gap-2 animate-fade-in">
-                    ${availableChips.map(key => 
-                        `<button onclick="handleScriptClick('${key}')" class="bg-slate-700 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 text-xs px-4 py-2 rounded-full transition-all border border-slate-600 touch-manipulation font-medium shadow-sm">${key}</button>`
+                    ${currentDisplayKeys.map(key => 
+                        `<button onclick="handleScriptClick('${key}')" class="bg-slate-700 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 text-xs px-4 py-2 rounded-full transition-all border border-slate-600 touch-manipulation font-medium shadow-sm active:scale-95">${key}</button>`
                     ).join('')}
                 </div>
             `;
@@ -779,13 +850,13 @@
         function handleScriptClick(key) {
             const chatMessages = document.getElementById('chat-messages');
             
-            // Remove clicked chip from available list
-            availableChips = availableChips.filter(item => item !== key);
+            // 1. Remove clicked key from current display
+            currentDisplayKeys = currentDisplayKeys.filter(k => k !== key);
             
-            // Clear current chips while thinking
-            document.getElementById('chat-actions').innerHTML = '';
+            // 2. Disable buttons temporarily
+            document.getElementById('chat-actions').innerHTML = ''; 
 
-            // User Message
+            // 3. User Message UI
             const userDiv = document.createElement('div');
             userDiv.className = "flex items-start gap-3 flex-row-reverse animate-fade-in";
             userDiv.innerHTML = `
@@ -794,7 +865,7 @@
             `;
             chatMessages.appendChild(userDiv);
 
-            // Bot Typing
+            // 4. Bot Typing Indicator
             const typingDiv = document.createElement('div');
             typingDiv.className = "flex items-start gap-3";
             typingDiv.id = "typing-indicator";
@@ -807,7 +878,7 @@
             chatMessages.appendChild(typingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // Bot Response
+            // 5. Response + New Chips
             setTimeout(() => {
                 typingDiv.remove();
                 const botDiv = document.createElement('div');
@@ -815,21 +886,27 @@
                 botDiv.innerHTML = `
                     <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center flex-shrink-0 text-brand-yellow border border-slate-600"><i data-lucide="bot" class="w-4 h-4"></i></div>
                     <div class="bg-slate-700 text-slate-100 p-4 rounded-2xl rounded-tr-none max-w-[85%] shadow-md text-sm leading-relaxed border border-slate-600">
-                        ${aiScripts[key]}
+                        ${fullAiScripts[key]}
                     </div>
                 `;
                 chatMessages.appendChild(botDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
                 lucide.createIcons();
                 
-                // Show remaining chips
+                // Replenish and Render
+                replenishChips();
                 renderChips();
             }, 800);
         }
 
         // --- אתחול והפעלת האתר ---
         lucide.createIcons();
-        resetChat(); // Initialize Chat
+        initChat(); // Start the enhanced chat
+
+        // Reset function for the header button
+        function resetChat() {
+            initChat();
+        }
 
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
@@ -952,7 +1029,6 @@
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
-        // Modal Logic
         let currentWorkshop = null;
         function openModal(id) { currentWorkshop = WORKSHOPS.find(w => w.id === id); if (!currentWorkshop) return; document.getElementById('modal-title').innerText = currentWorkshop.title; document.getElementById('modal-date').innerText = `${currentWorkshop.date} | ${currentWorkshop.time}`; document.getElementById('modal-image').src = currentWorkshop.image; const modal = document.getElementById('modal'); modal.classList.remove('hidden'); setTimeout(() => modal.classList.remove('opacity-0'), 10); document.body.classList.add('no-scroll'); }
         function closeModal() { const modal = document.getElementById('modal'); modal.classList.add('opacity-0'); setTimeout(() => { modal.classList.add('hidden'); document.body.classList.remove('no-scroll'); }, 300); }
