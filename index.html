@@ -168,18 +168,18 @@
             </button>
         </div>
 
-        <!-- תפריט מובייל נפתח (מתוקן) -->
-        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/98 backdrop-blur-xl z-[60] flex flex-col items-center justify-center transition-all duration-300 opacity-0 pointer-events-none" aria-hidden="true">
-            <button onclick="toggleMenu()" class="absolute top-6 left-6 text-white p-2 hover:bg-white/10 rounded-full" aria-label="סגור תפריט">
+        <!-- תפריט מובייל נפתח (מתוקן - גלילה ורקע שקוף למחצה) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xl z-[60] flex flex-col items-center justify-start pt-32 pb-10 transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto" aria-hidden="true">
+            <button onclick="toggleMenu()" class="absolute top-6 left-6 text-white p-2 hover:bg-white/10 rounded-full bg-slate-800/50 shadow-lg" aria-label="סגור תפריט">
                 <i data-lucide="x" class="w-8 h-8"></i>
             </button>
             <div class="flex flex-col p-6 gap-6 text-center text-white text-xl font-medium w-full max-w-xs">
-                <a href="#workshops" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors">סדנאות קרובות</a>
-                <a href="#custom-packages" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors">חבילות</a>
-                <a href="#gift-card" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors">שובר מתנה</a>
-                <a href="#ai-agent" onclick="toggleMenu()" class="py-3 border-b border-white/10 text-brand-yellow font-bold flex justify-center items-center gap-2"><i data-lucide="bot" class="w-5 h-5"></i> עוזר אישי AI</a>
-                <a href="#guide" onclick="toggleMenu()" class="py-3 border-b border-white/10 font-bold hover:text-brand-yellow transition-colors">מדריך צילום</a>
-                <a href="#contact" onclick="toggleMenu()" class="py-3 font-bold text-brand-dark bg-brand-yellow rounded-xl mt-4">צור קשר</a>
+                <a href="#workshops" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors bg-brand-dark/40 rounded-xl">סדנאות קרובות</a>
+                <a href="#custom-packages" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors bg-brand-dark/40 rounded-xl">חבילות</a>
+                <a href="#gift-card" onclick="toggleMenu()" class="py-3 border-b border-white/10 hover:text-brand-yellow transition-colors bg-brand-dark/40 rounded-xl">שובר מתנה</a>
+                <a href="#ai-agent" onclick="toggleMenu()" class="py-3 border-b border-white/10 text-brand-yellow font-bold flex justify-center items-center gap-2 bg-brand-dark/40 rounded-xl"><i data-lucide="bot" class="w-5 h-5"></i> עוזר אישי AI</a>
+                <a href="#guide" onclick="toggleMenu()" class="py-3 border-b border-white/10 font-bold hover:text-brand-yellow transition-colors bg-brand-dark/40 rounded-xl">מדריך צילום</a>
+                <a href="#contact" onclick="toggleMenu()" class="py-3 font-bold text-brand-dark bg-brand-yellow rounded-xl mt-4 shadow-lg">צור קשר</a>
             </div>
         </div>
     </nav>
@@ -734,6 +734,8 @@
             'ציוד': 'כל מה שצריך זה סמארטפון עם סוללה מלאה ומצב רוח טוב :) מומלץ להביא גם מטען נייד ליתר ביטחון.',
             'מיקום': 'הסדנאות מתקיימות בנווה צדק (תל אביב) או בנמל תל אביב. המיקום המדויק נשלח בווטסאפ לאחר ההרשמה.'
         };
+        
+        let availableChips = Object.keys(aiScripts);
 
         function resetChat() {
             const chatMessages = document.getElementById('chat-messages');
@@ -747,15 +749,27 @@
                     </div>
                 </div>
             `;
+            availableChips = Object.keys(aiScripts);
             renderChips();
             lucide.createIcons();
         }
 
         function renderChips() {
             const actionsDiv = document.getElementById('chat-actions');
+            
+            if (availableChips.length === 0) {
+                 actionsDiv.innerHTML = `
+                 <div class="text-center text-slate-500 text-xs">
+                    <p>נגמרו לי הנושאים... רוצים להתחיל מחדש?</p>
+                    <button onclick="resetChat()" class="mt-2 text-brand-yellow hover:underline">לחצו כאן</button>
+                 </div>
+                 `;
+                 return;
+            }
+
             actionsDiv.innerHTML = `
-                <div class="flex flex-wrap gap-2">
-                    ${Object.keys(aiScripts).map(key => 
+                <div class="flex flex-wrap gap-2 animate-fade-in">
+                    ${availableChips.map(key => 
                         `<button onclick="handleScriptClick('${key}')" class="bg-slate-700 hover:bg-brand-yellow hover:text-brand-dark text-slate-300 text-xs px-4 py-2 rounded-full transition-all border border-slate-600 touch-manipulation font-medium shadow-sm">${key}</button>`
                     ).join('')}
                 </div>
@@ -765,6 +779,12 @@
         function handleScriptClick(key) {
             const chatMessages = document.getElementById('chat-messages');
             
+            // Remove clicked chip from available list
+            availableChips = availableChips.filter(item => item !== key);
+            
+            // Clear current chips while thinking
+            document.getElementById('chat-actions').innerHTML = '';
+
             // User Message
             const userDiv = document.createElement('div');
             userDiv.className = "flex items-start gap-3 flex-row-reverse animate-fade-in";
@@ -796,13 +816,14 @@
                     <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center flex-shrink-0 text-brand-yellow border border-slate-600"><i data-lucide="bot" class="w-4 h-4"></i></div>
                     <div class="bg-slate-700 text-slate-100 p-4 rounded-2xl rounded-tr-none max-w-[85%] shadow-md text-sm leading-relaxed border border-slate-600">
                         ${aiScripts[key]}
-                        <br><br>
-                        <span class="text-xs text-slate-400">יש עוד משהו שמעניין אתכם?</span>
                     </div>
                 `;
                 chatMessages.appendChild(botDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
                 lucide.createIcons();
+                
+                // Show remaining chips
+                renderChips();
             }, 800);
         }
 
