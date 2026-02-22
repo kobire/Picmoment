@@ -213,26 +213,6 @@
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
             </div>
-
-            <!-- סטטיסטיקה -->
-            <div class="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-16 border-t border-white/10 pt-8 md:pt-10 w-full reveal">
-                <div class="text-center">
-                    <div class="text-2xl md:text-4xl font-black text-white mb-1">2,500+</div>
-                    <div class="text-xs md:text-sm text-slate-400 font-medium uppercase tracking-wider">בוגרים</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-2xl md:text-4xl font-black text-white mb-1">50+</div>
-                    <div class="text-xs md:text-sm text-slate-400 font-medium uppercase tracking-wider">סדנאות בשנה</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-2xl md:text-4xl font-black text-white mb-1">3</div>
-                    <div class="text-xs md:text-sm text-slate-400 font-medium uppercase tracking-wider">ערים מרכזיות</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-2xl md:text-4xl font-black text-white mb-1">100%</div>
-                    <div class="text-xs md:text-sm text-slate-400 font-medium uppercase tracking-wider">אחריות מלאה</div>
-                </div>
-            </div>
         </div>
     </header>
 
@@ -703,13 +683,13 @@
                 </div>
                 <div class="text-xs text-slate-700 font-mono mt-2">
                     <!-- הוספת קוד גרסה -->
-                    v2026.02.20.21.02
+                    v2026.02.22.08.54
                 </div>
             </div>
         </div>
     </footer>
     
-    <!-- Cookie Banner, Modals, Buttons etc. (Unchanged for brevity) -->
+    <!-- Cookie Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900/95 text-white p-4 z-[60] backdrop-blur-md border-t border-white/10 hidden transform translate-y-full transition-transform duration-300 shadow-2xl">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3">
@@ -723,6 +703,7 @@
         </div>
     </div>
 
+    <!-- כפתור וואטסאפ צף -->
     <a href="https://wa.me/972522649955" target="_blank" class="fixed bottom-6 left-6 z-40 group focus:outline-none touch-manipulation" aria-label="צור קשר בווטסאפ">
         <div class="bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 relative z-10"><i data-lucide="message-circle" class="w-7 h-7 md:w-8 md:h-8"></i></div>
         <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20 duration-1000"></div>
@@ -858,38 +839,36 @@
 
     <!-- סקריפטים -->
     <script>
-        // --- נתוני סדנאות ---
         const WORKSHOPS = [
-            { id: 1, title: 'נווה צדק ומתחם התחנה בת"א', date: "20.02.2026", time: "10:00 - 12:30", location: "נווה צדק, תל אביב", price: "220 ₪", image: "1 (18).JPG", spotsLeft: 7 },
-            { id: 2, title: "נמל תל אביב - רידינג 3", date: "27.02.2026", time: "10:00 - 12:30", location: "נמל תל אביב", price: "220 ₪", image: "1(4).JPG", spotsLeft: 50 },
-            { id: 3, title: 'נווה צדק ומתחם התחנה בת"א', date: "06.03.2026", time: "10:00 - 12:30", location: "נווה צדק, תל אביב", price: "220 ₪", image: "1 (18).JPG", spotsLeft: 8 },
-            { id: 4, title: 'נווה צדק ומתחם התחנה בת"א', date: "13.03.2026", time: "10:00 - 12:30", location: "נווה צדק, תל אביב", price: "220 ₪", image: "1 (18).JPG", spotsLeft: 0 },
-            { id: 5, title: "נמל תל אביב - רידינג 3", date: "20.03.2026", time: "10:00 - 12:30", location: "נמל תל אביב", price: "220 ₪", image: "1(4).JPG", spotsLeft: 12 },
-            { id: 6, title: 'נווה צדק ומתחם התחנה בת"א', date: "17.04.2026", time: "10:00 - 12:30", location: "נווה צדק, תל אביב", price: "220 ₪", image: "1 (18).JPG", spotsLeft: 50 }
+            { id: 1, title: `נווה צדק ומתחם התחנה בת"א`, date: `20.02.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `220 ₪`, image: `1 (18).JPG`, spotsLeft: 7 },
+            { id: 2, title: `נמל תל אביב - רידינג 3`, date: `27.02.2026`, time: `10:00 - 12:30`, location: `נמל תל אביב`, price: `220 ₪`, image: `1(4).JPG`, spotsLeft: 50 },
+            { id: 3, title: `נווה צדק ומתחם התחנה בת"א`, date: `06.03.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `220 ₪`, image: `1 (18).JPG`, spotsLeft: 8 },
+            { id: 4, title: `נווה צדק ומתחם התחנה בת"א`, date: `13.03.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `220 ₪`, image: `1 (18).JPG`, spotsLeft: 0 },
+            { id: 5, title: `נמל תל אביב - רידינג 3`, date: `20.03.2026`, time: `10:00 - 12:30`, location: `נמל תל אביב`, price: `220 ₪`, image: `1(4).JPG`, spotsLeft: 12 },
+            { id: 6, title: `נווה צדק ומתחם התחנה בת"א`, date: `17.04.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `220 ₪`, image: `1 (18).JPG`, spotsLeft: 50 }
         ];
 
-        // --- סקריפט סוכן AI מבוסס תסריטים (מורחב ל-20 נושאים) ---
         const fullAiScripts = {
-            'מחירים': 'עלות השתתפות בסדנה פתוחה היא 220 ש"ח למבוגר ו-200 ש"ח לילד (גילאי 10-17). ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש"ח. התשלום מראש בהרשמה.',
-            'תאריכים': 'הסדנאות מתקיימות לרוב בימי שישי בבוקר (10:00). ניתן לראות את לוח המועדים המלא והעדכני בחלק העליון של האתר.',
-            'ביטולים': 'ביטול עד 48 שעות לפני המועד מזכה בהחזר כספי מלא. בביטול של פחות מ-48 שעות לא ניתן לקבל החזר, אך ניתן להעביר את הזכות לחבר.',
-            'למי מתאים': 'הסדנה מתאימה לכולם! מגיל 10 ומעלה, לכל סוגי הסמארטפונים, וללא צורך בידע מוקדם בצילום.',
-            'ציוד נדרש': 'כל מה שצריך זה סמארטפון עם סוללה מלאה ומצב רוח טוב :) מומלץ להביא גם מטען נייד (Power Bank) ליתר ביטחון.',
-            'מיקום': 'הסדנאות מתקיימות בלוקיישנים הכי יפים: נווה צדק (ת"א), מתחם התחנה, או נמל תל אביב (רידינג 3). המיקום המדויק נשלח לנרשמים.',
-            'חניה': 'בכל הלוקיישנים שלנו יש חניונים מסודרים בקרבת מקום (חניון התחנה, חניון רידינג וכו\'). פרטים מדויקים נשלחים בהודעת הוואטסאפ לפני הסדנה.',
-            'מזג אוויר': 'הסדנאות מתקיימות בכל מזג אוויר סביר. במקרה של גשם סוער או תנאים קיצוניים, הסדנה תידחה ותקבלו הודעה מסודרת עם אפשרות למועד חלופי או החזר.',
-            'סוגי טלפונים': 'הסדנה מתאימה גם לאייפון וגם לאנדרואיד (סמסונג, שיאומי, פיקסל וכו\'). אנחנו מלמדים עקרונות צילום שנכונים לכל המכשירים.',
-            'גילאים': 'הסדנה מותאמת לגילאי 10 ומעלה. השפה נגישה, ההסברים ברורים והחוויה מהנה לילדים, נוער ומבוגרים כאחד.',
-            'נגישות': 'המסלולים שלנו בנווה צדק ובנמל תל אביב מונגשים ברובם ומותאמים לאנשים עם מוגבלויות. לפרטים ספציפיים מומלץ לוודא מול קובי.',
-            'משך הסדנה': 'משך הסדנה הוא כ-2.5 שעות של כיף, למידה ותרגול מעשי בשטח.',
-            'קבוצות פרטיות': 'בוודאי! אנחנו מקיימים סדנאות סגורות לימי הולדת, ימי גיבוש לעובדים ואירועים משפחתיים. צרו קשר לקבלת הצעת מחיר מותאמת.',
-            'מה לומדים?': 'לומדים קומפוזיציה (חוק השלישים, הולכת עין), שימוש באור טבעי, זוויות צילום יצירתיות, שליטה בפוקוס וחשיפה, ולבסוף - עריכת תמונות בסיסית.',
-            'עריכת תמונות': 'כן, חלק מהסדנה מוקדש לעיבוד תמונה. נלמד איך לשפר צבעים, חדות ותאורה בעזרת הכלים המובנים בטלפון ובאפליקציות חינמיות.',
-            'רמה מקצועית': 'הסדנה מיועדת בעיקר למתחילים ולחובבים שרוצים לשפר את התמונות שלהם ביומיום. אין צורך בידע מוקדם, אך גם צלמים חובבים ילמדו חידושים.',
-            'סדנת ערב': 'רוב הסדנאות הפתוחות הן בבוקר לניצול אור יום, אך לעיתים אנו מקיימים סדנאות שקיעה/לילה מיוחדות. שווה להתעדכן בלוח!',
-            'הנחות': 'יש לנו מחיר מוזל לילדים ונוער (200 ש"ח במקום 220). לקבוצות גדולות מאורגנות ניתן לקבל הצעת מחיר מרוכזת.',
-            'שובר מתנה': 'ניתן לרכוש שובר מתנה מעוצב (דיגיטלי או פיזי) בעלות של 250 ש"ח. השובר תקף לחצי שנה ואינו ניתן לביטול לאחר הרכישה.',
-            'יצירת קשר': 'ניתן ליצור קשר עם קובי ישירות בטלפון או בוואטסאפ: 052-2649955 לכל שאלה נוספת.'
+            'מחירים': `עלות השתתפות בסדנה פתוחה היא 220 ש"ח למבוגר ו-200 ש"ח לילד (גילאי 10-17). ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש"ח. התשלום מראש בהרשמה.`,
+            'תאריכים': `הסדנאות מתקיימות לרוב בימי שישי בבוקר (10:00). ניתן לראות את לוח המועדים המלא והעדכני בחלק העליון של האתר.`,
+            'ביטולים': `ביטול עד 48 שעות לפני המועד מזכה בהחזר כספי מלא. בביטול של פחות מ-48 שעות לא ניתן לקבל החזר, אך ניתן להעביר את הזכות לחבר.`,
+            'למי מתאים': `הסדנה מתאימה לכולם! מגיל 10 ומעלה, לכל סוגי הסמארטפונים, וללא צורך בידע מוקדם בצילום.`,
+            'ציוד נדרש': `כל מה שצריך זה סמארטפון עם סוללה מלאה ומצב רוח טוב :) מומלץ להביא גם מטען נייד (Power Bank) ליתר ביטחון.`,
+            'מיקום': `הסדנאות מתקיימות בלוקיישנים הכי יפים: נווה צדק (ת"א), מתחם התחנה, או נמל תל אביב (רידינג 3). המיקום המדויק נשלח לנרשמים.`,
+            'חניה': `בכל הלוקיישנים שלנו יש חניונים מסודרים בקרבת מקום (חניון התחנה, חניון רידינג וכו'). פרטים מדויקים נשלחים בהודעת הוואטסאפ לפני הסדנה.`,
+            'מזג אוויר': `הסדנאות מתקיימות בכל מזג אוויר סביר. במקרה של גשם סוער או תנאים קיצוניים, הסדנה תידחה ותקבלו הודעה מסודרת עם אפשרות למועד חלופי או החזר.`,
+            'סוגי טלפונים': `הסדנה מתאימה גם לאייפון וגם לאנדרואיד (סמסונג, שיאומי, פיקסל וכו'). אנחנו מלמדים עקרונות צילום שנכונים לכל המכשירים.`,
+            'גילאים': `הסדנה מותאמת לגילאי 10 ומעלה. השפה נגישה, ההסברים ברורים והחוויה מהנה לילדים, נוער ומבוגרים כאחד.`,
+            'נגישות': `המסלולים שלנו בנווה צדק ובנמל תל אביב מונגשים ברובם ומותאמים לאנשים עם מוגבלויות. לפרטים ספציפיים מומלץ לוודא מול קובי.`,
+            'משך הסדנה': `משך הסדנה הוא כ-2.5 שעות של כיף, למידה ותרגול מעשי בשטח.`,
+            'קבוצות פרטיות': `בוודאי! אנחנו מקיימים סדנאות סגורות לימי הולדת, ימי גיבוש לעובדים ואירועים משפחתיים. צרו קשר לקבלת הצעת מחיר מותאמת.`,
+            'מה לומדים?': `לומדים קומפוזיציה (חוק השלישים, הולכת עין), שימוש באור טבעי, זוויות צילום יצירתיות, שליטה בפוקוס וחשיפה, ולבסוף - עריכת תמונות בסיסית.`,
+            'עריכת תמונות': `כן, חלק מהסדנה מוקדש לעיבוד תמונה. נלמד איך לשפר צבעים, חדות ותאורה בעזרת הכלים המובנים בטלפון ובאפליקציות חינמיות.`,
+            'רמה מקצועית': `הסדנה מיועדת בעיקר למתחילים ולחובבים שרוצים לשפר את התמונות שלהם ביומיום. אין צורך בידע מוקדם, אך גם צלמים חובבים ילמדו חידושים.`,
+            'סדנת ערב': `רוב הסדנאות הפתוחות הן בבוקר לניצול אור יום, אך לעיתים אנו מקיימים סדנאות שקיעה/לילה מיוחדות. שווה להתעדכן בלוח!`,
+            'הנחות': `יש לנו מחיר מוזל לילדים ונוער (200 ש"ח במקום 220). לקבוצות גדולות מאורגנות ניתן לקבל הצעת מחיר מרוכזת.`,
+            'שובר מתנה': `ניתן לרכוש שובר מתנה מעוצב (דיגיטלי או פיזי) בעלות של 250 ש"ח. השובר תקף לחצי שנה ואינו ניתן לביטול לאחר הרכישה.`,
+            'יצירת קשר': `ניתן ליצור קשר עם קובי ישירות בטלפון או בוואטסאפ: 052-2649955 לכל שאלה נוספת.`
         };
 
         let unaskedKeys = Object.keys(fullAiScripts);
@@ -898,9 +877,8 @@
         function initChat() {
             unaskedKeys = Object.keys(fullAiScripts);
             currentDisplayKeys = [];
-            replenishChips(); // Fill initial 5
+            replenishChips(); 
             
-            // Render Chat Base
             const chatMessages = document.getElementById('chat-messages');
             chatMessages.innerHTML = `
                 <div class="flex flex-col gap-3">
@@ -917,9 +895,7 @@
         }
 
         function replenishChips() {
-            // Add new chips until we have 5 or run out
             while (currentDisplayKeys.length < 5 && unaskedKeys.length > 0) {
-                // Select random index to keep it interesting
                 const randomIndex = Math.floor(Math.random() * unaskedKeys.length);
                 const key = unaskedKeys.splice(randomIndex, 1)[0];
                 currentDisplayKeys.push(key);
@@ -951,13 +927,9 @@
         function handleScriptClick(key) {
             const chatMessages = document.getElementById('chat-messages');
             
-            // 1. Remove clicked key from current display
             currentDisplayKeys = currentDisplayKeys.filter(k => k !== key);
-            
-            // 2. Disable buttons temporarily
             document.getElementById('chat-actions').innerHTML = ''; 
 
-            // 3. User Message UI
             const userDiv = document.createElement('div');
             userDiv.className = "flex items-start gap-3 flex-row-reverse animate-fade-in";
             userDiv.innerHTML = `
@@ -966,7 +938,6 @@
             `;
             chatMessages.appendChild(userDiv);
 
-            // 4. Bot Typing Indicator
             const typingDiv = document.createElement('div');
             typingDiv.className = "flex items-start gap-3";
             typingDiv.id = "typing-indicator";
@@ -979,7 +950,6 @@
             chatMessages.appendChild(typingDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
-            // 5. Response + New Chips
             setTimeout(() => {
                 typingDiv.remove();
                 const botDiv = document.createElement('div');
@@ -994,17 +964,14 @@
                 chatMessages.scrollTop = chatMessages.scrollHeight;
                 lucide.createIcons();
                 
-                // Replenish and Render
                 replenishChips();
                 renderChips();
             }, 800);
         }
 
-        // --- אתחול והפעלת האתר ---
         lucide.createIcons();
-        initChat(); // Start the enhanced chat
+        initChat(); 
 
-        // Reset function for the header button
         function resetChat() {
             initChat();
         }
@@ -1027,7 +994,6 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // --- פונקציות עזר (קוקיז, טפסים, מודלים) ---
         function checkCookies() { 
             if (!localStorage.getItem('cookieConsent')) { 
                 const banner = document.getElementById('cookie-banner'); 
@@ -1035,13 +1001,23 @@
                 setTimeout(() => banner.classList.remove('translate-y-full'), 100); 
             } 
         }
-        function acceptCookies() { localStorage.setItem('cookieConsent', 'accepted'); hideCookieBanner(); }
-        function declineCookies() { localStorage.setItem('cookieConsent', 'declined'); hideCookieBanner(); }
+
+        function acceptCookies() { 
+            localStorage.setItem('cookieConsent', 'accepted'); 
+            hideCookieBanner(); 
+        }
+
+        function declineCookies() { 
+            localStorage.setItem('cookieConsent', 'declined'); 
+            hideCookieBanner(); 
+        }
+
         function hideCookieBanner() {
             const banner = document.getElementById('cookie-banner'); 
             banner.classList.add('translate-y-full'); 
             setTimeout(() => banner.classList.add('hidden'), 300); 
         }
+
         checkCookies();
 
         function submitContactForm(event) {
@@ -1054,7 +1030,10 @@
             window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`, '_blank');
         }
 
-        function downloadGuide() { const url = "https://drive.google.com/file/d/1PnO_QLs29nuXk8tYxprMdyftbKAA4Z3m/view"; window.open(url, '_blank'); }
+        function downloadGuide() { 
+            const url = "https://drive.google.com/file/d/1PnO_QLs29nuXk8tYxprMdyftbKAA4Z3m/view"; 
+            window.open(url, '_blank'); 
+        }
         
         function toggleMenu() { 
             const menu = document.getElementById('mobile-menu'); 
@@ -1072,7 +1051,6 @@
             const grid = document.getElementById('workshops-grid');
             grid.innerHTML = ''; 
             
-            // סינון סדנאות שעבר זמנן
             const today = new Date();
             today.setHours(0, 0, 0, 0);
             
@@ -1087,7 +1065,6 @@
 
             activeWorkshops.forEach(workshop => {
                 const isFull = workshop.spotsLeft === 0;
-                // עיצוב כפתור עדין יותר ומזמין
                 const btnClass = isFull 
                     ? 'bg-slate-100 text-slate-400 cursor-not-allowed border border-slate-200' 
                     : 'bg-brand-yellow text-brand-dark hover:bg-yellow-300 shadow-md hover:shadow-lg border border-transparent';
@@ -1095,7 +1072,6 @@
                 const btnText = isFull ? 'הסדנה מלאה' : 'שריין מקום';
                 let badgeHTML = '';
                 
-                // תגיות סטטוס בולטות ומעוצבות
                 if (isFull) {
                     badgeHTML = `<span class="bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md shadow-sm">אזל</span>`;
                 } else if (workshop.spotsLeft > 0 && workshop.spotsLeft < 10) {
@@ -1104,9 +1080,7 @@
                      badgeHTML = `<span class="bg-green-50 text-green-600 border border-green-100 text-[10px] font-bold px-2 py-0.5 rounded-md">פנוי</span>`;
                 }
 
-                // תיקון קריטי: החלפת גרשיים במחרוזת בטוחה לשימוש ב-HTML attribute
-                // זה מונע את שבירת הכפתור בסדנאות עם שם כמו 'ת"א'
-                const safeTitle = workshop.title.replace(/"/g, '&quot;');
+                const safeTitle = workshop.title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
                 const cardHTML = `
                     <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-100 flex flex-row h-[160px] sm:h-[190px] hover-card-effect reveal w-full">
@@ -1139,7 +1113,7 @@
                                 <button onclick="${isFull ? '' : `sendWhatsAppTo('${safeTitle}', '${workshop.date}')`}" 
                                     class="px-3 sm:px-5 py-1.5 sm:py-2 rounded-lg font-bold text-xs sm:text-sm transition-all transform active:scale-95 flex items-center gap-1 sm:gap-2 ${btnClass} touch-manipulation" 
                                     aria-label="${btnText} עבור ${workshop.title}">
-                                    ${isFull ? '<i data-lucide="lock" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>' : '<i data-lucide="message-circle" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>'} 
+                                    ${isFull ? `<i data-lucide="lock" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>` : `<i data-lucide="message-circle" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>`} 
                                     <span class="hidden sm:inline">${btnText}</span>
                                     <span class="sm:hidden">הזמן</span>
                                 </button>
@@ -1154,19 +1128,100 @@
 
         // Modal Logic
         let currentWorkshop = null;
-        function openModal(id) { currentWorkshop = WORKSHOPS.find(w => w.id === id); if (!currentWorkshop) return; document.getElementById('modal-title').innerText = currentWorkshop.title; document.getElementById('modal-date').innerText = `${currentWorkshop.date} | ${currentWorkshop.time}`; document.getElementById('modal-image').src = currentWorkshop.image; const modal = document.getElementById('modal'); modal.classList.remove('hidden'); setTimeout(() => modal.classList.remove('opacity-0'), 10); document.body.classList.add('no-scroll'); }
-        function closeModal() { const modal = document.getElementById('modal'); modal.classList.add('opacity-0'); setTimeout(() => { modal.classList.add('hidden'); document.body.classList.remove('no-scroll'); }, 300); }
-        function sendWhatsApp() { const phone = "972522649955"; const msg = `היי קובי, אשמח להירשם לסדנת צילום.`; window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank'); }
-        function sendWhatsAppTo(title, date) { const phone = "972522649955"; const msg = `היי קובי, ראיתי את הפרטים באתר ואשמח להירשם לסדנה: ${title} בתאריך ${date}.`; window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank'); }
-        function purchaseGiftCard() { const phone = "972522649955"; const msg = "היי קובי, אני רוצה לקנות שובר מתנה לסדנת צילום. אשמח לפרטים."; window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank'); }
-        function openLightbox(src) { document.getElementById('lightbox-img').src = src; document.getElementById('lightbox').classList.remove('hidden'); }
-        function closeLightbox() { document.getElementById('lightbox').classList.add('hidden'); }
-        function enquirePackage(packageName) { const phone = "972522649955"; const msg = `היי קובי, אשמח לקבל הצעת מחיר עבור סדנה פרטית: ${packageName}.`; window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank'); }
-        function openPrivacyModal() { const modal = document.getElementById('privacy-modal'); modal.classList.remove('hidden'); setTimeout(() => modal.classList.remove('opacity-0'), 10); document.body.classList.add('no-scroll'); }
-        function closePrivacyModal() { const modal = document.getElementById('privacy-modal'); modal.classList.add('opacity-0'); setTimeout(() => { modal.classList.add('hidden'); document.body.classList.remove('no-scroll'); }, 300); }
-        function openTermsModal() { const modal = document.getElementById('terms-modal'); modal.classList.remove('hidden'); setTimeout(() => modal.classList.remove('opacity-0'), 10); document.body.classList.add('no-scroll'); }
-        function closeTermsModal() { const modal = document.getElementById('terms-modal'); modal.classList.add('opacity-0'); setTimeout(() => { modal.classList.add('hidden'); document.body.classList.remove('no-scroll'); }, 300); }
-        function shareSite() { if (navigator.share) { navigator.share({ title: 'PicMoment', text: 'סדנאות צילום', url: window.location.href }).catch(console.error); } else { alert('הקישור הועתק!'); } }
+        
+        function openModal(id) { 
+            currentWorkshop = WORKSHOPS.find(w => w.id === id); 
+            if (!currentWorkshop) return; 
+            document.getElementById('modal-title').innerText = currentWorkshop.title; 
+            document.getElementById('modal-date').innerText = `${currentWorkshop.date} | ${currentWorkshop.time}`; 
+            document.getElementById('modal-image').src = currentWorkshop.image; 
+            const modal = document.getElementById('modal'); 
+            modal.classList.remove('hidden'); 
+            setTimeout(() => modal.classList.remove('opacity-0'), 10); 
+            document.body.classList.add('no-scroll'); 
+        }
+
+        function closeModal() { 
+            const modal = document.getElementById('modal'); 
+            modal.classList.add('opacity-0'); 
+            setTimeout(() => { 
+                modal.classList.add('hidden'); 
+                document.body.classList.remove('no-scroll'); 
+            }, 300); 
+        }
+
+        function sendWhatsApp() { 
+            const phone = "972522649955"; 
+            const msg = `היי קובי, אשמח להירשם לסדנת צילום.`; 
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank'); 
+        }
+
+        function sendWhatsAppTo(title, date) { 
+            const phone = "972522649955"; 
+            const msg = `היי קובי, ראיתי את הפרטים באתר ואשמח להירשם לסדנה: ${title} בתאריך ${date}.`; 
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank'); 
+        }
+
+        function purchaseGiftCard() { 
+            const phone = "972522649955"; 
+            const msg = "היי קובי, אני רוצה לקנות שובר מתנה לסדנת צילום. אשמח לפרטים."; 
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank'); 
+        }
+
+        function openLightbox(src) { 
+            document.getElementById('lightbox-img').src = src; 
+            document.getElementById('lightbox').classList.remove('hidden'); 
+        }
+
+        function closeLightbox() { 
+            document.getElementById('lightbox').classList.add('hidden'); 
+        }
+
+        function enquirePackage(packageName) { 
+            const phone = "972522649955"; 
+            const msg = `היי קובי, אשמח לקבל הצעת מחיר עבור סדנה פרטית: ${packageName}.`; 
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank'); 
+        }
+
+        function openPrivacyModal() { 
+            const modal = document.getElementById('privacy-modal'); 
+            modal.classList.remove('hidden'); 
+            setTimeout(() => modal.classList.remove('opacity-0'), 10); 
+            document.body.classList.add('no-scroll'); 
+        }
+
+        function closePrivacyModal() { 
+            const modal = document.getElementById('privacy-modal'); 
+            modal.classList.add('opacity-0'); 
+            setTimeout(() => { 
+                modal.classList.add('hidden'); 
+                document.body.classList.remove('no-scroll'); 
+            }, 300); 
+        }
+
+        function openTermsModal() { 
+            const modal = document.getElementById('terms-modal'); 
+            modal.classList.remove('hidden'); 
+            setTimeout(() => modal.classList.remove('opacity-0'), 10); 
+            document.body.classList.add('no-scroll'); 
+        }
+
+        function closeTermsModal() { 
+            const modal = document.getElementById('terms-modal'); 
+            modal.classList.add('opacity-0'); 
+            setTimeout(() => { 
+                modal.classList.add('hidden'); 
+                document.body.classList.remove('no-scroll'); 
+            }, 300); 
+        }
+
+        function shareSite() { 
+            if (navigator.share) { 
+                navigator.share({ title: 'PicMoment', text: 'סדנאות צילום', url: window.location.href }).catch(console.error); 
+            } else { 
+                alert('הקישור הועתק!'); 
+            } 
+        }
 
         renderWorkshops();
     </script>
