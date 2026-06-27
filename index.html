@@ -7,7 +7,7 @@
     <!-- SEO & Meta Tags -->
     <title>PicMoment | סדנאות צילום בסמארטפון | קובי רפאלי</title>
     <meta name="description" content="הצטרפו ל-2,500 משתתפים בסדנאות הצילום המובילות בישראל. למדו לצלם תמונות מקצועיות באייפון ובאנדרואיד עם קובי רפאלי. סדנאות בתל אביב, ירושלים ולקבוצות.">
-    <meta name="keywords" content="סדנת צילום, צילום בסמארטפון, צילום באייפון, צילום באנדרואיד, קובי רפאלי, קורס צילום, טיפים לצילום, סדנת צילום תל אביב, יום גיבוש לעובדים, צילום בנייד, PicMoment">
+    <meta name="keywords" content="סדנת צילום, צילום בסמארטפון, צילום באייפון, צילום באנדרואיד, קובי רפאלי, קורס צילום, טיפים לצילום, סדנת צילום תל אביב, סדנת צילום נמל יפו, צילום נווה צדק, יום גיבוש לעובדים, צילום בנייד, מתנה זוגית, חוויה זוגית, סדנה לזוג, PicMoment">
     <meta name="author" content="קובי רפאלי">
     <meta name="theme-color" content="#0F172A">
     <meta name="robots" content="index, follow">
@@ -36,7 +36,7 @@
       "offers": {
         "@type": "Offer",
         "category": "Paid",
-        "price": "220",
+        "price": "250",
         "priceCurrency": "ILS",
         "availability": "https://schema.org/InStock"
       },
@@ -292,7 +292,7 @@
                         </div>
                         <div class="flex items-center gap-2 justify-center md:justify-start">
                             <i data-lucide="credit-card" class="w-5 h-5 text-brand-yellow"></i>
-                            <span><strong>עלות:</strong> 220 ₪ למבוגר / 200 ₪ לילד (תשלום מראש)</span>
+                            <span><strong>עלות:</strong> 250 ₪ למשתתף / 450 ₪ לזוג (תשלום מראש)</span>
                         </div>
                         <div class="flex items-center gap-2 justify-center md:justify-start">
                             <i data-lucide="refresh-cw" class="w-5 h-5 text-brand-yellow"></i>
@@ -820,7 +820,7 @@
                 <section>
                     <h3 class="font-bold text-xl mb-3 text-brand-dark border-b-2 border-brand-yellow/30 pb-2 inline-block">מדיניות ביטולים והרשמה</h3>
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4">
-                        <div><h4 class="font-bold text-base mb-1">1. הרשמה ותשלום</h4><p class="text-slate-600 text-sm">ההשתתפות בסדנה מותנית בהרשמה ותשלום מלא מראש. עלות ההשתתפות הינה 220 ₪ למבוגר ו-200 ₪ לילד.</p></div>
+                        <div><h4 class="font-bold text-base mb-1">1. הרשמה ותשלום</h4><p class="text-slate-600 text-sm">ההשתתפות בסדנה מותנית בהרשמה ותשלום מלא מראש. עלות ההשתתפות הינה 250 ₪ למשתתף ו-450 ₪ לזוג.</p></div>
                         <div><h4 class="font-bold text-base mb-1">2. ביטול מצד המשתתף</h4><ul class="list-disc list-inside space-y-2 text-slate-600 text-sm"><li><strong>עד 48 שעות לפני המועד:</strong> החזר כספי מלא.</li><li><strong>פחות מ-48 שעות:</strong> אין החזר כספי, אך ניתן להעביר את הזכות לאחר.</li></ul></div>
                     </div>
                 </section>
@@ -842,16 +842,16 @@
         // Update 1: The new workshop list based on user request.
         // I have dynamically assigned random realistic "spotsLeft" to show UI logic.
         const WORKSHOPS = [
-            { id: 1, title: `נמל תל אביב - רידינג 3`, date: `03.07.2026`, time: `10:00 - 12:30`, location: `נמל תל אביב`, price: `220 ₪`, image: `1(4).JPG`, spotsLeft: 12 },
-            { id: 2, title: `נווה צדק ומתחם התחנה בת"א`, date: `10.07.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `220 ₪`, image: `1 (18).JPG`, spotsLeft: 8 },
-            { id: 3, title: `נמל תל אביב - רידינג 3`, date: `24.07.2026`, time: `10:00 - 12:30`, location: `נמל תל אביב`, price: `220 ₪`, image: `1(4).JPG`, spotsLeft: 15 },
-            { id: 4, title: `נמל יפו - קסם על הים`, date: `07.08.2026`, time: `10:00 - 12:30`, location: `נמל יפו`, price: `220 ₪`, image: `1(4).JPG`, spotsLeft: 5 },
-            { id: 5, title: `נווה צדק ומתחם התחנה בת"א`, date: `14.08.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `220 ₪`, image: `1 (18).JPG`, spotsLeft: 0 }, // Changed to 0 to demonstrate the "Sold Out" UI
-            { id: 6, title: `נווה צדק ומתחם התחנה בת"א`, date: `21.08.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `220 ₪`, image: `1 (18).JPG`, spotsLeft: 10 }
+            { id: 1, title: `נמל תל אביב - רידינג 3`, date: `03.07.2026`, time: `10:00 - 12:30`, location: `נמל תל אביב`, price: `250₪ | זוג ב-450₪`, image: `1(4).JPG`, spotsLeft: 12 },
+            { id: 2, title: `נווה צדק ומתחם התחנה בת"א`, date: `10.07.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `250₪ | זוג ב-450₪`, image: `1 (18).JPG`, spotsLeft: 8 },
+            { id: 3, title: `נמל תל אביב - רידינג 3`, date: `24.07.2026`, time: `10:00 - 12:30`, location: `נמל תל אביב`, price: `250₪ | זוג ב-450₪`, image: `1(4).JPG`, spotsLeft: 15 },
+            { id: 4, title: `נמל יפו - קסם על הים`, date: `07.08.2026`, time: `10:00 - 12:30`, location: `נמל יפו`, price: `250₪ | זוג ב-450₪`, image: `1 (10).JPEG`, spotsLeft: 10 },
+            { id: 5, title: `נווה צדק ומתחם התחנה בת"א`, date: `14.08.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `250₪ | זוג ב-450₪`, image: `1 (18).JPG`, spotsLeft: 14 },
+            { id: 6, title: `נווה צדק ומתחם התחנה בת"א`, date: `21.08.2026`, time: `10:00 - 12:30`, location: `נווה צדק, תל אביב`, price: `250₪ | זוג ב-450₪`, image: `1 (18).JPG`, spotsLeft: 10 }
         ];
 
         const fullAiScripts = {
-            'מחירים': `עלות השתתפות בסדנה פתוחה היא 220 ש"ח למבוגר ו-200 ש"ח לילד (גילאי 10-17). ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש"ח. התשלום מראש בהרשמה.`,
+            'מחירים': `עלות השתתפות בסדנה פתוחה היא 250 ש"ח למשתתף ו-450 ש"ח לזוג. ניתן גם לרכוש שובר מתנה חגיגי ב-250 ש"ח. התשלום מראש בהרשמה.`,
             'תאריכים': `הסדנאות מתקיימות לרוב בימי שישי בבוקר (10:00). ניתן לראות את לוח המועדים המלא והעדכני בחלק העליון של האתר.`,
             'ביטולים': `ביטול עד 48 שעות לפני המועד מזכה בהחזר כספי מלא. בביטול של פחות מ-48 שעות לא ניתן לקבל החזר, אך ניתן להעביר את הזכות לחבר.`,
             'למי מתאים': `הסדנה מתאימה לכולם! מגיל 10 ומעלה, לכל סוגי הסמארטפונים, וללא צורך בידע מוקדם בצילום.`,
@@ -868,7 +868,7 @@
             'עריכת תמונות': `כן, חלק מהסדנה מוקדש לעיבוד תמונה. נלמד איך לשפר צבעים, חדות ותאורה בעזרת הכלים המובנים בטלפון ובאפליקציות חינמיות.`,
             'רמה מקצועית': `הסדנה מיועדת בעיקר למתחילים ולחובבים שרוצים לשפר את התמונות שלהם ביומיום. אין צורך בידע מוקדם, אך גם צלמים חובבים ילמדו חידושים.`,
             'סדנת ערב': `רוב הסדנאות הפתוחות הן בבוקר לניצול אור יום, אך לעיתים אנו מקיימים סדנאות שקיעה/לילה מיוחדות. שווה להתעדכן בלוח!`,
-            'הנחות': `יש לנו מחיר מוזל לילדים ונוער (200 ש"ח במקום 220). לקבוצות גדולות מאורגנות ניתן לקבל הצעת מחיר מרוכזת.`,
+            'הנחות': `יש לנו מחיר מיוחד לזוגות - 450 ש"ח בלבד לשני משתתפים (במקום 500). לקבוצות גדולות מאורגנות ניתן לקבל הצעת מחיר מרוכזת.`,
             'שובר מתנה': `ניתן לרכוש שובר מתנה מעוצב (דיגיטלי או פיזי) בעלות של 250 ש"ח. השובר תקף לחצי שנה ואינו ניתן לביטול לאחר הרכישה.`,
             'יצירת קשר': `ניתן ליצור קשר עם קובי ישירות בטלפון או בוואטסאפ: 052-2649955 לכל שאלה נוספת.`
         };
@@ -1125,8 +1125,8 @@
 
                             <div class="flex items-center justify-between pt-2 border-t border-slate-50 mt-auto">
                                 <div class="flex flex-col">
-                                    <span class="text-[10px] sm:text-xs text-slate-400 font-medium leading-none">למשתתף</span>
-                                    <div class="text-base sm:text-lg font-black text-slate-900 leading-tight">${workshop.price}</div>
+                                    <span class="text-[10px] sm:text-xs text-slate-400 font-medium leading-none">מחיר</span>
+                                    <div class="text-xs sm:text-sm font-black text-slate-900 leading-tight tracking-tight">${workshop.price}</div>
                                 </div>
                                 
                                 <button onclick="${isFull ? '' : `sendWhatsAppTo('${safeTitle}', '${workshop.date}')`}" 
