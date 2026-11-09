@@ -17,7 +17,7 @@ button,input,select{font:inherit}button,select{cursor:pointer}button{border:0}
 .page{width:min(1460px,100%);margin:auto;padding:clamp(18px,3vw,38px)}
 .intro-banner{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;border-radius:24px;background:linear-gradient(125deg,#163d37,#142636 72%);border:1px solid #2c665e;padding:clamp(22px,3vw,34px);margin:8px 0 24px}
 .eyebrow{letter-spacing:.09em;text-transform:uppercase;color:var(--mint);font-weight:750;font-size:.78rem}
-.intro-banner h1{font-size:clamp(1.5rem,3vw,2.6rem);margin:.25rem 0;line-height:1.25}
+.intro-banner h2{font-size:clamp(1.5rem,3vw,2.6rem);margin:.25rem 0;line-height:1.25}
 .intro-banner p{margin:.3rem 0;color:#dde6f0;max-width:70ch}
 .chip{border:1px solid #4d947e;border-radius:99px;padding:7px 12px;font-size:.88rem;white-space:nowrap;color:#e2ffe9}
 .layout{display:grid;grid-template-columns:minmax(235px,300px) minmax(0,1fr);gap:22px;align-items:start}
