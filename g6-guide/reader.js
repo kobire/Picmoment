@@ -1,0 +1,51 @@
+(()=>{
+"use strict";
+const catalog=window.G6_CATALOG||[];
+const chapters=window.G6_CHAPTERS||{};
+const $=id=>document.getElementById(id);
+const langText={
+he:{home:"דף הבית",library:"ספריית השיעורים",browse:"ניווט בין 35 שיעורים",search:"חיפוש בכל תוכן השיעורים",placeholder:"חיפוש שיעור, מושג או שאלה...",lesson:"שיעור",of:"מתוך",words:"תוכן מורחב",toc:"בפרק זה",case:"דוגמה מהחיים",learn:"מה לוקחים מהשיעור",terms:"מילון מושגים",sources:"מקורות וקישורים שימושיים",copy:"העתקת קישור",copied:"הקישור הועתק",print:"הדפסה / PDF",prev:"השיעור הקודם",next:"השיעור הבא",hebrew:"הטקסט המפורט כתוב בעברית. אפשר לעבור לשפה אחרת לממשק ולכותרות.",video:"חיפוש סרטוני הדגמה",none:"לא נמצאה התאמה בתוכן השיעורים",web:"חיפוש מידע ברשת",ai:"פתיחת ChatGPT לחיפוש נוסף",results:"תוצאות",disclaimer:"מדריך לימודי עצמאי; אינו תחליף למדריך XPENG, להנחיות יבואן או להדרכת בטיחות. מפרטים ותכונות תלויים בשנה, גרסה ושוק.",older:"מדריך עברי רשמי לדור קודם (2024) — לבדוק התאמה",official:"מפרט היבואן הישראלי",manufacturer:"ספרי רכב רשמיים של XPENG"},
+en:{home:"Home",library:"Lesson library",browse:"Browse 35 lessons",search:"Search all lesson text",placeholder:"Search lessons and topics...",lesson:"Lesson",of:"of",words:"Expanded guide",toc:"In this chapter",case:"Everyday example",learn:"What to remember",terms:"Glossary",sources:"Sources and resources",copy:"Copy chapter link",copied:"Link copied",print:"Print / PDF",prev:"Previous lesson",next:"Next lesson",hebrew:"Full lesson content is currently in Hebrew. Interface and titles can be translated.",video:"Find demonstration videos",none:"No matching lesson found",web:"Search the web",ai:"Open ChatGPT for further help",results:"Results",disclaimer:"Independent educational guide, not a replacement for the official owner’s manual. Features depend on model year, variant and country.",older:"Older official Hebrew guide (2024) — check applicability",official:"Israeli importer specifications",manufacturer:"Official XPENG manuals"},
+ru:{home:"Главная",library:"Библиотека уроков",browse:"Все 35 уроков",search:"Поиск по всем урокам",placeholder:"Поиск по урокам и темам...",lesson:"Урок",of:"из",words:"Подробный материал",toc:"В этой главе",case:"Пример из жизни",learn:"Главное из урока",terms:"Словарь",sources:"Источники и ссылки",copy:"Копировать ссылку",copied:"Ссылка скопирована",print:"Печать / PDF",prev:"Предыдущий урок",next:"Следующий урок",hebrew:"Полный текст уроков пока доступен на иврите. Интерфейс и названия переведены.",video:"Найти демонстрационные видео",none:"Совпадений нет",web:"Поиск в интернете",ai:"Открыть ChatGPT",results:"Результаты",disclaimer:"Независимое учебное руководство. Проверяйте официальное руководство и комплектацию.",older:"Старое официальное руководство на иврите (2024)",official:"Спецификации израильского импортёра",manufacturer:"Официальные руководства XPENG"},
+es:{home:"Inicio",library:"Biblioteca de lecciones",browse:"Explorar las 35 lecciones",search:"Buscar en todo el contenido",placeholder:"Buscar lecciones y temas...",lesson:"Lección",of:"de",words:"Guía ampliada",toc:"En este capítulo",case:"Ejemplo práctico",learn:"Qué recordar",terms:"Glosario",sources:"Fuentes y recursos",copy:"Copiar enlace",copied:"Enlace copiado",print:"Imprimir / PDF",prev:"Lección anterior",next:"Lección siguiente",hebrew:"El texto completo está disponible actualmente en hebreo. Los títulos y la interfaz están traducidos.",video:"Buscar vídeos de demostración",none:"No se encontraron lecciones",web:"Buscar en internet",ai:"Abrir ChatGPT",results:"Resultados",disclaimer:"Guía educativa independiente. Consulta el manual oficial; las funciones varían según la versión.",older:"Manual oficial antiguo en hebreo (2024)",official:"Especificaciones del importador israelí",manufacturer:"Manuales oficiales XPENG"}
+};
+const getSaved=k=>{try{return localStorage.getItem(k)}catch{return null}};
+const save=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
+let lang=langText[getSaved("g6-lang")]?getSaved("g6-lang"):"he";
+let id=Number(new URLSearchParams(location.search).get("lesson"))||1;
+if(!Number.isInteger(id)||id<1||id>35)id=1;
+const u=(key)=>langText[lang][key]||langText.he[key];
+const node=(tag,txt,cl)=>{const n=document.createElement(tag);if(txt!==undefined&&txt!==null)n.textContent=txt;if(cl)n.className=cl;return n};
+const addText=(parent,tag,txt,cl)=>{const n=node(tag,txt,cl);parent.append(n);return n};
+function link(text,href,external=false){const a=node("a",text);a.href=href;if(external){a.target="_blank";a.rel="noopener noreferrer"}return a}
+function hideSearch(){const q=$("searchInput").value.trim().toLocaleLowerCase();const list=$("lessonLinks");list.replaceChildren();let count=0;for(const item of catalog){const article=chapters[item.id];const hay=[Object.values(item.title).join(" "),item.intro,item.tip,item.caution,article?.lead||"",...(article?.sections||[]).flatMap(x=>[x.h,x.p,...x.bullets]),article?.scenario||"",(article?.terms||[]).join(" ")].join(" ").toLocaleLowerCase();if(q&&!hay.includes(q))continue;count++;const a=link("", "./learning.html?lesson="+item.id);a.classList.toggle("active",item.id===id);if(item.id===id)a.setAttribute("aria-current","page");addText(a,"b",String(item.id).padStart(2,"0"));addText(a,"span",item.title[lang]||item.title.he);list.append(a)}$("searchState").textContent=count+" "+u("results");if(!count){const p=node("div",u("none"),"noresult");const urls=[["web","https://www.google.com/search?q="+encodeURIComponent("XPENG G6 "+$("searchInput").value)],["ai","https://chatgpt.com/"]];for(const [key,url]of urls){p.append(link(u(key),url,true))}list.append(p)}}
+function renderPage(){const item=catalog.find(x=>x.id===id),data=chapters[id];if(!item||!data){$("lessonTitle").textContent="תוכן לא זמין";$("lessonLead").textContent="חסרים קובצי תוכן. נסו לטעון את העמוד מחדש.";return}
+document.documentElement.lang=lang;document.documentElement.dir=lang==="he"?"rtl":"ltr";
+$("lang").value=lang;$("homeLink").textContent=u("home");$("libraryLabel").textContent=u("library");$("searchLabel").textContent=u("search");$("searchInput").placeholder=u("placeholder");$("browserTitle").textContent=u("browse");
+$("chapterMeta").textContent=u("lesson")+" "+id+" "+u("of")+" 35";
+$("lessonTitle").textContent=item.title[lang]||item.title.he;$("lessonLead").textContent=data.lead;$("lessonLead").lang="he";$("lessonLead").dir="rtl";
+document.title=item.title[lang]+" | G6 GUIDE";
+$("copyLink").textContent=u("copy");$("printButton").textContent=u("print");
+$("contentTag").textContent=u("words");$("tocLabel").textContent=u("toc");$("languageNote").textContent=lang==="he"?"":u("hebrew");$("languageNote").hidden=lang==="he";
+$("footerNotice").textContent=u("disclaimer");
+const visual=$("studyVisual");visual.replaceChildren();const captions=lang==="he"?["להכיר","להבין","ליישם"]:lang==="en"?["Explore","Understand","Apply"]:lang==="ru"?["Знакомство","Понимание","Применение"]:["Conocer","Entender","Aplicar"];
+data.terms.slice(0,3).forEach((text,i)=>{const card=node("div",null,"visual-step");addText(card,"span",String(i+1));addText(card,"strong",captions[i]);addText(card,"p",text);visual.append(card)});
+const toc=$("tocLinks"),article=$("sections");toc.replaceChildren();article.replaceChildren();data.sections.forEach((sec,i)=>{const section=node("section",null,"section");section.id="part-"+(i+1);addText(section,"h2",(i+1)+". "+sec.h);addText(section,"p",sec.p);const list=node("ul");for(const bullet of sec.bullets)addText(list,"li",bullet);section.append(list);section.lang="he";section.dir="rtl";article.append(section);toc.append(link(sec.h,"#part-"+(i+1)))});
+$("caseLabel").textContent=u("case");$("caseText").textContent=data.scenario;$("caseText").lang="he";$("caseText").dir="rtl";
+$("learnLabel").textContent=u("learn");const results=$("outcomes");results.replaceChildren();for(const s of data.steps)addText(results,"li",s);results.lang="he";results.dir="rtl";
+$("termsLabel").textContent=u("terms");const glossary=$("glossary");glossary.replaceChildren();for(const term of data.terms)addText(glossary,"span",term,"term");glossary.lang="he";glossary.dir="rtl";
+$("sourcesLabel").textContent=u("sources");const resource=$("resourceLinks");resource.replaceChildren();
+resource.append(link(u("official"),"https://heyxpeng.co.il/g6/",true),link(u("manufacturer"),"https://www.xpeng.com/user-manual",true),link(u("older"),"https://storage.googleapis.com/carassodriverbook/G6-%20HEB_20240924055019584.pdf",true),link(u("video"),"https://www.youtube.com/results?search_query="+encodeURIComponent("XPENG G6 "+(item.title.en||"guide")+" official tutorial"),true));
+const nav=$("chapterNav");nav.replaceChildren();if(id>1){const before=catalog.find(x=>x.id===id-1);const a=link("← "+u("prev")+" · "+before.title[lang],"./learning.html?lesson="+(id-1));nav.append(a)}if(id<35){const after=catalog.find(x=>x.id===id+1);const a=link(u("next")+" · "+after.title[lang]+" →","./learning.html?lesson="+(id+1));nav.append(a)}
+hideSearch()}
+$("lang").addEventListener("change",e=>{lang=e.target.value;save("g6-lang",lang);renderPage()});
+$("searchInput").addEventListener("input",hideSearch);
+$("copyLink").addEventListener("click",async()=>{const b=$("copyLink");try{await navigator.clipboard.writeText(location.href);b.textContent=u("copied");setTimeout(()=>b.textContent=u("copy"),1800)}catch{b.textContent=location.href}});
+$("printButton").addEventListener("click",()=>window.print());
+$("fontButton").addEventListener("click",()=>{document.body.classList.toggle("large");save("g6-large",document.body.classList.contains("large")?"1":"0")});
+$("contrastButton").addEventListener("click",()=>{document.body.classList.toggle("high-contrast");save("g6-contrast",document.body.classList.contains("high-contrast")?"1":"0")});
+if(getSaved("g6-large")==="1")document.body.classList.add("large");
+if(getSaved("g6-contrast")==="1")document.body.classList.add("high-contrast");
+if(window.matchMedia&&window.matchMedia("(min-width:921px)").matches)$("chapterDetails").open=true;
+renderPage();
+})();
