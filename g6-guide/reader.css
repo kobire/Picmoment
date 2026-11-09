@@ -1,6 +1,6 @@
 /* G6 GUIDE – accessible lesson reader, 2026 */
 :root{--bg:#07101b;--surface:#101d2b;--surface2:#162637;--line:#324457;--text:#eaf4ff;--muted:#b7c9db;--mint:#a9f771;--mint2:#79dcb4;--warm:#ffd79b;--shadow:0 18px 55px rgba(0,0,0,.18);font-family:system-ui,-apple-system,"Arial","Noto Sans",sans-serif;color-scheme:dark}
-*{box-sizing:border-box}
+*{box-sizing:border-box}.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 html{scroll-behavior:smooth;scroll-padding-top:112px}
 body{margin:0;background:radial-gradient(ellipse at 5% -6%,#1d3446 0,transparent 48%),var(--bg);color:var(--text);font-size:16px;line-height:1.72}
 body.large{font-size:19px}
