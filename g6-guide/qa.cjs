@@ -8,7 +8,7 @@ const sandbox={window:{}};vm.createContext(sandbox);
 for(const file of files)vm.runInContext(fs.readFileSync(path.join(base,file),"utf8"),sandbox,{filename:file,timeout:3000});
 const catalog=sandbox.window.G6_CATALOG||[],chapters=sandbox.window.G6_CHAPTERS||{},deep=sandbox.window.G6_DEEP||{};
 assert.equal(catalog.length,35,"Exactly 35 lessons required");
-assert.deepEqual(catalog.map(c=>c.id),Array.from({length:35},(_,i)=>i+1),"Lessons must be 1-35 in order");
+assert.deepEqual(Array.from(catalog,c=>c.id),Array.from({length:35},(_,i)=>i+1),"Lessons must be 1-35 in order");
 let total=0,words=0,minimum=Infinity;
 for(let id=1;id<=35;id++){
  const item=catalog[id-1],old=chapters[id],blocks=deep[id];
