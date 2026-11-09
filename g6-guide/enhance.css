@@ -1,0 +1,45 @@
+/* G6 Guide 2026 — accessible supplementary study modules */
+.deep-heading{border-top:1px solid var(--line);margin:28px 0 12px;padding:26px 4px 4px}
+.deep-eyebrow{color:var(--mint);font-size:.84rem;font-weight:800;letter-spacing:.04em}
+.deep-main-title{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.25;margin:6px 0}
+.deep-subtitle{color:var(--muted);max-width:74ch;margin:8px 0 14px}
+.deep-section{border-inline-start:4px solid var(--mint2);background:linear-gradient(135deg,#10253a 0%,#101d2b 75%);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.deep-section .section-index{display:inline-block;background:#1c3c36;border-radius:99px;padding:2px 12px;font-weight:700;font-size:.8rem;color:#c6ffb2;margin-bottom:8px}
+.deep-section h2{margin-top:4px}
+.deep-section p{font-size:1.06rem;line-height:1.85;max-width:78ch}
+.detail-bullets{display:grid;gap:10px;padding-inline-start:23px}
+.detail-bullets li{padding-inline-start:4px;line-height:1.75}
+.detail-bullets li::marker{color:var(--mint)}
+.detail-note{color:#ffe9c6;background:#3b3020;border:1px solid #886c3e;border-radius:12px;padding:12px 14px}
+.verified-context,.tool-panel,.finish-panel{padding:clamp(18px,3vw,28px);border:1px solid var(--line);border-radius:19px;background:var(--surface);margin:22px 0}
+.verified-context{border-inline-start:5px solid #f2c875}
+.context-mark{color:#ffdf93;font-weight:750;font-size:.84rem}
+.verified-context h2,.tool-panel h2,.finish-panel h2{font-size:clamp(1.22rem,2.4vw,1.65rem);margin:8px 0 10px}
+.verified-context ul{padding-inline-start:24px;line-height:1.8}
+.tool-description{color:var(--muted);margin-top:0;max-width:75ch}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:18px 0}
+.tool-field{display:grid;gap:7px;padding:13px;background:var(--surface2);border:1px solid var(--line);border-radius:13px;font-weight:750}
+.tool-field span{font-size:.88rem}
+.tool-field input{min-width:0;max-width:100%;background:#071422;color:#f1f9ff;border:1px solid #62788b;border-radius:9px;font:inherit;padding:9px}
+.tool-field small{color:var(--muted);font-weight:450}
+.tool-output{display:block;background:#17352e;color:#e9ffce;border:1px solid #699d6b;font-weight:800;border-radius:13px;padding:15px 18px;line-height:1.8}
+.tool-fineprint{font-size:.88rem;color:var(--muted);margin:12px 0 0}
+.diagram-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.diagram-item{position:relative;min-height:130px;display:flex;flex-direction:column;gap:9px;border:1px solid #4c766c;border-radius:13px;padding:14px;background:linear-gradient(135deg,#164136,#132d39)}
+.diagram-item:after{content:"←";position:absolute;inset-inline-end:-17px;top:36px;font-size:1.25rem;color:#b3f8a2;z-index:1}
+.diagram-item:last-child:after{content:none}
+.diagram-num{font-size:.85rem;color:#cafcae}
+.diagram-item strong{font-size:1.02rem}
+.diagram-item span{font-size:.87rem;color:#c9dfdb}
+.media-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.media-item{display:grid;align-content:start;gap:12px;border:1px solid var(--line);background:var(--surface2);border-radius:12px;padding:16px}
+.media-item a{font-weight:700;line-height:1.6}
+.media-kind{display:inline-block;justify-self:start;border:1px solid #558f81;border-radius:40px;padding:3px 9px;font-size:.75rem;color:#c7eadf}
+.finish-panel{background:linear-gradient(130deg,#163a32,#152c39)}
+.finish-btn{background:var(--mint);color:#092018;border-radius:12px;padding:12px 20px;font:inherit;font-weight:800;min-height:48px;cursor:pointer;border:2px solid transparent}
+.finish-btn:hover{border-color:#fff}
+.finish-count{display:block;color:var(--muted);margin-top:10px}
+#tocLinks a{border-bottom:1px dotted var(--line)}
+@media(max-width:850px){.diagram-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.diagram-item:nth-child(2):after{content:none}}
+@media(max-width:460px){.diagram-grid{grid-template-columns:1fr}.diagram-item{min-height:0}.diagram-item:after{content:none}.tool-field{padding:10px}}
+@media print{.tool-panel,.finish-panel{break-inside:avoid}.tool-field input{background:white;color:#111}.deep-section{break-inside:auto}.media-item{background:#fff}.diagram-item{color:#111;background:#eee}.deep-heading,.verified-context{color:#111;background:#fff}}
