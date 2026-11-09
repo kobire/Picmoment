@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07101b">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="מדריך מפורט בעברית ל־XPENG G6: 35 שיעורים מלאים, הסברים, דוגמאות, רשימות מונחים וניווט נגיש.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self';">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307101b'/%3E%3Ctext x='7' y='42' fill='%23a9f771' font-family='Arial' font-size='28' font-weight='bold'%3EG6%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="reader.css">
+<title>G6 GUIDE | ספריית הלימוד המלאה</title>
+<script src="catalog.js"></script>
+<script src="chapters-01-07.js"></script>
+<script src="chapters-08-14.js"></script>
+<script src="chapters-15-21.js"></script>
+<script src="chapters-22-28.js"></script>
+<script src="chapters-29-35.js"></script>
+<script src="reader.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#lessonArticle">דילוג לתוכן השיעור</a>
+<header class="head" role="banner">
+ <a class="brand" href="./" aria-label="G6 Guide - לדף הבית">G6 <span>GUIDE</span></a>
+ <nav class="header-actions" aria-label="כלים">
+  <a id="homeLink" class="back-link" href="./">דף הבית</a>
+  <label for="lang" class="sr-only" style="position:absolute;left:-99999px">שפת ממשק</label>
+  <select id="lang" class="lang" aria-label="שפת ממשק">
+   <option value="he">עברית</option><option value="en">English</option><option value="ru">Русский</option><option value="es">Español</option>
+  </select>
+  <button id="fontButton" class="smallbtn" aria-label="הגדלת טקסט" title="הגדלת טקסט" type="button">A+</button>
+  <button id="contrastButton" class="smallbtn" aria-label="ניגודיות גבוהה" title="ניגודיות גבוהה" type="button">◐</button>
+ </nav>
+</header>
+<div class="page">
+ <section class="intro-banner" aria-labelledby="pageHeading">
+  <div><span class="eyebrow">EXPANDED LEARNING LIBRARY · G6 GUIDE</span><h1 id="pageHeading">כל התוכן. כל 35 השיעורים.</h1><p>הסברים מפורטים בעברית, דוגמאות, מושגים מקצועיים, המלצות שימוש ובטיחות — במקום תקצירים בלבד. אין בחינות ואין צורך להימצא ברכב.</p></div>
+  <span class="chip" id="libraryLabel">ספריית השיעורים</span>
+ </section>
+ <main class="layout">
+  <aside class="sidebar" aria-label="ניווט לכל השיעורים">
+   <details id="chapterDetails"><summary id="browserTitle">ניווט בין 35 שיעורים</summary>
+    <label id="searchLabel" for="searchInput">חיפוש בכל תוכן השיעורים</label>
+    <input id="searchInput" type="search" autocomplete="off" placeholder="חיפוש שיעור או מושג" aria-controls="lessonLinks">
+    <p id="searchState" role="status" aria-live="polite"></p>
+    <nav id="lessonLinks" class="lesson-links" aria-label="רשימת כל השיעורים"></nav>
+   </details>
+  </aside>
+  <article class="article" id="lessonArticle">
+   <div class="hero-lesson">
+    <div class="lesson-meta"><span id="chapterMeta"></span><span id="contentTag"></span></div>
+    <h1 id="lessonTitle">השיעור</h1><p id="lessonLead"></p><p id="languageNote" class="readonly-note" hidden></p>
+    <div class="chapter-actions">
+     <button id="copyLink" class="action primary" type="button">העתקת קישור לשיעור</button>
+     <button id="printButton" class="action" type="button">הדפסה / PDF</button>
+    </div>
+   </div>
+   <section class="contents" aria-labelledby="tocLabel"><strong id="tocLabel">בפרק זה</strong><nav id="tocLinks" class="toc-links"></nav></section>
+   <div id="studyVisual" class="study-visual" aria-label="מפה חזותית של שלושה מונחים מרכזיים"></div>
+   <div id="sections"></div>
+   <section class="callout" aria-labelledby="caseLabel"><h2 id="caseLabel">דוגמה מהחיים</h2><p id="caseText"></p></section>
+   <section class="endlist" aria-labelledby="learnLabel"><h2 id="learnLabel">מה לוקחים מהשיעור</h2><ul id="outcomes"></ul></section>
+   <section class="endlist" aria-labelledby="termsLabel"><h2 id="termsLabel">מילון מושגים</h2><div id="glossary" class="glossary"></div></section>
+   <section class="resources" aria-labelledby="sourcesLabel"><h2 id="sourcesLabel">מקורות וקישורים שימושיים</h2><div id="resourceLinks" class="resource-list"></div>
+     <p>המדריך העברי המקושר הוא לדור קודם (2024), ומשמש להמחשה בלבד. לרכב Core Plus חדש יש לבדוק את שנת הייצור, ספר הרכב והוראות היבואן העדכניות.</p>
+   </section>
+   <nav id="chapterNav" class="chapter-nav" aria-label="מעבר בין שיעורים"></nav>
+  </article>
+ </main>
+</div>
+<footer class="foot"><strong>G6 GUIDE · Unofficial, independent educational project</strong><p id="footerNotice">מדריך לימודי שאינו מחליף ספר רכב או הנחיות שירות ובטיחות.</p>
+ <p>החיפוש מתבצע בדפדפן בלבד. אין עוגיות מעקב או חשבון משתמש; קישורים חיצוניים נפתחים רק לבחירתך. התוכן הוכן מחדש לפי נושאי סדרת הלימוד, ולא מהווה תמלול מילה במילה של השיחות.</p>
+ <a href="./">דף הבית</a><a href="https://heyxpeng.co.il/g6/" target="_blank" rel="noopener noreferrer">מפרט רשמי</a>
+</footer>
+</body></html>
